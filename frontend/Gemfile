@@ -1,0 +1,6 @@
+gem 'sinatra'
+gem 'sinatra-content-for'
+
+group :development, :test do
+  gem 'rake'
+end
