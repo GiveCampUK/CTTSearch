@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 
 namespace SearchParty.Controllers
 {
@@ -15,9 +16,13 @@ namespace SearchParty.Controllers
                                               {
                                                   result1 = new
                                                                 {
+                                                                    id = Guid.NewGuid().ToString(),
                                                                     title = "GiveCampUK",
-                                                                    url = "http://givecamp.org.uk",
-                                                                    tags = "charity"
+                                                                    uri = "http://givecamp.org.uk",
+                                                                    tags = "charity",
+                                                                    shortDescription = "Generous Geeks",
+                                                                    longDescription = "Generous geeks give their weekend to code",
+                                                                    resultType = "uri"
                                                                 }
                                               }
                             },
