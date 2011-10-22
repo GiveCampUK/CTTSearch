@@ -98,6 +98,7 @@
     <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="Commands\ResourceRepository.cs" />
     <Compile Include="Commands\ResourceCommandBase.cs" />
+    <Compile Include="Commands\ResourceUpdateCommand.cs" />
     <Compile Include="Commands\SearchCommandHelper.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Data\NHibernateHelper.cs" />
