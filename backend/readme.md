@@ -95,6 +95,7 @@ id = ''
 title = ''
 blub = ''
 tags = ''
+parent = ''
 searchResultLinks = ''
 subCategories = ''
 }
