@@ -25,7 +25,7 @@ namespace SearchParty.Controllers
                             {
                                 results = new
                                               {
-                                                  result1 = new
+                                                  result2 = new
                                                                 {
                                                                     id = Guid.NewGuid().ToString(),
                                                                     title = "GiveCampUK",
