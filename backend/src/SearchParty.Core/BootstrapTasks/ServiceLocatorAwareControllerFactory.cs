@@ -18,17 +18,17 @@
         private readonly string _controllerAssemblyName;
         private readonly string _controllerNamespace;
         //private readonly string _homeControllerGenericSuffix;
-        private readonly MiniProfiler _profiler;
+        //private readonly MiniProfiler _profiler;
 
         public ServiceLocatorAwareControllerFactory(IServiceLocator serviceLocator,
                                                     string controllerAssemblyName,
-                                                    string controllerNamespace,
-                                                    MiniProfiler profiler)
+                                                    string controllerNamespace)
+               //                                     MiniProfiler profiler)
         {
             _serviceLocator = serviceLocator;
             _controllerAssemblyName = controllerAssemblyName;
             _controllerNamespace = controllerNamespace;
-            _profiler = profiler;
+            //_profiler = profiler;
         }
 
         /// <summary>
@@ -39,8 +39,8 @@
         /// </summary>
         public override IController CreateController(RequestContext requestContext, string controllerName)
         {
-            using (_profiler.Step("CreateController"))
-            {
+            //using (_profiler.Step("CreateController"))
+            //{
                 try
                 {
                     var controllerTypeToLocate =
@@ -55,7 +55,7 @@
                     //e.Log();
                     throw new ControllerInstantiationException(controllerName, e);
                 }
-            }
+            //}
         }
 
         public override void ReleaseController(IController controller)

@@ -11,19 +11,19 @@
     {
         private readonly ControllerBuilder _currentControllerBuilder;
         private readonly IFeatureManifest<Feature> _featureManifest;
-        private readonly MiniProfiler _miniProfiler;
+        //private readonly MiniProfiler _miniProfiler;
         private readonly IServiceLocator _serviceLocator;
 
 
         public RegisterControllerFactoryWithMvcBootstrapperTask(IServiceLocator serviceLocator,
                                                                 ControllerBuilder currentControllerBuilder,
-                                                                IFeatureManifest<Feature> featureManifest,
-                                                                MiniProfiler miniProfiler)
+                                                                IFeatureManifest<Feature> featureManifest)
+                                                                //MiniProfiler miniProfiler)
         {
             _serviceLocator = serviceLocator;
             _currentControllerBuilder = currentControllerBuilder;
             _featureManifest = featureManifest;
-            _miniProfiler = miniProfiler;
+            //_miniProfiler = miniProfiler;
         }
 
         public void Execute()
@@ -37,10 +37,10 @@
                              .ControllerNamespace, _featureManifest);
 
             _currentControllerBuilder
-                .SetControllerFactory(new ServiceLocatorAwareControllerFactory(_serviceLocator, 
+                .SetControllerFactory(new ServiceLocatorAwareControllerFactory(_serviceLocator,
                                                                          controllerAssemblyNameLeftPart,
-                                                                         controllerNamespace,
-                                                                         _miniProfiler));
+                                                                         controllerNamespace));
+                                                                         //_miniProfiler));
             _currentControllerBuilder.DefaultNamespaces.Add("SearchParty.Api.Controllers");
 
             
