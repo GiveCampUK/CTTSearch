@@ -1,0 +1,35 @@
+body {
+	margin: 0;
+	padding: 0;
+	background: #111;
+	color: #FFF;
+	font-size: 1em;
+	font-family: sans-serif;
+}
+
+#main {
+	background: #222;
+	width: 960px;
+	margin: 20px auto;
+}
+
+#head {
+	border-bottom: 3px solid #CCC;
+	padding: 15px;
+}
+
+#logo {
+	font-size: 1.1em;
+	font-weight: 700;
+}
+
+/** CONTENT **/
+
+#content {
+	padding: 20px;
+}
+
+h1 {
+	font-size: 1.4em;
+	font-weight: normal;
+}
