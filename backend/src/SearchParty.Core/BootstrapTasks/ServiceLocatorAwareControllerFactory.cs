@@ -3,6 +3,7 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using NHibernate;
     using NServiceLocator;
 
     /// <summary>
@@ -16,18 +17,14 @@
         private readonly string _controllerAssemblyName;
         private readonly string _controllerNamespace;
         private readonly IServiceLocator _serviceLocator;
-        //private readonly string _homeControllerGenericSuffix;
-        //private readonly MiniProfiler _profiler;
 
         public ServiceLocatorAwareControllerFactory(IServiceLocator serviceLocator,
                                                     string controllerAssemblyName,
                                                     string controllerNamespace)
-            //                                     MiniProfiler profiler)
         {
             _serviceLocator = serviceLocator;
             _controllerAssemblyName = controllerAssemblyName;
             _controllerNamespace = controllerNamespace;
-            //_profiler = profiler;
         }
 
         /// <summary>

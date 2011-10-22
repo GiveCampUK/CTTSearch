@@ -32,6 +32,7 @@ resourceType = ''
 ]
 ```
 
+Possible ResourceTypes: YouTubeVideo, InternalLink, ExternalLink, PDF, ExternalLink (currently called ExternalPage)
 
 WIP from here
 ===

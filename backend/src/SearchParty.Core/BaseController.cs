@@ -10,7 +10,7 @@
 
         protected ISession DataSession
         {
-            get { return _session ?? (_session = NHibernateHelper.OpenSession()); }
+            get { return _session ?? (_session = NHibernateSessionHelper.OpenSession()); }
         }
     }
 }

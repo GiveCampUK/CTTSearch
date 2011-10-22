@@ -43,6 +43,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="MvcMiniProfiler">
       <HintPath>..\packages\MiniProfiler.1.9\lib\net40\MvcMiniProfiler.dll</HintPath>
     </Reference>
@@ -95,14 +98,14 @@
     <Compile Include="BootstrapTasks\ServiceLocatorAwareControllerFactory.cs" />
     <Compile Include="Commands\CategoryCommand.cs" />
     <Compile Include="Commands\CategoryCommandBase.cs" />
-    <Compile Include="Commands\CategoryUpdateCommand.cs" />
+<Compile Include="Commands\CategoryUpdateCommand.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="Commands\ResourceRepository.cs" />
     <Compile Include="Commands\ResourceCommandBase.cs" />
-    <Compile Include="Commands\ResourceUpdateCommand.cs" />
+<Compile Include="Commands\ResourceUpdateCommand.cs" />
     <Compile Include="Commands\SearchCommandHelper.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
-    <Compile Include="Data\NHibernateHelper.cs" />
+    <Compile Include="Data\NHibernateSessionHelper.cs" />
     <Compile Include="Data\Overrides\ResourceOverride.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
@@ -135,3 +138,5 @@
   </Target>
   -->
 </Project>
+
+

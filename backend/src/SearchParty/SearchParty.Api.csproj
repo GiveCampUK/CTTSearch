@@ -34,10 +34,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bjma.Utility.DataAccess, Version=1.0.4312.31032, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="MvcMiniProfiler, Version=1.9.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL" />
     <Reference Include="NBasicExtensionMethod">
       <HintPath>..\packages\NBasicExtensionMethod.1.0.4292.32667\lib\net40\NBasicExtensionMethod.dll</HintPath>
@@ -102,12 +106,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocation\Copy of ServiceLocatorBindings.SearchParty.Core.cs" />
     <Compile Include="ServiceLocation\SearchPartyNinjectModule.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.System.Web.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.Tenancy.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.Time.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.MvcMiniProfiler.cs" />
-    <Compile Include="ServiceLocation\ServiceLocatorBindings.SearchParty.Core.cs" />
+    <Compile Include="ServiceLocation\ServiceLocatorBindings.SearchParty.Core.Data.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -161,7 +166,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>64459</DevelopmentServerPort>
+          <DevelopmentServerPort>4800</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

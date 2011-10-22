@@ -8,13 +8,13 @@
     using NHibernate;
     using NHibernate.Cfg;
 
-    public class NHibernateHelper
+    public class NHibernateSessionHelper
     {
         private static readonly ISessionFactory SessionFactory;
 
         private static Configuration _configuration;
 
-        static NHibernateHelper()
+        static NHibernateSessionHelper()
         {
             SessionFactory = Fluently
                 .Configure(Configuration)
