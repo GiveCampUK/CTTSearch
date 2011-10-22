@@ -130,3 +130,23 @@ searchResultLinks is a list of searchResultLinks
 subCategories is a list of categories nested within this category
 
 ----------------------------------------------------------
+
+Resource/Update
+
+Methods: ```POST```
+Returns:
+Json object of the created/updated resource, or error details
+n.b. to create a new resource, set the id property to 0. To update, use the existing id.
+
+```json
+{
+id = ''
+uri = ''
+title = ''
+tags = ''
+shortDescription = ''
+longDescription = ''
+resourceType = ''
+}
+
+```
