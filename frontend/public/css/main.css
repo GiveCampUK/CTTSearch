@@ -56,13 +56,22 @@ a:hover, a:focus { text-decoration: underline; }
 	color: #E8F2D6;
 }
 
+#introduction {
+	font-size: 1.3em;
+}
+
 /** QUERY FORM **/
+
+#who_are_you {
+	overflow: hidden;
+}
 
 form .slider {
 	width: 300px;
 	margin: 10px 0 20px;
 	position: relative;
 	font-size: 1.4em;
+	float: left;
 }
 
 form .slider .marker {
@@ -86,10 +95,17 @@ form .ui-slider-horizontal .ui-slider-handle {
 form label {
 	padding-top: 10px;
 	display: block;
+	float: left;
+	clear: left;
+	width: 19em;
 }
 
 #search_input_area {
 	text-align: center;
+}
+
+#search_input_area h2 {
+	text-align: left;
 }
 
 #search_input_area #f_query {
@@ -112,8 +128,7 @@ form label {
 
 h1 {
 	font-size: 1.8em;
-	font-weight: normal;g
-	text-align: center;
+	font-weight: normal;
 	margin-bottom: 20px;
 }
 
@@ -134,6 +149,10 @@ h1 {
 	border-bottom: 2px solid #CCC;
 	text-decoration: none;
 	display: block;
+}
+
+#categories .category p {
+	padding: 1em 1em 0;
 }
 
 #categories .category ul {

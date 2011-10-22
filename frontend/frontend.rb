@@ -13,4 +13,8 @@ class Frontend < Sinatra::Base
     @categories = Categories.all
     erb :index
   end
+
+  get '/result' do
+  	erb :result
+  end
 end
