@@ -48,9 +48,10 @@ a:hover, a:focus { text-decoration: underline; color: #8FC63F;  }
 }
 
 #logo {
+	display: block;
 	font-size: 4em;
 	font-weight: 700;
-	float: right;
+	text-align: right;
 	line-height: 50px;
 	position: relative;
 	color: #E8F2D6;
