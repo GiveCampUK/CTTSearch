@@ -73,6 +73,7 @@
     <Compile Include="BoostrapTasks\BindControllersToServiceLocatorBootstrapperTask.cs" />
     <Compile Include="BoostrapTasks\ControllerInstantiationException.cs" />
     <Compile Include="BoostrapTasks\ServiceLocatorAwareControllerFactory.cs" />
+    <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
