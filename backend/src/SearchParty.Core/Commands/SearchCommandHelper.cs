@@ -13,12 +13,15 @@
             {
                 //var tag1 = new Tag { Name = "Windows7" };
                 //DataSession.Save(tag1);
+                const string small = "org_size:1-5,";
+                const string medium = "org_size:6-25,";
+                const string large = "org_size:26+,";
 
                 #region Resource Spam - Solutions Anyone?
 
                 var resource = new Resource
                                    {
-                                       Tags = "Email, Spam",
+                                       Tags = small + medium + large + "Email, Spam",
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
                                        ShortDescription =
@@ -35,7 +38,7 @@
 
                 resource = new Resource
                                {
-                                   Tags = "Email, Contact, AddressBook",
+                                   Tags = medium + large + "Email, Contact, AddressBook",
                                    Title = "Delete an email contact or an address book",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/6/juYn0TUrW90",
                                    ShortDescription =
@@ -52,7 +55,7 @@
 
                 resource = new Resource
                                {
-                                   Tags = "Email, Font",
+                                   Tags = small + "Email, Font",
                                    Title = "Changing Font Colours in Email",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/10/ZQQloZ3rk5g",
                                    ShortDescription =
@@ -69,7 +72,7 @@
 
                 resource = new Resource
                                {
-                                   Tags = "Payments, PCI-DSS",
+                                   Tags = large + "Payments, PCI-DSS",
                                    Title = "PCI-DSS regulations – D day for charities",
                                    Uri = "http://www.ctt.org/sites/default/files/PCI_Whitepaper.pdf",
                                    ShortDescription =
@@ -86,7 +89,7 @@
 
                 resource = new Resource
                                {
-                                   Tags = "Payments, DirectDebit",
+                                   Tags = medium + large + "Payments, DirectDebit",
                                    Title = "Paperless Direct Debit (PDD) User Guide",
                                    Uri = "http://www.ctt.org/sites/default/files/pdd_userguide290711.pdf",
                                    ShortDescription =
@@ -103,7 +106,7 @@
 
                 resource = new Resource
                                {
-                                   Tags = "Payments, Pricing",
+                                   Tags = medium + "Payments, Pricing",
                                    Title = "CTPayments Pricing",
                                    Uri = "http://www.ctt.org/ctpayments/pricing",
                                    ShortDescription =
