@@ -133,14 +133,23 @@ namespace SearchParty.Core.Commands
                 category = new Category
                                {
                                    Title = "Payment Solutions",
-                                   Blurb =
-                                       "Online fundraising is now an integral part of the fundraising mix. Not-for-profit organisations wanting to maximise their income, must be able to offer the full range of payment options.",
+                                   Blurb = "Online fundraising is now an integral part of the fundraising mix. Not-for-profit organisations wanting to maximise their income, must be able to offer the full range of payment options.",
                                    Tags = "Payments",
                                    SearchResultLinks =
                                        new List<SearchResultLink>
                                            {
-                                               new SearchResultLink
-                                                   {Title = "Chip & Pin Terminals", Tags = "Payments, ChipAndPin"}
+                                               new SearchResultLink {Title = "Web Online Payments", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + proficiencyIntermediate +
+                                                                                                            promoted + 
+                                                                                                            "Payments, Online"},
+                                               new SearchResultLink {Title = "Chip & Pin Terminals", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                                                                            promoted + 
+                                                                                                            "Payments, ChipAndPin"},
+                                               new SearchResultLink {Title = "Security of PCI-DSS Payment Card Industry Data", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                                                                            promoted + 
+                                                                                                            "Payments, PCI-DSS, Security"}
                                            },
                                    SubCategories =
                                        new List<Category>
@@ -151,7 +160,22 @@ namespace SearchParty.Core.Commands
                                                        Blurb =
                                                            "Direct Debit is an essential tool for charities seeking regular gifts either online or via telephone fundraising campaigns",
                                                        Tags = "Payments, DirectDebit",
-                                                       SearchResultLinks = new List<SearchResultLink> {},
+                                                       SearchResultLinks = new List<SearchResultLink> { new SearchResultLink {Title = "What are Online Direct Debits?", 
+                                                                                                            Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + 
+                                                                                                            promoted + 
+                                                                                                            "Payments, DirectDebit, Online"},
+                                                                                                        new SearchResultLink {Title = "Direct Debit Bureau Services", 
+                                                                                                            Tags = mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                                                                            promoted + 
+                                                                                                            "Payments, DirectDebit, Bureau"},
+                                                                                                        new SearchResultLink {Title = "Direct Debit Facilities Management", 
+                                                                                                            Tags = mediumOrgSize + largeOrgSize +
+                                                                                                            proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                                                                            promoted + 
+                                                                                                            "Payments, DirectDebit, Facilities"}
+                                                       },
                                                        SubCategories = new List<Category> {}
                                                    }
                                            }
@@ -167,16 +191,36 @@ namespace SearchParty.Core.Commands
                 category = new Category
                                {
                                    Title = "Email",
-                                   Blurb =
-                                       "Connecting to the Internet will allow you better access to information and better communication with members and other partners through the use of email.",
-                                   Tags = "Email",
+                                   Blurb = "Connecting to the Internet will allow you better access to information and better communication with members and other partners through the use of email.",
+                                   Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            proficiencyNovice + 
+                                            "Email",
                                    SearchResultLinks =
                                        new List<SearchResultLink>
                                            {
-                                               new SearchResultLink
+                                                   new SearchResultLink
                                                    {
                                                        Title = "Choosing An Internet Service Provider",
-                                                       Tags = "Email, ISP"
+                                                       Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                               proficiencyNovice + proficiencyIntermediate +
+                                                               promoted + 
+                                                               "Email, ISP"
+                                                   },
+                                                   new SearchResultLink
+                                                   {
+                                                       Title = "Email in the Cloud: A Google Apps Case Study",
+                                                       Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                               proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                               promoted + 
+                                                               "Email, Cloud, Google, CaseStudy"
+                                                   },
+                                                   new SearchResultLink
+                                                   {
+                                                       Title = "Using Email Marketing",
+                                                       Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                               proficiencyNovice + proficiencyIntermediate +
+                                                               promoted + 
+                                                               "Email, Marketing"
                                                    }
                                            },
                                    SubCategories = new List<Category>
