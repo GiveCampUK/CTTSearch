@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty", "SearchParty\SearchParty.csproj", "{4BAD95A8-A538-4041-B497-710EBC566E0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty.Api", "SearchParty\SearchParty.Api.csproj", "{4BAD95A8-A538-4041-B497-710EBC566E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty.Core", "SearchParty.Core\SearchParty.Core.csproj", "{8DC1A96F-27DB-4334-90A7-7D33324E45E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty.Infrastructure", "SearchParty.Infrastructure\SearchParty.Infrastructure.csproj", "{C832DD90-D251-4026-8321-BF8900800767}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +17,14 @@ Global
 		{4BAD95A8-A538-4041-B497-710EBC566E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BAD95A8-A538-4041-B497-710EBC566E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BAD95A8-A538-4041-B497-710EBC566E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC1A96F-27DB-4334-90A7-7D33324E45E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC1A96F-27DB-4334-90A7-7D33324E45E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC1A96F-27DB-4334-90A7-7D33324E45E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC1A96F-27DB-4334-90A7-7D33324E45E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C832DD90-D251-4026-8321-BF8900800767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C832DD90-D251-4026-8321-BF8900800767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C832DD90-D251-4026-8321-BF8900800767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C832DD90-D251-4026-8321-BF8900800767}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
