@@ -14,6 +14,9 @@
 					this.domOrgSize = $('#org_size');
 					this.domTechLevel = $('#user_prof');
 
+					this.domOrgSizeOptions = this.domOrgSize.find('option');
+					this.domTechLevelOptions = this.domTechLevel.find('option');
+
 					this.domOrgSizeValueLabel = $('<span/>').appendTo('label[for=org_size]');
 					this.domTechLevelValueLabel = $('<span/>').appendTo('label[for=user_prof]');
 
@@ -57,19 +60,11 @@
 				},
 
 				convertOrgSizeSliderVal: function(v) {
-					switch (v) {
-						case 1: return '1-5'
-						case 2: return '6-25'
-						case 3: return '26+'
-					}
+					return this.domOrgSizeOptions.eq(v-1).val();
 				},
 				
 				convertTechLevelSliderVal: function(v) {
-					switch (v) {
-						case 1: return 'Novice'
-						case 2: return 'Intermediate'
-						case 3: return 'Advanced'
-					}
+					return this.domTechLevelOptions.eq(v-1).val();
 				},
 
 				setupSliderMarkers: function() {

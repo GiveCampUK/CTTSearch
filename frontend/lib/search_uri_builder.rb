@@ -6,7 +6,7 @@ class SearchUriBuilder
   end
   
   def uri
-    "/search/#{query_string}"
+    "/search#{query_string}"
   end
   
   def query_string

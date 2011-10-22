@@ -14,7 +14,7 @@ class Frontend < Sinatra::Base
     erb :index
   end
 
-  get '/search' do
+  get '/search/?' do
   	erb :result
   end
   
