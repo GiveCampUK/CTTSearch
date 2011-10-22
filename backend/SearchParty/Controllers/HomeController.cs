@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using NHibernate.Tool.hbm2ddl;
+using SearchParty.Data;
 
 namespace SearchParty.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -15,9 +13,16 @@ namespace SearchParty.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult CreateDatabase()
         {
-            return View();
+            new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult UpdateDatabase()
+        {
+            new SchemaUpdate(NHibernateHelper.Configuration).Execute(false, true);
+            return RedirectToAction("Index");
         }
     }
 }
