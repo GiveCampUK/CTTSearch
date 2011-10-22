@@ -1,13 +1,55 @@
-﻿namespace SearchParty.Core.Commands
-{
-    using System.Web.Mvc;
-    using Infrastructure;
+﻿using System.Linq;
+using NHibernate;
+using NHibernate.Criterion;
+using SearchParty.Core.Models;
 
-    public class ResourceCommand : ActionCommand<JsonResult, object>    // TODO NullDto
+namespace SearchParty.Core.Commands
+{
+    public class ResourceCreateCommand
     {
-        public override JsonResult PerformAction(object o)      // TODO NullDto
+        public object PerformAction(int? id, ISession dataSession)
         {
-            return new JsonResult { };
+            return new {status = "failed"};
+        }
+    }
+    public class ResourceCommand
+    {
+        public object PerformAction(int? id, ISession dataSession)
+        {
+            if (id.HasValue)
+            {
+                var resource = dataSession.CreateCriteria<Resource>()
+                    .Add(Restrictions.IdEq(id)).UniqueResult<Resource>();
+                if (resource == null)
+                {
+                    return new {};
+                }
+                return GenerateResource(resource);
+            }
+            else
+            {
+                var resource = dataSession.CreateCriteria<Resource>()
+                    .List<Resource>().ToList();
+                if (!resource.Any())
+                {
+                    return new { };
+                }
+                return resource.Select(GenerateResource).ToList();
+            }
+        }
+
+        private static object GenerateResource(Resource resource)
+        {
+            return new
+                       {
+                           id = resource.Id,
+                           uri = resource.Uri,
+                           title = resource.Title,
+                           tags = resource.Tags.Tagify(),
+                           shortDescription = resource.ShortDescription,
+                           longDescription = resource.LongDescription,
+                           resourceType = resource.ResourceType
+                       };
         }
     }
 }
