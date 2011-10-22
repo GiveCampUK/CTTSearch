@@ -236,19 +236,22 @@ h1 {
 	padding: 10px;
 }
 
-.results .result h3 {
-	font-size: 1.4em;
+.results .result p {
+	padding: .5em 0;
 }
 
-.results .result h3, .results .result p {
-	padding: .3em 0;
+.results .result h3 {
+	font-size: 1.4em;
+	padding: .5em 0 0;
 }
 
 /* Result types */
 
-.results .type-text { height: 150px; border-color: #8FC63F; background-color: #E8F2D6; }
-.results .type-video { height: 300px; border-color: #543E87; background-color: #BEC2C5; }
-.results .type-link { height: 300px; border-color: #F37A22; background-color: #FBE4D6; }
+.results .type_text { height: 150px; border-color: #8FC63F; background-color: #E8F2D6; }
+.results .type_video { height: 300px; border-color: #543E87; background-color: #BEC2C5; }
+.results .type_link { height: 300px; border-color: #F37A22; background-color: #FBE4D6; }
+
+.results .video_with_description { height: 492px; }
 
 /************************/
 /** SINGLE RESULT PAGE **/
