@@ -17,10 +17,18 @@ namespace SearchParty.Core.Commands
             {
                 var results = dataSession.CreateCriteria<Category>()
                     .Add(Restrictions.IsNull("Parent")).List<Category>();
+                if (!results.Any())
+                {
+                    return new { };
+                }
                 return results.Select(category => GenerateCategory(category, true));
             }
             var result = dataSession.CreateCriteria<Category>()
                 .Add(Restrictions.IdEq(id.Value)).UniqueResult<Category>();
+            if (result == null)
+            {
+                return new { };
+            }
             return GenerateCategory(result);
         }
 
