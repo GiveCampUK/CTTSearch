@@ -1,0 +1,17 @@
+require 'rake'
+
+namespace :test do
+  desc "Run Cucumber Features"
+  task :features do
+    system "cucumber features"
+  end
+  
+  desc "Run RSpec Specs"
+  task :specs do
+    system "rspec specs"
+  end
+end
+
+task :default do
+  Rake::Task["test:features"].invoke
+end
