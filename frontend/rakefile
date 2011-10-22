@@ -10,8 +10,17 @@ namespace :test do
   task :specs do
     system "rspec specs"
   end
+  
+  desc "Run WIP Features"
+  task :wip do
+    system "cucumber features --tags @wip"
+  end
 end
 
 task :default do
   Rake::Task["test:features"].invoke
+end
+
+task :wip do
+  Rake::Task["test:wip"].invoke
 end
