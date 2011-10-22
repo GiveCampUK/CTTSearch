@@ -2,7 +2,6 @@
 {
     using System;
     using System.Web.Mvc;
-    using MvcMiniProfiler;
     using NBootstrap;
     using NFeature;
     using NServiceLocator;
@@ -18,7 +17,7 @@
         public RegisterControllerFactoryWithMvcBootstrapperTask(IServiceLocator serviceLocator,
                                                                 ControllerBuilder currentControllerBuilder,
                                                                 IFeatureManifest<Feature> featureManifest)
-                                                                //MiniProfiler miniProfiler)
+            //MiniProfiler miniProfiler)
         {
             _serviceLocator = serviceLocator;
             _currentControllerBuilder = currentControllerBuilder;
@@ -38,12 +37,11 @@
 
             _currentControllerBuilder
                 .SetControllerFactory(new ServiceLocatorAwareControllerFactory(_serviceLocator,
-                                                                         controllerAssemblyNameLeftPart,
-                                                                         controllerNamespace));
-                                                                         //_miniProfiler));
+                                                                               controllerAssemblyNameLeftPart,
+                                                                               controllerNamespace));
+            //_miniProfiler));
             _currentControllerBuilder.DefaultNamespaces.Add("SearchParty.Api.Controllers");
 
-            
 
             Console.WriteLine(GetType() + " completed OK.");
         }

@@ -3,12 +3,10 @@
     namespace Bjma.Utility.Feature
     {
         using Core;
-        using global::System;
         using NFeature;
         using NFeature.DefaultImplementations;
         using Ninject;
         using Ninject.Modules;
-        using SearchParty.Core;
 
         public class ServiceLocatorBindings
         {
@@ -26,8 +24,8 @@
                 _module.Bind
                     <IFeatureSettingAvailabilityChecker<Feature, Tenant, EmptyArgs>>()
                     .ToMethod(x => new FeatureSettingAvailabilityChecker<Feature,
-                                        EmptyArgs,
-                                        Tenant>((f,t) => true));
+                                       EmptyArgs,
+                                       Tenant>((f, t) => true));
                 _module.Bind<IFeatureSettingService<Feature, Tenant, EmptyArgs>>()
                     .To<FeatureSettingService<Feature, Tenant, EmptyArgs>>();
                 _module.Bind<IFeatureManifestCreationStrategy<Feature>>()

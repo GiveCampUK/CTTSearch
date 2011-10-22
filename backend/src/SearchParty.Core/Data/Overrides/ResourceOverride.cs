@@ -10,27 +10,27 @@
         {
             mapping
                 .Map(q => q.LongDescription)
-                .CustomType(typeof(string))
+                .CustomType(typeof (string))
                 .Length(10000)
                 .Column("LongDescription");
             mapping
                 .Map(q => q.ShortDescription)
-                .CustomType(typeof(string))
+                .CustomType(typeof (string))
                 .Length(10000)
-                .Column("ShortDescription");     
+                .Column("ShortDescription");
             mapping
                 .Map(q => q.Tags)
-                .CustomType(typeof(string))
+                .CustomType(typeof (string))
                 .Length(10000)
                 .Column("Tags");
             mapping
                 .Map(q => q.Title)
-                .CustomType(typeof(string))
+                .CustomType(typeof (string))
                 .Length(10000)
                 .Column("Title");
             mapping
                 .Map(q => q.Uri)
-                .CustomType(typeof(string))
+                .CustomType(typeof (string))
                 .Length(10000)
                 .Column("Uri");
         }
