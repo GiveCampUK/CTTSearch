@@ -3,6 +3,8 @@ using SearchParty.Core.Commands;
 
 namespace SearchParty.Api.Controllers
 {
+    using Core;
+
     public class CategoryController : BaseController
     {
         private readonly CategoryCommand _categoryCommand;
@@ -10,7 +12,6 @@ namespace SearchParty.Api.Controllers
         public CategoryController()
             : this(new CategoryCommand())
         {
-
         }
 
         private CategoryController(CategoryCommand categoryCommand)

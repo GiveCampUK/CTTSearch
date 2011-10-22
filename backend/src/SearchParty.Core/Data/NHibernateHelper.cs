@@ -1,11 +1,10 @@
-﻿using SearchParty.Core.Models;
-
-namespace SearchParty.Api.Data
+﻿namespace SearchParty.Core.Data
 {
     using System;
     using FluentNHibernate.Automapping;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Conventions.Helpers;
+    using Models;
     using NHibernate;
     using NHibernate.Cfg;
 

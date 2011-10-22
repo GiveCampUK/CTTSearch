@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Api.Controllers
+﻿namespace SearchParty.Core
 {
     using System.Web.Mvc;
     using Data;

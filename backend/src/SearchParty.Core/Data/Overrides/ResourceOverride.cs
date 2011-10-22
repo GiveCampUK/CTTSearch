@@ -1,9 +1,9 @@
-﻿using FluentNHibernate.Automapping;
-using FluentNHibernate.Automapping.Alterations;
-using SearchParty.Core.Models;
-
-namespace SearchParty.Api.Data.Overrides
+﻿namespace SearchParty.Core.Data.Overrides
 {
+    using FluentNHibernate.Automapping;
+    using FluentNHibernate.Automapping.Alterations;
+    using Models;
+
     public class ResourceOverride : IAutoMappingOverride<Resource>
     {
         public void Override(AutoMapping<Resource> mapping)

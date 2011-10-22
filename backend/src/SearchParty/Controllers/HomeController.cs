@@ -1,7 +1,8 @@
 ﻿namespace SearchParty.Api.Controllers
 {
     using System.Web.Mvc;
-    using Data;
+    using Core;
+    using Core.Data;
     using NHibernate.Tool.hbm2ddl;
 
     public class HomeController : BaseController
