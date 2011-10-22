@@ -2,7 +2,7 @@
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
-using SearchParty.Api.Models;
+using SearchParty.Core.Models;
 using SearchParty.Infrastructure;
 
 namespace SearchParty.Core.Commands
@@ -49,10 +49,10 @@ namespace SearchParty.Core.Commands
                                                             id = resource.Id,
                                                             title = resource.Title,
                                                             uri = resource.Uri,
-                                                            tags = string.Join(",", resource.Tags.Replace(",", " ").Trim().Replace(" ", ",")),
+                                                            tags = resource.Tags.Tagify(),
                                                             shortDescription = resource.ShortDescription,
                                                             longDescription = resource.LongDescription,
-                                                            resultType = "uri"
+                                                            resourceType = "uri"
                                                         }
                                                   })
                 };
@@ -78,7 +78,7 @@ namespace SearchParty.Core.Commands
                         "Four questions to ask before acquiring and deploying Windows 7 at your organisation.",
                     LongDescription =
                         "Four questions to ask before acquiring and deploying Windows 7 at your organisation. In this first article in a two-part guide to Windows 7, we’ll help you decide whether Windows 7 is right for your organisation.",
-                    ResultType = "link"
+                    ResourceType = "link"
                 };
                 dataSession.Save(resource);
                 tx.Commit();

@@ -6,7 +6,6 @@ namespace SearchParty.Api.Data
     using FluentNHibernate.Automapping;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Conventions.Helpers;
-    using Models;
     using NHibernate;
     using NHibernate.Cfg;
 
@@ -27,7 +26,7 @@ namespace SearchParty.Api.Data
                         .OverrideAll(map => map.IgnoreProperty("IsIgnored"))
                         .Where(t =>
                                (
-                                   t.Namespace == "SearchParty.Api.Models"
+                                   t.Namespace == "SearchParty.Core.Models"
                                )
                                && !t.IsSubclassOf(typeof (Exception))
                                && !t.IsSubclassOf(typeof (Attribute)))))
