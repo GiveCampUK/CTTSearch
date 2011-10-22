@@ -32,28 +32,15 @@
 </form>
 
 <div id="categories">
-	<div class="category">
-		<h3><a href="#">Category name</a></h3>
-		<ul>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-		</ul>
-	</div>
-	<div class="category">
-		<h3><a href="#">Category name</a></h3>
-		<ul>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-		</ul>
-	</div>
-	<div class="category">
-		<h3><a href="#">Category name</a></h3>
-		<ul>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-			<li><a href="#">Category item</a></li>
-		</ul>
-	</div>
+	<% @categories.each do |cat| %>
+	  <div class="category">
+  		<h3><a href="#"><%= cat[:title] %></a></h3>
+  		<p><%= cat[:blurb] %></p>
+  		<ul>
+  			<li><a href="#">Category item</a></li>
+  			<li><a href="#">Category item</a></li>
+  			<li><a href="#">Category item</a></li>
+  		</ul>
+  	</div>
+	<% end %>
 </div>
