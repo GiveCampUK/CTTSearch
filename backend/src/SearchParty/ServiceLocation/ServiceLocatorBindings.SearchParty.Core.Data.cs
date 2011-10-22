@@ -19,10 +19,10 @@ namespace SearchParty.Api.ServiceLocation
 
             public void BindAll()
             {
-                //real one
-                //_module.Bind<ISession>().ToMethod(x => NHibernateSessionHelper.OpenSession()).InRequestScope();
+                _module.Bind<ISession>().ToMethod(x => NHibernateSessionHelper.OpenSession()).InRequestScope();
 
-                _module.Bind<ISession>().ToMethod(x => new Mock<ISession>().Object).InRequestScope();
+                //if you need to get up and running locally for the time being
+                //_module.Bind<ISession>().ToMethod(x => new Mock<ISession>().Object).InRequestScope();
             }
         }
     }
