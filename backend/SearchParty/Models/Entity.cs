@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Models
+﻿namespace SearchParty.Api.Models
 {
     public interface IEntity
     {

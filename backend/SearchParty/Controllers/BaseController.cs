@@ -1,21 +1,16 @@
-﻿using System.Web.Mvc;
-using NHibernate;
-using NHibernate.Tool.hbm2ddl;
-using SearchParty.Data;
-
-namespace SearchParty.Controllers
+﻿namespace SearchParty.Api.Controllers
 {
+    using System.Web.Mvc;
+    using Data;
+    using NHibernate;
+
     public class BaseController : Controller
     {
         private ISession _session;
 
         protected ISession DataSession
         {
-            get
-            {
-                return _session ?? (_session = NHibernateHelper.OpenSession());
-            }
+            get { return _session ?? (_session = NHibernateHelper.OpenSession()); }
         }
-
     }
 }

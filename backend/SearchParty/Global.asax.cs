@@ -1,4 +1,4 @@
-﻿namespace SearchParty
+﻿namespace SearchParty.Api
 {
     using System.Web;
     using System.Web.Mvc;
@@ -32,5 +32,33 @@
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
         }
+
+        /////////////
+        ///// private static readonly IServiceLocator ServiceLocator =
+        //    NinjectServiceLocator<WizeratiNinjectModule>.GetInstance();
+
+        ////this is run once per HttpApplication
+        //protected void Application_Start()
+        //{
+        //    try
+        //    {
+        //        Bootstrapper.Run(ServiceLocator, BootstrapperHelper.GetBootstrapperTasks<BootstrapperTask>);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        e.Log();
+        //        throw;
+        //    }
+        //}
+
+        ///// <summary>
+        ///// NOTE 1: BA; this needs to happen here as the 
+        ///// persistence of the results occurs, required 
+        ///// for rendering.
+        ///// </summary>
+        //protected void Application_EndRequest()
+        //{
+        //    MiniProfiler.Stop(); //see note 1
+        //}
     }
 }

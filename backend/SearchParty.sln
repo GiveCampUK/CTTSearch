@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty", "SearchParty\SearchParty.csproj", "{4BAD95A8-A538-4041-B497-710EBC566E0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty.Api", "SearchParty\SearchParty.Api.csproj", "{4BAD95A8-A538-4041-B497-710EBC566E0E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchParty.Core", "SearchParty.Core\SearchParty.Core.csproj", "{8DC1A96F-27DB-4334-90A7-7D33324E45E3}"
 EndProject

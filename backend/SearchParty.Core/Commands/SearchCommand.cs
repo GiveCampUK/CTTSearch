@@ -7,7 +7,7 @@
     {
         public override void Validate(object[] validationErrors)
         {
-            throw new NotImplementedException();
+            //nothing for now
         }
 
         public override SearchResponse PerformAction()

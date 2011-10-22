@@ -31,8 +31,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MvcMiniProfiler">
+      <HintPath>..\packages\MiniProfiler.1.9\lib\net40\MvcMiniProfiler.dll</HintPath>
+    </Reference>
+    <Reference Include="NBasicExtensionMethod">
+      <HintPath>..\packages\NBasicExtensionMethod.1.0.4292.32667\lib\net40\NBasicExtensionMethod.dll</HintPath>
+    </Reference>
+    <Reference Include="NBootstrap">
+      <HintPath>..\packages\NBootstrap.1.0.4293.40037\lib\net40\NBootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NFeature">
+      <HintPath>..\packages\NFeature.1.0.4306.31505\lib\net40\NFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="NHelpfulException">
+      <HintPath>..\packages\NHelpfulException.1.0.4292.35244\lib\net40\NHelpfulException.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceLocator">
+      <HintPath>..\packages\NServiceLocator.1.0.4293.1115\lib\net40\NServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="NSure">
+      <HintPath>..\packages\NSure.1.0.4292.35410\lib\net40\NSure.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,6 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BoostrapTasks\BootstrapperTask.cs" />
+    <Compile Include="BoostrapTasks\BindControllersToServiceLocatorBootstrapperTask.cs" />
+    <Compile Include="BoostrapTasks\ControllerInstantiationException.cs" />
+    <Compile Include="BoostrapTasks\ServiceLocatorAwareControllerFactory.cs" />
+    <Compile Include="ControllerFactoryHelper.cs" />
+    <Compile Include="Feature.cs" />
+    <Compile Include="FeatureSettingNames.cs" />
+    <Compile Include="BoostrapTasks\RegisterControllerFactoryWithMvcBootstrapperTask.cs" />
+    <Compile Include="BoostrapTasks\RegisterRoutesBootstrapperTask.cs" />
+    <Compile Include="Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
     <Compile Include="SearchResponse.cs" />
@@ -49,6 +85,9 @@
       <Project>{C832DD90-D251-4026-8321-BF8900800767}</Project>
       <Name>SearchParty.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

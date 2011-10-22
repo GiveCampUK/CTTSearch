@@ -1,9 +1,9 @@
-﻿using System.Web.Mvc;
-using NHibernate.Tool.hbm2ddl;
-using SearchParty.Data;
-
-namespace SearchParty.Controllers
+﻿namespace SearchParty.Api.Controllers
 {
+    using System.Web.Mvc;
+    using Data;
+    using NHibernate.Tool.hbm2ddl;
+
     public class HomeController : BaseController
     {
         public ActionResult Index()

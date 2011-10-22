@@ -4,7 +4,7 @@
     using System.Net;
 
     /// <summary>
-    /// NOTE: BA; WIP!
+    ///   NOTE: BA; WIP!
     /// </summary>
     public class ApiValidationException : Exception
     {
