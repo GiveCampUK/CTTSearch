@@ -27,13 +27,12 @@ namespace SearchParty.Api.Controllers
                             JsonRequestBehavior.AllowGet);
         }
 
-        [HttpGet]
         public ActionResult Update()
         {
             return View(new Resource
                             {
-                                Id=0,
-                                LongDescription = "Long description",
+                                Id=2,
+                                LongDescription = "Longer description",
                                 ShortDescription = "Short description",
                                 Uri = "http://givecamp.org.uk",
                                 ResourceType = "Uri",
