@@ -1,10 +1,10 @@
-﻿using System.Linq;
-using NHibernate;
-using NHibernate.Criterion;
-using SearchParty.Core.Models;
-
-namespace SearchParty.Core.Commands
+﻿namespace SearchParty.Core.Commands
 {
+    using System.Linq;
+    using Models;
+    using NHibernate;
+    using NHibernate.Criterion;
+
     public class ResourceCreateCommand
     {
         public object PerformAction(int? id, ISession dataSession)
@@ -12,6 +12,7 @@ namespace SearchParty.Core.Commands
             return new {status = "failed"};
         }
     }
+
     public class ResourceCommand
     {
         public object PerformAction(int? id, ISession dataSession)
@@ -32,7 +33,7 @@ namespace SearchParty.Core.Commands
                     .List<Resource>().ToList();
                 if (!resource.Any())
                 {
-                    return new { };
+                    return new {};
                 }
                 return resource.Select(GenerateResource).ToList();
             }

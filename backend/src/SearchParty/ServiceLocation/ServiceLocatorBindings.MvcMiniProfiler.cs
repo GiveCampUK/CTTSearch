@@ -21,7 +21,7 @@ namespace SearchParty.Api.ServiceLocation
             public void BindAll()
             {
                 _module.Bind<MiniProfiler>().ToMethod(x => MiniProfiler.Start()).InRequestScope();
-                    //.OnDeactivation(x => MiniProfiler.Stop());
+                //.OnDeactivation(x => MiniProfiler.Stop());
             }
         }
     }

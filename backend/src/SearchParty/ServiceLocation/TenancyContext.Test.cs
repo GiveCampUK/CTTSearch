@@ -1,8 +1,7 @@
 ﻿namespace SearchParty.Api.ServiceLocation
 {
-    using global::System;
+    using Core;
     using NFeature;
-    using Tenant = Core.Tenant;
 
     public class TenancyContext : ITenancyContext<Tenant>
     {

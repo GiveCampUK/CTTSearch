@@ -41,7 +41,8 @@
         {
             var query = DataSession.Connection.CreateCommand();
             query.CommandText =
-                string.Format("IF EXISTS (SELECT 1 FROM sysobjects WHERE xtype='u' AND name='{0}') DROP TABLE {0}", tableName);
+                string.Format("IF EXISTS (SELECT 1 FROM sysobjects WHERE xtype='u' AND name='{0}') DROP TABLE {0}",
+                              tableName);
             query.ExecuteNonQuery();
         }
     }
