@@ -3,6 +3,7 @@
     using System.Web.Mvc;
     using Core;
     using Core.Commands;
+    using Core.Data;
 
     public class SearchController : BaseController
     {
@@ -10,7 +11,7 @@
 
         public SearchController(SearchCommand searchCommand)
         {
-            _searchCommand = searchCommand;
+            _searchCommand = new SearchCommand(NHibernateSessionHelper.OpenSession(), new ResourceRepository());//searchCommand;
         }
 
         public JsonResult SearchEngine(string q)
