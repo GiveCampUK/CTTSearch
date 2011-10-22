@@ -99,6 +99,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Data\NHibernateHelper.cs" />
+    <Compile Include="Data\Overrides\ResourceOverride.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

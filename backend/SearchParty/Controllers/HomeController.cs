@@ -24,5 +24,12 @@
             new SchemaUpdate(NHibernateHelper.Configuration).Execute(false, true);
             return RedirectToAction("Index");
         }
+
+        public ActionResult ResetDatabase()
+        {
+            new SchemaExport(NHibernateHelper.Configuration).Drop(false, true);
+            new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -38,6 +38,7 @@
 
             _currentControllerBuilder
                 .SetControllerFactory((ServiceLocatorAwareControllerFactory) null);
+            _currentControllerBuilder.DefaultNamespaces.Add("SearchParty.Api.Controllers");
             //new ServiceLocatorAwareControllerFactory(_serviceLocator, 
             //                                                             controllerAssemblyNameLeftPart,
             //                                                             controllerNamespace,
