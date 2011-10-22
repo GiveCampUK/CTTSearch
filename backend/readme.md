@@ -59,11 +59,11 @@ resourceType = ''
 ID is auto generated GUID.
 
 ----------------------------------------------------------
-categoryView		 
+category		 
 
 Methods: ```GET / PUT / POST / DELETE```
 Parameters: ```id```
- = identifier of the categoryView
+ = identifier of the category
 Returns:
 Json resource entity
 
@@ -74,12 +74,36 @@ title = ''
 blub = ''
 tags = ''
 searchResultLinks = ''
+subCategories = ''
 }
 ]
 ```
 
 ID is auto generated GUID.
-searchResultLinks is a list of searchResultLinks
+searchResultLinks is a list of searchResultLinks - SEPARATE?
+subCategories is a list of categories nested within this category - SEPARATE?
 
 ----------------------------------------------------------
 
+topLevelCategoryList	 
+
+Methods: ```GET```
+Returns:
+Json array of the top level categories like
+
+```json
+[{
+id = ''
+title = ''
+blub = ''
+tags = ''
+searchResultLinks = ''
+subCategories = ''
+},
+]
+```
+
+searchResultLinks is a list of searchResultLinks
+subCategories is a list of categories nested within this category
+
+----------------------------------------------------------
