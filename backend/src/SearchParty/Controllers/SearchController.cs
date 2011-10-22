@@ -11,12 +11,12 @@
 
         public SearchController(SearchCommand searchCommand)
         {
-            _searchCommand = new SearchCommand(NHibernateSessionHelper.OpenSession(), new ResourceRepository());//searchCommand;
+            _searchCommand = new SearchCommand(NHibernateSessionHelper.OpenSession());//searchCommand;
         }
 
         public JsonResult SearchEngine(string q, string tags)
         {
-            return Json(_searchCommand.PerformAction(q, tags),
+            return Json(_searchCommand.PerformAction(q, tags, Request.Url.Query),
                         JsonRequestBehavior.AllowGet);
         }
     }
