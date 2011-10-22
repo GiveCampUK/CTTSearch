@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bjma.Utility.DataAccess">
+      <HintPath>..\packages\Bjma.Utility.DataAccess.1.0.4312.31032\lib\net40\Bjma.Utility.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
     </Reference>
@@ -93,8 +96,8 @@
     <Compile Include="Commands\CategoryCommand.cs" />
     <Compile Include="Commands\CategoryCommandBase.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
+    <Compile Include="Commands\ResourceRepository.cs" />
     <Compile Include="Commands\ResourceCommandBase.cs" />
-    <Compile Include="Commands\ResourceUpdateCommand.cs" />
     <Compile Include="Commands\SearchCommandHelper.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Data\NHibernateHelper.cs" />

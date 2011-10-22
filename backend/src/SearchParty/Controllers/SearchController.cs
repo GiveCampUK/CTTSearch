@@ -9,7 +9,6 @@
     public class SearchController : BaseController
     {
         private readonly SearchCommand _searchCommand;
-        public SearchController() : this(new SearchCommand()) {}
 
         public SearchController(SearchCommand searchCommand)
         {

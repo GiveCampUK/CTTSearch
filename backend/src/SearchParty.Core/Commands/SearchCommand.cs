@@ -1,15 +1,25 @@
 ﻿namespace SearchParty.Core.Commands
 {
     using System.Linq;
+    using Bjma.Utility.DataAccess;
     using Infrastructure;
     using Models;
     using NHibernate;
     using NHibernate.Criterion;
     using NHibernate.Linq;
 
-    public class SearchCommand : ActionCommand<object, Tuple<string, ISession>>
+    public class SearchCommand : ActionCommand<object, NHibernate.Linq.Tuple<string, ISession>>
     {
-        public override object PerformAction(Tuple<string, ISession> args)
+        private readonly ISession _dataSession;
+        private readonly IRepository<Resource> _resourceRepo;
+
+        public SearchCommand(ISession dataSession, IRepository<Resource> resourceRepo)
+        {
+            _dataSession = dataSession;
+            _resourceRepo = resourceRepo;
+        }
+
+        public override object PerformAction(NHibernate.Linq.Tuple<string, ISession> args)
         {
             var query = args.First;
             var dataSession = args.Second;
