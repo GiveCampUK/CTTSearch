@@ -17,4 +17,8 @@ class Frontend < Sinatra::Base
   get '/result' do
   	erb :result
   end
+
+  get '/results' do
+  	erb :results
+  end
 end

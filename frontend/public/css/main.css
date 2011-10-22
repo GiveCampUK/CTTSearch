@@ -160,7 +160,22 @@ h1 {
 	padding: 10px 0 15px 3em;
 }
 
-/** RESULT PAGE **/
+/** RESULTS MASHUP PAGE **/
+
+#results {
+	
+}
+
+#results .content {
+	width: 1000px;
+	overflow: hidden;
+}
+
+#results .result {
+
+}
+
+/** SINGLE RESULT PAGE **/
 
 #result_page h1 {
 	text-align: left;
