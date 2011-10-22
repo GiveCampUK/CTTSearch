@@ -18,7 +18,6 @@ class Frontend < Sinatra::Base
     @query = params[:q]
     tags = params[:tags] || ""
     @results = Search.party(@query, tags.split(";"))
-    p @results.inspect
   	erb :results
   end
   

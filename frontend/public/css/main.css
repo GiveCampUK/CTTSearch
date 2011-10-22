@@ -17,7 +17,7 @@ body, ul, ol, li, img, form, p, h1, h2, h3, h4, h5, h6 {
 }
 
 a { color: #000; }
-a:hover, a:focus { text-decoration: underline; }
+a:hover, a:focus { text-decoration: underline; color: #8FC63F;  }
 
 .panel {
 	padding: 20px;
@@ -54,6 +54,7 @@ a:hover, a:focus { text-decoration: underline; }
 	line-height: 50px;
 	position: relative;
 	color: #E8F2D6;
+	text-decoration: none;
 }
 
 #introduction {
@@ -166,67 +167,97 @@ h1 {
 	padding: 10px 0 15px 3em;
 }
 
-/** RESULTS MASHUP PAGE **/
+/************************/
+/**** RESULTS MASHUP ****/
+/************************/
 
-#results {
-	
-}
-
-#results .content {
-	width: 1000px;
-	overflow: hidden;
-}
-
-#results .result {
-
-}
-
-/** SINGLE RESULT PAGE **/
-
-#result_page h1 {
+#results_page h1 {
 	text-align: left;
 	margin-bottom: 5px;
 }
 
-.result {
-	border: 1px solid #CCC;
-	margin: 20px 0;
+.results {
+	
 }
 
-.result .alternate_level_nav {
+.results .alternate_level_nav {
 	overflow: hidden;
+	margin-top: 20px;
+	padding-top: 4px;
 }
 
-.result .alternate_level_nav li {
+.results .alternate_level_nav li {
 	float: left;
 	width: 33.3%;
 	list-style: none;
 }
 
-.result .alternate_level_nav li a {
+.results .alternate_level_nav li a {
 	padding: 6px 10px;
 	text-decoration: none;
 	display: block;
 	text-align: center;
 	background: #E8F2D6;
+	font-size: 1.3em;
 	color: #444;
 }
 
-.result .alternate_level_nav li.first a {
+.results .alternate_level_nav li.first a {
 
 }
 
-.result .alternate_level_nav li.selected a {
+.results .alternate_level_nav li a:hover,
+.results .alternate_level_nav li a:focus,
+.results .alternate_level_nav li.selected a {
 	padding: 10px;
 	margin-top: -4px;
 	background: #8FC63F;
 	color: #FFF;
 }
 
-.result .content {
-	padding: 20px;
+.results .content {
+	padding-top: 20px;
+	overflow: hidden;
 }
 
-.result .content ul {
-	padding: 10px 0 10px 3em;
+.results .column {
+	width: 440px;
+	margin-left: 20px;
+	float: left;
+}
+
+.results .first_column { margin-left: 0; }
+
+.results .result {
+	background: #EEE;
+	height: 150px;
+	border: 1px dotted #000;
+	margin: 0 0 20px;
+	padding: 10px;
+}
+
+.results .result p {
+	padding: .5em 0;
+}
+
+.results .result h3 {
+	font-size: 1.4em;
+	padding: .5em 0 0;
+}
+
+/* Result types */
+
+.results .type_text { height: 150px; border-color: #8FC63F; background-color: #E8F2D6; }
+.results .type_video { height: 300px; border-color: #543E87; background-color: #BEC2C5; }
+.results .type_link { height: 300px; border-color: #F37A22; background-color: #FBE4D6; }
+
+.results .video_with_description { height: 492px; }
+
+/************************/
+/** SINGLE RESULT PAGE **/
+/************************/
+
+#result_page h1 {
+	text-align: left;
+	margin-bottom: 5px;
 }
