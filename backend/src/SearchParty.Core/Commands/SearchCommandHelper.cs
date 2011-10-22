@@ -135,6 +135,130 @@
 
                 #endregion
 
+                #region Sight Advice South Lakes - CTT case study
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            "CaseStudy, DonatedTechnology",
+                                   Title = "Sight Advice South Lakes - CTT case study",
+                                   Uri = "http://www.youtube.com/watch?v=rNnKJ6naWgQ&feature=player_embedded&noredirect=1",
+                                   ShortDescription =
+                                       "The Sight Advice South Lakes charity has set up a technology suite, using donated software from CTT and Microsoft, aimed at providing new opportunities for their clients.",
+                                   LongDescription =
+                                       "Sight Advice South Lakes are a small charity supporting blind, partially sighted and vision impaired people in South Lakeland, Cumbria. The charity has set up a technology suite, using donated software from CTT and Microsoft, aimed at providing new opportunities for their clients.",
+                                   ResourceType = "YouTubeVideo"
+                               };
+                dataSession.Save(resource);
+
+                #endregion
+
+                #region Why Be Concerned About Managing IT
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice +  
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            "GettingStarted, Strategy",
+                                   Title = "Why Be Concerned About Managing IT",
+                                   Uri = "http://www.ictknowledgebase.org.uk/whyworryaboutictmanagement",
+                                   ShortDescription = "Managers increasingly face important decisions about IT. It is too important to be ignored, and this article tells you why.",
+                                   LongDescription = "Managers increasingly face important decisions about IT. It is too important to be ignored, even by people who feel they don't know much about it. But why do we single out IT? Why not write about managing filing cabinets, or managing notice-boards? This article explains why IT needs your attention.",
+                                   ResourceType = "ExternalLink"
+                               };
+                dataSession.Save(resource);
+
+                #endregion
+
+                #region Viruses, Spyware & Malware
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice +  
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            "GettingStarted, Virus, Malware, Spyware",
+                                   Title = "Viruses, Spyware & Malware",
+                                   Uri = "http://www.ictknowledgebase.org.uk/virusesspywaremalware",
+                                   ShortDescription = "A collection of articles telling you about keeping nasties off your organisation's network and computers.",
+                                   LongDescription = "A collection of articles telling you about keeping nasties off your organisation's network and computers.",
+                                   ResourceType = "ExternalLink"
+                               };
+                dataSession.Save(resource);
+
+                #endregion
+
+                #region Infection Control
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice + proficiencyIntermediate +
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            promoted + 
+                                            "Virus, Malware, Spyware",
+                                   Title = "Infection Control",
+                                   Uri = "http://www.ictknowledgebase.org.uk/infectioncontrol",
+                                   ShortDescription = "Computer viruses plague millions around the world and email is a common way of spreading them. This article looks at the main issues.",
+                                   LongDescription = "Computer viruses plague millions around the world and email is a common way of spreading them. Protecting your system effectively against email viruses depends on adopting a range of different measures. This article looks at the main issues.",
+                                   ResourceType = "ExternalLink"
+                               };
+                dataSession.Save(resource);
+
+                #endregion
+
+                #region Virus Hoax Alert
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            "Virus, Malware, Spyware",
+                                   Title = "Virus Hoax Alert",
+                                   Uri = "http://www.ictknowledgebase.org.uk/virushoax",
+                                   ShortDescription = "Virus hoaxes can cause mayhem and confusion. They often encourage recipients to delete important system files. This article gives examples of past hoaxes and tips on how to spot hoaxes so you can avoid spreading them.",
+                                   LongDescription = "Virus hoaxes can cause mayhem and confusion. They often encourage recipients to delete important system files. This article gives examples of past hoaxes and tips on how to spot hoaxes so you can avoid spreading them.",
+                                   ResourceType = "ExternalLink"
+                               };
+                dataSession.Save(resource);
+
+                #endregion
+
+                #region Choosing An Antivirus Solution For Your Organisation
+
+                resource = new Resource
+                               {
+                                   Tags = proficiencyNovice +  
+                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                            promoted + 
+                                            "GettingStarted, Virus, Malware, Spyware",
+                                   Title = "Choosing An Antivirus Solution For Your Organisation",
+                                   Uri = "http://www.ictknowledgebase.org.uk/choosingantivirus",
+                                   ShortDescription = "Your organisation needs antivirus - that we can all agree. Don't rely on antivirus products that come with new computers. Coordinate a strategy across your organisation to benefit from time and money savings.",
+                                   LongDescription = "Your organisation needs antivirus - that we can all agree. Don't rely on antivirus products that come with new computers. Coordinate a strategy across your organisation to benefit from time and money savings.",
+                                   ResourceType = "ExternalLink"
+                               };
+                dataSession.Save(resource);
+
+                #endregion  
+              
+                #region A Day In The Life Of A PDA User
+
+                resource = new Resource
+                {
+                    Tags =  proficiencyIntermediate + proficiencyExpert +
+                             largeOrgSize +
+                             promoted +
+                             "Mobile, PDA",
+                    Title = "A Day In The Life Of A PDA User",
+                    Uri = "http://www.ictknowledgebase.org.uk/pdadiary",
+                    ShortDescription = "Whilst not in itself a true story, all of these events show how a Personal Digital Assistants (PDA) could commonly be used by an Advice Worker. For this example we are going to use an Outreach Advice Worker working for a Housing charity.",
+                    LongDescription = "Whilst not in itself a true story, all of these events show how a Personal Digital Assistants (PDA) could commonly be used by an Advice Worker. For this example we are going to use an Outreach Advice Worker working for a Housing charity.",
+                    ResourceType = "ExternalLink"
+                };
+                dataSession.Save(resource);
+
+                #endregion  
+
                 tx.Commit();
             }
         }
