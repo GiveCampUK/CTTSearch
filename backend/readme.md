@@ -65,7 +65,7 @@ Methods: ```GET / PUT / POST / DELETE```
 Parameters: ```id```
  = identifier of the category
 Returns:
-Json resource entity
+Json category entity
 
 ```json
 [{
