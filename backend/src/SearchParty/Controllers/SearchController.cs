@@ -14,9 +14,9 @@
             _searchCommand = new SearchCommand(NHibernateSessionHelper.OpenSession(), new ResourceRepository());//searchCommand;
         }
 
-        public JsonResult SearchEngine(string q)
+        public JsonResult SearchEngine(string q, string tags)
         {
-            return Json(_searchCommand.Execute(q),
+            return Json(_searchCommand.PerformAction(q, tags),
                         JsonRequestBehavior.AllowGet);
         }
     }

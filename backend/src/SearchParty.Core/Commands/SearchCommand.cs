@@ -8,7 +8,7 @@
     using NHibernate.Criterion;
     using NHibernate.Linq;
 
-    public class SearchCommand : ActionCommand<object, string>
+    public class SearchCommand
     {
 
         private readonly ISession _dataSession;
@@ -20,26 +20,24 @@
             _resourceRepo = resourceRepo;
         }
 
-        public override object PerformAction(string query)
+        public object PerformAction(string query, string tags)
         {
             SearchCommandHelper.CreateDummyDataIfEmpty(_dataSession);
-            //_resourceRepo.GetByFreeText(query,);
 
-            var terms = query.Split(' ');
-            const string tagIndicator = "^";
-            var words = terms.Where(t => !t.StartsWith(tagIndicator)).ToArray();
-            var tags = terms.Where(t => t.StartsWith(tagIndicator)).Select(t => t.Replace(tagIndicator, "")).ToArray();
             var criteria = _dataSession.CreateCriteria<Resource>();
-            words.ForEach(word => criteria.Add(
-                Restrictions.Or(
-                    Restrictions.InsensitiveLike("Title", word, MatchMode.Anywhere),
-                    Restrictions.Or(
-                        Restrictions.InsensitiveLike("ShortDescription", word, MatchMode.Anywhere),
-                        Restrictions.InsensitiveLike("LongDescription", word, MatchMode.Anywhere))
-                    )));
-            if (tags.Any())
+            if (!string.IsNullOrEmpty(query))
             {
-                foreach (var tag in tags)
+                query.Split(' ').ForEach(word => criteria.Add(
+                    Restrictions.Or(
+                        Restrictions.InsensitiveLike("Title", word, MatchMode.Anywhere),
+                        Restrictions.Or(
+                            Restrictions.InsensitiveLike("ShortDescription", word, MatchMode.Anywhere),
+                            Restrictions.InsensitiveLike("LongDescription", word, MatchMode.Anywhere))
+                        )));
+            }
+            if (!string.IsNullOrEmpty(tags))
+            {
+                foreach (var tag in tags.Split(','))
                 {
                     criteria.Add(Restrictions.InsensitiveLike("Tags", string.Format(",{0},", tag), MatchMode.Anywhere));
                 }
@@ -68,7 +66,7 @@
                            };
             }
 
-            return new {results = new {}};
+            return new { results = new { } };
         }
     }
 }
