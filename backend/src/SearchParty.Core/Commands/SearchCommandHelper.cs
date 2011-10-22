@@ -13,15 +13,20 @@
             {
                 //var tag1 = new Tag { Name = "Windows7" };
                 //DataSession.Save(tag1);
-                const string small = "org_size:1-5,";
-                const string medium = "org_size:6-25,";
-                const string large = "org_size:26+,";
+                const string smallOrgSize = "org_size:1-5,";
+                const string mediumOrgSize = "org_size:6-25,";
+                const string largeOrgSize = "org_size:26+,";
+                const string proficiencyNovice = "user_prof:novice,";
+                const string proficiencyIntermediate = "user_prof:intermediate,";
+                const string proficiencyExpert = "user_prof:expert,";
 
                 #region Resource Spam - Solutions Anyone?
 
                 var resource = new Resource
                                    {
-                                       Tags = small + medium + large + "Email, Spam",
+                                       Tags = proficiencyNovice + proficiencyIntermediate 
+                                                + smallOrgSize + mediumOrgSize + largeOrgSize 
+                                                + "Email, Spam",
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
                                        ShortDescription =
@@ -38,7 +43,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = medium + large + "Email, Contact, AddressBook",
+                                   Tags = proficiencyNovice + 
+                                            mediumOrgSize + largeOrgSize + "Email, Contact, AddressBook",
                                    Title = "Delete an email contact or an address book",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/6/juYn0TUrW90",
                                    ShortDescription =
@@ -55,7 +61,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = small + "Email, Font",
+                                   Tags = proficiencyNovice + 
+                                                smallOrgSize + "Email, Font",
                                    Title = "Changing Font Colours in Email",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/10/ZQQloZ3rk5g",
                                    ShortDescription =
@@ -72,7 +79,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = large + "Payments, PCI-DSS",
+                                   Tags = proficiencyExpert + 
+                                                largeOrgSize + "Payments, PCI-DSS",
                                    Title = "PCI-DSS regulations – D day for charities",
                                    Uri = "http://www.ctt.org/sites/default/files/PCI_Whitepaper.pdf",
                                    ShortDescription =
@@ -89,7 +97,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = medium + large + "Payments, DirectDebit",
+                                   Tags = proficiencyIntermediate + proficiencyExpert + 
+                                                mediumOrgSize + largeOrgSize + "Payments, DirectDebit",
                                    Title = "Paperless Direct Debit (PDD) User Guide",
                                    Uri = "http://www.ctt.org/sites/default/files/pdd_userguide290711.pdf",
                                    ShortDescription =
@@ -106,7 +115,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = medium + "Payments, Pricing",
+                                   Tags = proficiencyIntermediate + proficiencyExpert + 
+                                            mediumOrgSize + "Payments, Pricing",
                                    Title = "CTPayments Pricing",
                                    Uri = "http://www.ctt.org/ctpayments/pricing",
                                    ShortDescription =
