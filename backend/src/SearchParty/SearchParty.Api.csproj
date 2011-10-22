@@ -108,7 +108,6 @@
     <Compile Include="ServiceLocation\ServiceLocatorBindings.Time.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.MvcMiniProfiler.cs" />
     <Compile Include="ServiceLocation\ServiceLocatorBindings.SearchParty.Core.cs" />
-    <Compile Include="ServiceLocation\TenancyContext.Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

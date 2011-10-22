@@ -15,9 +15,6 @@ namespace SearchParty.Api.ServiceLocation
                 _module = module;
             }
 
-            /// <summary>
-            ///   NOTE: BA; stop originally called in application_endrequest.
-            /// </summary>
             public void BindAll()
             {
                 _module.Bind<MiniProfiler>().ToMethod(x => MiniProfiler.Start()).InRequestScope();

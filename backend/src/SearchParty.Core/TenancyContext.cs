@@ -1,6 +1,5 @@
-﻿namespace SearchParty.Api.ServiceLocation
+﻿namespace SearchParty.Core
 {
-    using Core;
     using NFeature;
 
     public class TenancyContext : ITenancyContext<Tenant>

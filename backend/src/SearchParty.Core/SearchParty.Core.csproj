@@ -92,6 +92,7 @@
     <Compile Include="BootstrapTasks\ServiceLocatorAwareControllerFactory.cs" />
     <Compile Include="Commands\CategoryCommand.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
+    <Compile Include="Commands\SearchCommandHelper.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Data\NHibernateHelper.cs" />
     <Compile Include="Data\Overrides\ResourceOverride.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Resource.cs" />
     <Compile Include="Models\SearchResultLink.cs" />
+    <Compile Include="TenancyContext.cs" />
     <Compile Include="Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
