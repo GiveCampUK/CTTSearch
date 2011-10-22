@@ -8,6 +8,9 @@ Search Party API
  - ioc container
  - define command pattern
 
+**Example URI**
+ - ```http://searchparty-1.apphb.com/search```
+
  ---
 URI: ```/search/?q=```
 Methods: ```GET```
