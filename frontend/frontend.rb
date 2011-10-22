@@ -16,7 +16,7 @@ class Frontend < Sinatra::Base
 
   get '/search/?' do
     @query = params[:q]
-  	erb :result
+  	erb :results
   end
   
   get '/process' do

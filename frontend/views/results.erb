@@ -1,35 +1,66 @@
 <% content_for :title do %>
 	Look what we found!
 <% end %>
-<div id="result_page">
+<div id="results_page">
 	<h1>You asked: <strong>How do I blah?</strong></h1>
 	<h2>What we found:</h2>
 
-	<div class="results">
-		<ul class="alternate_level_nav">
-			<li class="selected"><a href="#">Novice</a></li>
-			<li><a href="#">Intermediate</a></li>
-			<li><a href="#">Advanced</a></li>
-		</ul>
-		<div class="content">
+	<% if @query.empty? %>
+	  <p>Exactly what you asked for!</p>
+	  <p><a href="http://www.sadtrombone.com" target="_blank">Now Go Here</a></p>
+	<% else %>
 
-			<div class="result type-video">
-				
+		<div class="results">
+			<ul class="alternate_level_nav">
+				<li class="selected"><a href="#">Novice</a></li>
+				<li><a href="#">Intermediate</a></li>
+				<li><a href="#">Advanced</a></li>
+			</ul>
+			<div class="content">
+
+				<div class="column first_column">
+
+					<div class="result">
+						
+					</div>
+
+					<div class="result type-video">
+						
+					</div>
+
+					<div class="result type-link">
+						
+					</div>
+
+					<div class="result">
+						
+					</div>
+
+					<div class="result type-video">
+						
+					</div>
+
+				</div>
+
+				<div class="column">
+
+					<div class="result type-video">
+						
+					</div>
+
+					<div class="result">
+						
+					</div>
+
+					<div class="result type-text">
+						
+					</div>
+
+				</div>
+
 			</div>
-
-			<div class="result">
-				
-			</div>
-
-			<div class="result type-video">
-				
-			</div>
-
-			<div class="result">
-				
-			</div>
-
 		</div>
-	</div>
+
+	<% end %>
 
 </div>
