@@ -23,7 +23,7 @@ namespace SearchParty.Api.Controllers
         //modify to expose as was /
         public JsonResult SearchEngine(string q)
         {
-            return _searchCommand.Execute(q);
+            //return _searchCommand.Execute(q);
 
             var results = DataSession.CreateCriteria<Resource>()
                 .List<Resource>();
