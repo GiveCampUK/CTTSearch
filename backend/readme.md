@@ -3,8 +3,10 @@ Search Party API
 
 **TODO:**
 
- - search
- - api
+ - search - thinking criteria api stuff
+ - api (adding of resources etc)
+ - ioc container
+ - define command pattern
 
  ---
 URI: ```/search/?q=```
@@ -33,13 +35,13 @@ WIP from here
 resource/
 
 GET / PUT / POST / DELETE
-id = “”
-uri = “”
-title = “”
-tags = “”
-shortDescription = “”
-longDescription = “”
-resultType = “”
+id = ï¿½ï¿½
+uri = ï¿½ï¿½
+title = ï¿½ï¿½
+tags = ï¿½ï¿½
+shortDescription = ï¿½ï¿½
+longDescription = ï¿½ï¿½
+resultType = ï¿½ï¿½
 
 ID is auto generated GUID.
 
@@ -47,7 +49,7 @@ ID is auto generated GUID.
 guidedsearchstep		 
 
 GET / PUT / POST / DELETE
-id = “”
+id = ï¿½ï¿½
 
 
 ----------------------------------------------------------
