@@ -1,4 +1,6 @@
-﻿namespace SearchParty.Api.Models
+﻿using SearchParty.Core.Models;
+
+namespace SearchParty.Api.Models
 {
     using System.Collections.Generic;
 

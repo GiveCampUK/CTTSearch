@@ -1,4 +1,6 @@
-﻿namespace SearchParty.Api.Data
+﻿using SearchParty.Core.Models;
+
+namespace SearchParty.Api.Data
 {
     using System;
     using FluentNHibernate.Automapping;

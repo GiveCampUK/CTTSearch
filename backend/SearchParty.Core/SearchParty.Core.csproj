@@ -78,8 +78,10 @@
     <Compile Include="FeatureSettingNames.cs" />
     <Compile Include="BoostrapTasks\RegisterControllerFactoryWithMvcBootstrapperTask.cs" />
     <Compile Include="BoostrapTasks\RegisterRoutesBootstrapperTask.cs" />
-    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Resource.cs" />
+    <Compile Include="Models\SearchResultLink.cs" />
     <Compile Include="Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SearchCommand.cs" />
