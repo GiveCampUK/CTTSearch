@@ -37,8 +37,8 @@ namespace SearchParty.Core.Commands
             if (dataSession.CreateCriteria<Category>().List<Category>().Any()) return;
             using (var tx = dataSession.BeginTransaction())
             {
-                const string smallOrgSize = "org_size:1-5,";
-                const string mediumOrgSize = "org_size:6-25,";
+                const string smallOrgSize = "org_size:1to5,";
+                const string mediumOrgSize = "org_size:6to25,";
                 const string largeOrgSize = "org_size:26plus,";
                 const string proficiencyNovice = "user_prof:novice,";
                 const string proficiencyIntermediate = "user_prof:intermediate,";
