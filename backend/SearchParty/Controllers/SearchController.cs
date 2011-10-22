@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using NHibernate;
 using NHibernate.Criterion;
 using SearchParty.Api.Models;
 
@@ -16,13 +14,13 @@ namespace SearchParty.Api.Controllers
 
         public JsonResult Index(string q)
         {
-            IList<Resource> results = DataSession.CreateCriteria<Resource>()
+            var results = DataSession.CreateCriteria<Resource>()
                 .List<Resource>();
 
             // Quick hacky write something into the database
             if (!results.Any())
             {
-                using (ITransaction tx = DataSession.BeginTransaction())
+                using (var tx = DataSession.BeginTransaction())
                 {
                     var tag = new Tag { Name = "Windows7" };
                     DataSession.Save(tag);
@@ -47,24 +45,22 @@ namespace SearchParty.Api.Controllers
             }
             if (results.Any())
             {
-                Resource resource = results.First();
                 return Json(new
                                 {
-                                    results = new
+                                    results = results.Select(resource => new []
                                                   {
-                                                      result2 = new
+                                                      new
                                                                     {
-                                                                        id = Guid.NewGuid().ToString(),
+                                                                        id = resource.Id,
                                                                         title = resource.Title,
                                                                         uri = resource.Uri,
                                                                         tags =
                                 string.Join(",", resource.Tags.Select(t => t.Name)),
-                                                                        shortDescription = "Generous Geeks",
-                                                                        longDescription =
-                                "Generous geeks give their weekend to code",
+                                                                        shortDescription = resource.ShortDescription,
+                                                                        longDescription = resource.LongDescription,
                                                                         resultType = "uri"
                                                                     }
-                                                  }
+                                                  })
                                 },
                             JsonRequestBehavior.AllowGet);
             }
