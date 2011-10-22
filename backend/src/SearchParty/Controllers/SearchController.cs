@@ -6,12 +6,7 @@
 
     public class SearchController : BaseController
     {
-        private SearchCommand _searchCommand;
-
-        public SearchController() 
-        {
-            
-        }
+        private readonly SearchCommand _searchCommand;
 
         public SearchController(SearchCommand searchCommand)
         {
@@ -20,10 +15,6 @@
 
         public JsonResult SearchEngine(string q)
         {
-            if (_searchCommand == null)
-            {
-                _searchCommand=new SearchCommand(DataSession, null);
-            }
             return Json(_searchCommand.Execute(q),
                         JsonRequestBehavior.AllowGet);
         }
