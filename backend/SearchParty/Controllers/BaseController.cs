@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using NHibernate;
+using NHibernate.Tool.hbm2ddl;
 using SearchParty.Data;
 
 namespace SearchParty.Controllers
