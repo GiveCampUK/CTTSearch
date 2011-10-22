@@ -2,7 +2,7 @@
 	Look what we found!
 <% end %>
 <div id="results_page">
-	<h1>You asked: <strong>How do I blah?</strong></h1>
+
 
 	<form action="/process" method="get">
 
@@ -10,14 +10,11 @@
 		<input type="hidden" name="user_prof" />
 
 		<div id="search_input_area" class="panel">
-			<h2>I want to find out:</h2>
 			<input value="How do I nyan?" name="query" id="query" />
 			<input class="submit" type="submit" value="Search" />
 		</div>
 
 	</form>
-
-	<h2>What we found:</h2>
 
 	<% if @query.empty? %>
 	  <p>Exactly what you asked for!</p>
