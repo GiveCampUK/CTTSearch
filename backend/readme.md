@@ -27,7 +27,7 @@ title = ''
 tags = ''
 shortDescription = ''
 longDescription = ''
-resultType = ''
+resourceType = ''
 },
 ]
 ```
@@ -35,28 +35,75 @@ resultType = ''
 
 WIP from here
 ===
-resource/
+resource
 
-GET / PUT / POST / DELETE
-id = ��
-uri = ��
-title = ��
-tags = ��
-shortDescription = ��
-longDescription = ��
-resultType = ��
+Methods: ```GET / PUT / POST / DELETE```
+Parameters: ```id```
+ = identifier of the resource
+Returns:
+Json resource entity
+
+```json
+[{
+id = ''
+uri = ''
+title = ''
+tags = ''
+shortDescription = ''
+longDescription = ''
+resourceType = ''
+}
+]
+```
 
 ID is auto generated GUID.
 
 ----------------------------------------------------------
-guidedsearchstep		 
+category		 
 
-GET / PUT / POST / DELETE
-id = ��
+Methods: ```GET / PUT / POST / DELETE```
+Parameters: ```id```
+ = identifier of the category
+Returns:
+Json resource entity
 
+```json
+[{
+id = ''
+title = ''
+blub = ''
+tags = ''
+searchResultLinks = ''
+subCategories = ''
+}
+]
+```
+
+ID is auto generated GUID.
+searchResultLinks is a list of searchResultLinks - SEPARATE?
+subCategories is a list of categories nested within this category - SEPARATE?
 
 ----------------------------------------------------------
 
+topLevelCategoryList	 
 
-GuidedSearchResultTemplate
----------------------------------------------------------
+Methods: ```GET```
+Returns:
+Json array of the top level categories like
+
+```json
+[{
+id = ''
+title = ''
+blub = ''
+tags = ''
+searchResultLinks = ''
+subCategories = ''
+},
+]
+```
+
+searchResultLinks is a list of searchResultLinks
+subCategories is a list of categories nested within this category
+
+----------------------------------------------------------
