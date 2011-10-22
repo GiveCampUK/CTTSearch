@@ -7,7 +7,7 @@ namespace SearchParty.Core.Commands
     using NHibernate.Criterion;
     using NHibernate.Linq;
 
-    public class CategoryCommand
+    public class CategoryCommand: CategoryCommandBase
     {
         public object PerformAction(int? id, ISession dataSession)
         {
@@ -151,30 +151,6 @@ namespace SearchParty.Core.Commands
 
                 tx.Commit();
             }
-        }
-
-        private static object GenerateCategory(Category result, bool recurseOnce = false)
-        {
-            return new
-                       {
-                           id = result.Id,
-                           title = result.Title,
-                           blurb = result.Blurb,
-                           tags = result.Tags.Tagify(),
-                           parentId = result.Parent == null ? 0 : result.Parent.Id,
-                           searchResultLinks = result.SearchResultLinks
-                               .Select(link => new
-                                                   {
-                                                       id = link.Id,
-                                                       title = link.Title,
-                                                       tags = link.Tags.Tagify()
-                                                   }),
-                           subCategories = recurseOnce
-                                               ? (object)
-                                                 result.SubCategories
-                                                     .Select(category => GenerateCategory(category))
-                                               : new {}
-                       };
         }
     }
 }

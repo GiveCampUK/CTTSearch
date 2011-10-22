@@ -91,6 +91,7 @@
     <Compile Include="BootstrapTasks\RegisterRoutesBootstrapperTask.cs" />
     <Compile Include="BootstrapTasks\ServiceLocatorAwareControllerFactory.cs" />
     <Compile Include="Commands\CategoryCommand.cs" />
+    <Compile Include="Commands\CategoryCommandBase.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="Commands\ResourceCommandBase.cs" />
     <Compile Include="Commands\SearchCommandHelper.cs" />
