@@ -19,6 +19,7 @@
                 const string proficiencyNovice = "user_prof:novice,";
                 const string proficiencyIntermediate = "user_prof:intermediate,";
                 const string proficiencyExpert = "user_prof:expert,";
+                const string promoted = "promoted,";
 
                 #region Resource Spam - Solutions Anyone?
 
@@ -26,6 +27,7 @@
                                    {
                                        Tags = proficiencyNovice + proficiencyIntermediate 
                                                 + smallOrgSize + mediumOrgSize + largeOrgSize 
+                                                + promoted
                                                 + "Email, Spam",
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
@@ -44,7 +46,9 @@
                 resource = new Resource
                                {
                                    Tags = proficiencyNovice + 
-                                            mediumOrgSize + largeOrgSize + "Email, Contact, AddressBook",
+                                            mediumOrgSize + largeOrgSize + 
+                                            promoted +
+                                            "Email, Contact, AddressBook",
                                    Title = "Delete an email contact or an address book",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/6/juYn0TUrW90",
                                    ShortDescription =
@@ -80,7 +84,9 @@
                 resource = new Resource
                                {
                                    Tags = proficiencyExpert + 
-                                                largeOrgSize + "Payments, PCI-DSS",
+                                                largeOrgSize + 
+                                                promoted + 
+                                                "Payments, PCI-DSS",
                                    Title = "PCI-DSS regulations – D day for charities",
                                    Uri = "http://www.ctt.org/sites/default/files/PCI_Whitepaper.pdf",
                                    ShortDescription =
