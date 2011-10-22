@@ -25,6 +25,6 @@ class SearchUriBuilder
   end
   
   def self.search_terms(q = "", tags = [ ])
-    tags << (q unless q.strip)
+    tags << q unless q.strip.empty?
   end
 end
