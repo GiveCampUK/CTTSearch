@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Core.BoostrapTasks
+﻿namespace SearchParty.Core.BootstrapTasks
 {
     /// <summary>
     ///   Defines the ordering of the tasks to 
@@ -10,6 +10,5 @@
         RegisterControllerFactoryWithMvc,
         RegisterGlobalFilters,
         RegisterRoutes,
-        ImportLucidViews,
     }
 }

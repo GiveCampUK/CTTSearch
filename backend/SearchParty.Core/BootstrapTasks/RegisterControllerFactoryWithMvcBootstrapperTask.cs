@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Core.BoostrapTasks
+﻿namespace SearchParty.Core.BootstrapTasks
 {
     using System;
     using System.Web.Mvc;
@@ -37,12 +37,13 @@
                              .ControllerNamespace, _featureManifest);
 
             _currentControllerBuilder
-                .SetControllerFactory((ServiceLocatorAwareControllerFactory) null);
+                .SetControllerFactory(new ServiceLocatorAwareControllerFactory(_serviceLocator, 
+                                                                         controllerAssemblyNameLeftPart,
+                                                                         controllerNamespace,
+                                                                         _miniProfiler));
             _currentControllerBuilder.DefaultNamespaces.Add("SearchParty.Api.Controllers");
-            //new ServiceLocatorAwareControllerFactory(_serviceLocator, 
-            //                                                             controllerAssemblyNameLeftPart,
-            //                                                             controllerNamespace,
-            //                                                             _miniProfiler));
+
+            
 
             Console.WriteLine(GetType() + " completed OK.");
         }

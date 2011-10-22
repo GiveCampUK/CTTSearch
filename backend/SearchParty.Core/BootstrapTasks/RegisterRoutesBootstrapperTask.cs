@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Core.BoostrapTasks
+﻿namespace SearchParty.Core.BootstrapTasks
 {
     using System;
     using System.Web.Mvc;
@@ -19,15 +19,16 @@
             _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             _routes.IgnoreRoute("favicon.ico");
 
+            _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            _routes.MapRoute("search", "Search", new {controller = "Search", action = "SearchEngine"});
             _routes.MapRoute(
                 "Default", // Route name
-                "{itemType}/{controller}/{action}/{id}", // URL with parameters
-                new {itemType = new NullDto(), controller = "Home", action = "Index", id = UrlParameter.Optional});
-                // Parameter defaults;
+                "{controller}/{action}/{id}", // URL with parameters
+                new {controller = "Home", action = "Index", id = UrlParameter.Optional} // Parameter defaults
+                );
 
+				
             Console.WriteLine(GetType() + " completed OK.");
         }
     }
-
-    public class NullDto {}
 }

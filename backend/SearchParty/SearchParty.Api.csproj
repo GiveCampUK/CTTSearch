@@ -41,6 +41,7 @@
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcMiniProfiler, Version=1.9.0.0, Culture=neutral, PublicKeyToken=b44f9351044011a3, processorArchitecture=MSIL" />
     <Reference Include="NBasicExtensionMethod">
       <HintPath>..\packages\NBasicExtensionMethod.1.0.4292.32667\lib\net40\NBasicExtensionMethod.dll</HintPath>
     </Reference>
@@ -106,6 +107,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SearchPartyNinjectModule.asax.cs" />
+    <Compile Include="ServiceLocation\ServiceLocatorBindings.Test.cs" />
+    <Compile Include="ServiceLocation\TenancyContext.Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -124,7 +128,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
+    <Content Include="index.aspx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SearchParty.Core\SearchParty.Core.csproj">

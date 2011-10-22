@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Core.BoostrapTasks
+﻿namespace SearchParty.Core.BootstrapTasks
 {
     using System;
     using NHelpfulException;
