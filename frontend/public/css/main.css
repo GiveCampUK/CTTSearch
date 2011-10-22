@@ -58,6 +58,7 @@ a:hover, a:focus { text-decoration: underline; }
 
 #introduction {
 	font-size: 1.3em;
+	background: #DDD;	
 }
 
 /** QUERY FORM **/
