@@ -3,6 +3,8 @@ using SearchParty.Core.Commands;
 
 namespace SearchParty.Api.Controllers
 {
+    using Core;
+
     public class ResourceController : BaseController
     {
         private readonly ResourceCommand _resourceCommand;

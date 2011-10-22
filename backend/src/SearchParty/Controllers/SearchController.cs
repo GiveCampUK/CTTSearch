@@ -4,6 +4,7 @@ using NHibernate.Linq;
 
 namespace SearchParty.Api.Controllers
 {
+    using Core;
     using Core.Commands;
 
     public class SearchController : BaseController

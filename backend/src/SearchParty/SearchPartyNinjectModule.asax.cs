@@ -16,7 +16,6 @@
             new ServiceLocation.Bjma.Utility.Feature.ServiceLocatorBindings(this).BindAll();
             new ServiceLocation.Bjma.Utility.Tenancy.ServiceLocatorBindings(this).BindAll();
             new ServiceLocation.Bjma.Utility.Time.ServiceLocatorBindings(this).BindAll();
-            //new ServiceLocation.MvcMiniProfiler.ServiceLocatorBindings(this).BindAll();
         }
     }
 }
