@@ -59,6 +59,28 @@ resourceType = ''
 ID is auto generated GUID.
 
 ----------------------------------------------------------
+resourceList
+
+Methods: ```GET```
+Returns:
+Json array of resources like
+
+```json
+[{
+id = ''
+uri = ''
+title = ''
+tags = ''
+shortDescription = ''
+longDescription = ''
+resourceType = ''
+}
+]
+```
+
+ID is auto generated GUID.
+
+----------------------------------------------------------
 category		 
 
 Methods: ```GET / PUT / POST / DELETE```
