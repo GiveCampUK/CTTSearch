@@ -118,7 +118,7 @@ form label {
 
 #search_input_area {
 	text-align: center;
-}
+}	
 
 #search_input_area h2 {
 	text-align: left;
@@ -168,7 +168,6 @@ h1 {
 #categories .category h3 a {
 	padding: 8px;
 	border-bottom: 2px solid #8FC63F;
-	text-decoration: none;
 	display: block;
 }
 
