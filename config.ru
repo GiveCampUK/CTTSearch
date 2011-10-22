@@ -1,3 +1,3 @@
 $: << File.join(File.dirname(__FILE__), 'frontend')
-require 'frontend'
-run Frontend
+require 'cttsearch'
+run CTTSearch

@@ -1,11 +1,10 @@
-$:. << './lib'
-
+$:. << File.join(File.dirname(__FILE__), 'lib')
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/content_for'
 require 'frontend'
 
-class Frontend < Sinatra::Base
+class CTTSearch < Sinatra::Base
   helpers Sinatra::ContentFor
   set :root, File.dirname(__FILE__)
   
