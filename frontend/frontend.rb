@@ -16,13 +16,15 @@ class Frontend < Sinatra::Base
 
   get '/search/?' do
     @query = params[:q]
-    tags = params[:tags] || ""
-    @results = Search.party(@query, tags.split(";"))
+    @tags = (params[:tags] || "").split("|")
+    @results = Search.party(@query, @tags)
   	erb :results
   end
   
   get '/process' do
+    p params[:query], params[:org_size], params[:user_prof]
     builder = SearchUriBuilder.new(params[:query],[ params[:org_size], params[:user_prof]])
+    p "Redirecting to Search?: #{builder.uri}"
     redirect builder.uri
   end
 end

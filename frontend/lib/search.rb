@@ -23,7 +23,11 @@ class Search
   end
   
   def self.query_api(path)
-    uri = "#{base_uri}#{path}"
-    JSON.parse(URI.parse(uri).read)
+    begin
+      uri = "#{base_uri}#{path}"
+      JSON.parse(URI.parse(uri).read)
+    rescue => ex
+      p ex.inspect
+    end
   end
 end

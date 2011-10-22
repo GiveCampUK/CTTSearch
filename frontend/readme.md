@@ -6,7 +6,6 @@
 
 ## TODO
 
-- Add Hiddens to Search Results to Ensure User Context Not Lost
 - Possible Bug in '`search_uri_builder`'?
 - Define High-Level Categories for Home Page
 - Limit Results to 3

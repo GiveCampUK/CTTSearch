@@ -5,8 +5,10 @@
 
 	<form action="/process" method="get">
 
-		<input type="hidden" name="org_size" />
-		<input type="hidden" name="user_prof" />
+    <% @tags.each do |tag| %>
+      <% name, value = tag.split(":")[0] %>
+      <input type="hidden" name="<%= name %>" value="<%= tag %>" />
+    <% end %>
 
 		<div id="search_input_area" class="panel">
 			<input value="<%= @query %>" name="query" id="query" />
