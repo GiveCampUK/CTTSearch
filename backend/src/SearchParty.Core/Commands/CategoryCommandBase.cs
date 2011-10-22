@@ -17,14 +17,15 @@ namespace SearchParty.Core.Commands
                 blurb = result.Blurb,
                 tags = result.Tags.Tagify(),
                 parentId = result.Parent == null ? 0 : result.Parent.Id,
-                searchResultLinks = result.SearchResultLinks
+                searchResultLinks = result.SearchResultLinks == null ? null :
+                    result.SearchResultLinks
                     .Select(link => new
                     {
                         id = link.Id,
                         title = link.Title,
                         tags = link.Tags.Tagify()
                     }),
-                subCategories = recurseOnce
+                subCategories = result.SubCategories == null ? null : recurseOnce
                                     ? (object)
                                       result.SubCategories
                                           .Select(category => GenerateCategory(category))

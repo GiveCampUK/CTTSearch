@@ -27,32 +27,25 @@ namespace SearchParty.Api.Controllers
         }
 
         [HttpPost]
-        public ViewResult Update(int? id)
+        public JsonResult Update(Category category)
         {
-            if (id.HasValue)
+            return Json(_categoryUpdateCommand.PerformAction(category, DataSession));
+        }
+
+        [HttpGet]
+        public ActionResult Update()
+        {
+            // Only here for the test form - DELETE
+            return View(new Category
             {
-                return View(_categoryUpdateCommand.PerformAction(new Category
-                {
-                    Id = id.Value,
-                    Tags = "",
-                    Title = "",
-                    Blurb = "",
-                    SubCategories = new List<Category> { },
-                    SearchResultLinks = new List<SearchResultLink> { }
-                }, DataSession));
-            }
-            else
-            {
-                return View(_categoryUpdateCommand.PerformAction(new Category
-                {
-                    Id = id.Value,
-                    Tags = "",
-                    Title = "",
-                    Blurb = "",
-                    SubCategories = new List<Category> { },
-                    SearchResultLinks = new List<SearchResultLink> { }
-                }, DataSession));
-            }
+                Id = 0,
+                Title = "Long description",
+                Blurb = "Short description",
+                Tags = "test,data",
+                Parent = null,
+                SearchResultLinks = new List<SearchResultLink> { },
+                SubCategories = new List<Category> { }
+            });
         }
 
     }
