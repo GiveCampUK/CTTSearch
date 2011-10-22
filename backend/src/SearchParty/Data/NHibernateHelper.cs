@@ -6,7 +6,6 @@ namespace SearchParty.Api.Data
     using FluentNHibernate.Automapping;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Conventions.Helpers;
-    using Models;
     using NHibernate;
     using NHibernate.Cfg;
 
