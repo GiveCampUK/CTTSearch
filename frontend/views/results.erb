@@ -2,7 +2,7 @@
 	Look what we found!
 <% end %>
 <div id="result_page">
-	<h1>You asked: <strong>How do I blah?</strong></h1>
+	<h1>You asked: <strong><%= @query.empty? ? "Nothing" : @query %></strong></h1>
 	<h2>What we found:</h2>
 
 	<div class="results">

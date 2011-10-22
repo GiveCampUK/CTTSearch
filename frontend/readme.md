@@ -6,20 +6,13 @@
 
 ## TODO
 
-- Hook Up Search Form to '/query' (redirecting to results once retrieved).
-- Update Backend ReadMe on Org Size Tags:
-  
-  <option value="org_size:1to5">1-5</option>
-	<option value="org_size:6to25">6-25</option>
-	<option value="org_size:26plus">26+</option>
-	
-	<option value="user_prof:novice">Novice</option>
-	<option value="user_prof:intermediate">Intermediate</option>
-	<option value="user_prof:advanced">Advanced</option>
-	
+- Add Hiddens to Search Results to Ensure User Context Not Lost
+- Possible Bug in '`search_uri_builder`'?
 - Define High-Level Categories for Home Page
 - Limit Results to 3
 - Hook Up Top Search Results in Categories in Home Page
 - Add Login
 - Add Guided Search
 - Add Editor View
+
+- REVIEW: HereDocs and UTF-8 (JSON.parse on HereDoc Fails!?)
