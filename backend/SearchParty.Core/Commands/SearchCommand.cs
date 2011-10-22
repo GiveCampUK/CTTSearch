@@ -1,19 +1,13 @@
 ﻿namespace SearchParty.Core.Commands
 {
-    using System;
+    using System.Web.Mvc;
     using Infrastructure;
 
-    public class SearchCommand : ActionCommand<SearchResponse>
+    public class SearchCommand : ActionCommand<JsonResult, string>
     {
-        public override void Validate(object[] validationErrors)
+        public override JsonResult PerformAction(string query)
         {
-            //nothing for now
-        }
-
-        public override SearchResponse PerformAction()
-        {
-            return new SearchResponse
-                       {};
+            return new JsonResult { };
         }
     }
 }

@@ -1,9 +1,12 @@
 ﻿namespace SearchParty.Infrastructure
 {
-    public interface IActionCommand<out T>
+    /// <summary>
+    /// TODO: BA; add validation in.
+    /// </summary>
+    /// <typeparam name="TReturnValue"></typeparam>
+    /// <typeparam name="TArgs"></typeparam>
+    public interface IActionCommand<out TReturnValue, in TArgs>
     {
-        T Execute(object[] validationErrors);
-
-        void Validate(object[] validationErrors);
+        TReturnValue Execute(TArgs args);
     }
 }

@@ -1,21 +1,15 @@
 ﻿namespace SearchParty.Infrastructure
 {
-    public abstract class ActionCommand<TReturn> : IActionCommand<TReturn>
+    public abstract class ActionCommand<TReturn, TArgs> : IActionCommand<TReturn,TArgs>
     {
-        public abstract void Validate(object[] validationErrors);
+        
 
-        public TReturn Execute(object[] validationErrors)
+        public TReturn Execute(TArgs args)
         {
-            Validate(validationErrors);
-
-            if (validationErrors != null)
-            {
-                throw new ApiValidationException(validationErrors);
-            }
-
-            return PerformAction();
+            //TODO: add in validation here
+            return PerformAction(args);
         }
 
-        public abstract TReturn PerformAction();
+        public abstract TReturn PerformAction(TArgs args);
     }
 }

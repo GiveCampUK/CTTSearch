@@ -127,6 +127,16 @@
   <ItemGroup>
     <Content Include="index.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SearchParty.Core\SearchParty.Core.csproj">
+      <Project>{8DC1A96F-27DB-4334-90A7-7D33324E45E3}</Project>
+      <Name>SearchParty.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SearchParty.Infrastructure\SearchParty.Infrastructure.csproj">
+      <Project>{C832DD90-D251-4026-8321-BF8900800767}</Project>
+      <Name>SearchParty.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

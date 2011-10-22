@@ -6,14 +6,25 @@ using SearchParty.Api.Models;
 
 namespace SearchParty.Api.Controllers
 {
+    using Core.Commands;
+
     public class SearchController : BaseController
     {
+        private readonly SearchCommand _searchCommand;
+
+        public SearchController(SearchCommand searchCommand)
+        {
+            _searchCommand = searchCommand;
+        }
+
         //
         // GET: /Search/
 
-
-        public JsonResult Index(string q)
+        //modify to expose as was /
+        public JsonResult SearchEngine(string q)
         {
+            return _searchCommand.Execute(q);
+
             var results = DataSession.CreateCriteria<Resource>()
                 .List<Resource>();
 
