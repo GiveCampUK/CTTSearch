@@ -66,15 +66,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoostrapTasks\BootstrapperTask.cs" />
-    <Compile Include="BoostrapTasks\BindControllersToServiceLocatorBootstrapperTask.cs" />
-    <Compile Include="BoostrapTasks\ControllerInstantiationException.cs" />
-    <Compile Include="BoostrapTasks\ServiceLocatorAwareControllerFactory.cs" />
+    <Compile Include="BootstrapTasks\BootstrapperTask.cs" />
+    <Compile Include="BootstrapTasks\BindControllersToServiceLocatorBootstrapperTask.cs" />
+    <Compile Include="BootstrapTasks\ControllerInstantiationException.cs" />
+    <Compile Include="BootstrapTasks\RegisterGlobalFiltersBootstrapperTask.cs" />
+    <Compile Include="BootstrapTasks\ServiceLocatorAwareControllerFactory.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
-    <Compile Include="BoostrapTasks\RegisterControllerFactoryWithMvcBootstrapperTask.cs" />
-    <Compile Include="BoostrapTasks\RegisterRoutesBootstrapperTask.cs" />
+    <Compile Include="BootstrapTasks\RegisterControllerFactoryWithMvcBootstrapperTask.cs" />
+    <Compile Include="BootstrapTasks\RegisterRoutesBootstrapperTask.cs" />
     <Compile Include="Tenant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Commands\SearchCommand.cs" />

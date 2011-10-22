@@ -7,7 +7,15 @@
     {
         public override JsonResult PerformAction(string query)
         {
-            return new JsonResult { };
+            return new JsonResult {};
+        }
+    }
+
+    public class GetAllResourcesCommand : SimpleActionCommand<JsonResult>
+    {
+        public override JsonResult PerformAction()
+        {
+            return new JsonResult {};
         }
     }
 }

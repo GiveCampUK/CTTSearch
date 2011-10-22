@@ -1,4 +1,4 @@
-﻿namespace SearchParty.Core.BoostrapTasks
+﻿namespace SearchParty.Core.BootstrapTasks
 {
     using System;
     using System.Web.Mvc;
@@ -21,13 +21,11 @@
 
             _routes.MapRoute(
                 "Default", // Route name
-                "{itemType}/{controller}/{action}/{id}", // URL with parameters
-                new {itemType = new NullDto(), controller = "Home", action = "Index", id = UrlParameter.Optional});
-                // Parameter defaults;
+                "{controller}/{action}/{id}", // URL with parameters
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                );
 
             Console.WriteLine(GetType() + " completed OK.");
         }
     }
-
-    public class NullDto {}
 }
