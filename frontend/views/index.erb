@@ -2,11 +2,19 @@
 	Home
 <% end %>
 
+<div id="introduction" class="panel">
+	<p>
+		CTT Search Party brings together our expertise &amp;
+		resourcesto help you find information about how your
+		charity can better utilise technology.
+	</p>
+</div>
+
 <form action="">
 
 	<div id="who_are_you" class="panel">
 	
-		<h2>Who are you?</h2>
+		<h2>Tell us about yourself so that we can give you appropriate advice</h2>
 
 		<label for="f_org_size">How big is your organisation?</label>
 		<select id="f_org_size" name="f_org_size">
@@ -15,7 +23,7 @@
 			<option>26+</option>
 		</select>
 
-		<label for="f_user_proficiency">How technical are you?</label>
+		<label for="f_user_proficiency">How technically minded are you?<br/>(in regards to I.T)</label>
 		<select id="f_user_proficiency" name="f_user_proficiency">
 			<option>Novice</option>
 			<option>Intermediate</option>
@@ -26,7 +34,7 @@
 	<div id="search_input_area" class="panel">
 		<h2>What do you want to know?</h2>
 		<input name="f_query" id="f_query" />
-		<input class="submit" type="submit" />
+		<input class="submit" type="submit" value="Search" />
 	</div>
 
 </form>

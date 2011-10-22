@@ -17,33 +17,36 @@
 					this.domOrgSizeValueLabel = $('<span/>').appendTo('label[for=f_org_size]');
 					this.domTechLevelValueLabel = $('<span/>').appendTo('label[for=f_user_proficiency]');
 
-					this.orgSizeSlider = $('<div class="slider"/>')
+					this.domOrgSizeSlider = $('<div class="slider"/>');
+					this.domTechLevelSlider = $('<div class="slider"/>');
+
+					this.orgSizeSlider = this.domOrgSizeSlider
 						.insertAfter(this.domOrgSize).slider({
 							value: 0,
 							min: 1,
 							max: 3,
 							step: 1,
 							slide:  function(e, ui){
-								var val = this.convertOrgSizeSliderVal(ui.value) ;
-								this.domOrgSizeValueLabel.text(' (' + val + ')');
+								var val = this.convertOrgSizeSliderVal(ui.value);
 								this.domOrgSize.val(val);
 							}.bind(this)
 						})
 						.data('slider');
 
-					this.techLevelSlider = $('<div class="slider"/>')
+					this.techLevelSlider = this.domTechLevelSlider
 						.insertAfter(this.domTechLevel).slider({
 							value: 0,
 							min: 1,
 							max: 3,
 							step: 1,
 							slide: function(e, ui) {
-								var val = this.convertTechLevelSliderVal(ui.value) ;
-								this.domTechLevelValueLabel.text(' (' + val + ')');
+								var val = this.convertTechLevelSliderVal(ui.value);
 								this.domTechLevel.val(val);
 							}.bind(this)
 						})
 						.data('slider');
+
+					this.setupSliderMarkers();
 
 					this.domOrgSize.hide();
 					this.domTechLevel.hide();
@@ -67,7 +70,24 @@
 						case 2: return 'Intermediate'
 						case 3: return 'Advanced'
 					}
+				},
+
+				setupSliderMarkers: function() {
+
+					this.domOrgSizeSlider.append(
+						'<div class="marker" style="left:0;text-align:left;">1-5</div>',
+						'<div class="marker" style="left:50%;margin-left:-50px;text-align:center;">6-25</div>',
+						'<div class="marker" style="right:0;text-align:right;">26+</div>'
+					);
+
+					this.domTechLevelSlider.append(
+						'<div class="marker" style="left:0;text-align:left;">Novice</div>',
+						'<div class="marker" style="left:50%;margin-left:-50px;text-align:center;">Intermediate</div>',
+						'<div class="marker" style="right:0;text-align:right;">Advanced</div>'
+					);
+						
 				}
+
 			}]
 		],
 
