@@ -150,33 +150,33 @@ h1 {
 	margin-bottom: 20px;
 }
 
-#categories {
+.categories {
 	overflow: hidden;
 	margin-top: 20px;
 }
 
-#categories h2 {
+.categories h2 {
 	padding: 20px;
 }
 
-#categories .category {
+.categories .category {
 	width: 280px;
 	float: left;
 	margin: 0 10px;
 	background: #EEE;
 }
 
-#categories .category h3 a {
+.categories .category h3 a {
 	padding: 8px;
 	border-bottom: 2px solid #8FC63F;
 	display: block;
 }
 
-#categories .category p {
+.categories .category p {
 	padding: 1em 1em 0;
 }
 
-#categories .category ul {
+.categories .category ul {
 	padding: 10px 0 15px 3em;
 }
 
