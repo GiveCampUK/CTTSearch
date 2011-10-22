@@ -14,6 +14,12 @@ class Frontend < Sinatra::Base
     erb :index
   end
 
+  get '/cats' do
+    @categories = Categories.all ## Todo: this needs to be sub-cats
+    @top_level_categories = Categories.all ## Todo: this needs to be top level cats
+    erb :category_explore
+  end
+
   get '/search/?' do
     @query = params[:q]
     @tags = (params[:tags] || "").split(",")
