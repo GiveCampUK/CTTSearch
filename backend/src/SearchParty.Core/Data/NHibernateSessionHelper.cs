@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using FluentNHibernate.Automapping;
     using FluentNHibernate.Cfg;
+    using FluentNHibernate.Cfg.Db;
     using FluentNHibernate.Conventions.Helpers;
     using Models;
     using NHibernate;
@@ -102,27 +103,13 @@
         {
             try
             {
-                return Fluently
-                .Configure(Configuration)
-                .Mappings(m => m.AutoMappings.Add(
-                    AutoMap.AssemblyOf<IEntity>()
-                        .UseOverridesFromAssemblyOf<IEntity>()
-                        .Conventions.Add(DefaultCascade.None())
-                        .OverrideAll(map => map.IgnoreProperty("IsIgnored"))
-                        .Where(t =>
-                               (
-                                   t.Namespace == "SearchParty.Core.Models"
-                               )
-                               && !t.IsSubclassOf(typeof(Exception))
-                               && !t.IsSubclassOf(typeof(Attribute)))))
+                return Configuration
                 .BuildSessionFactory();
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                    Debug.WriteLine(ex.Message);
                 throw;
-                
-                
             }
             
         }
@@ -133,9 +120,20 @@
             {
                 if (_configuration == null)
                 {
-                    _configuration = new Configuration();
-                    _configuration.Configure();
-                    _configuration.AddAssembly(typeof (IEntity).Assembly);
+
+                    _configuration = Fluently.Configure()
+                        .Database(MsSqlConfiguration.MsSql2008.ConnectionString(_=>_.FromConnectionStringWithKey("SearchParty")))
+                        .Mappings(m => m.AutoMappings.Add(
+                        AutoMap.AssemblyOf<IEntity>()
+                            .UseOverridesFromAssemblyOf<IEntity>()
+                            .Conventions.Add(DefaultCascade.None())
+                            .OverrideAll(map => map.IgnoreProperty("IsIgnored"))
+                            .Where(t =>
+                                   (
+                                       t.Namespace == "SearchParty.Core.Models"
+                                   )
+                                   && !t.IsSubclassOf(typeof(Exception))
+                                   && !t.IsSubclassOf(typeof(Attribute))))).BuildConfiguration();
                 }
                 return _configuration;
             }
@@ -145,5 +143,10 @@
         {
             return SessionFactory.OpenSession();
         }
+    }
+
+    public class MyConfiguration : DefaultAutomappingConfiguration
+    {
+        
     }
 }
