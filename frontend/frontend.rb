@@ -16,7 +16,7 @@ class Frontend < Sinatra::Base
 
   get '/search/?' do
     @query = params[:q]
-    @tags = (params[:tags] || "").split("|")
+    @tags = (params[:tags] || "").split(",")
     @results = Search.party(@query, @tags)
   	erb :results
   end

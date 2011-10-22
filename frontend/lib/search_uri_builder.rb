@@ -14,7 +14,7 @@ class SearchUriBuilder
   end
   
   def self.query_string(q = "", *tags)
-    "?q=#{escaped q}" << "&tags=#{tags.join("|")}" unless tags.empty?
+    "?q=#{escaped q}" << "&tags=#{tags.join(",")}" unless tags.empty?
   end
   
   private
