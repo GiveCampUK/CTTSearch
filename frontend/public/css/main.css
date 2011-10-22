@@ -108,7 +108,7 @@ form label {
 	text-align: left;
 }
 
-#search_input_area #f_query {
+#search_input_area #query {
 	padding: 6px;
 	width: 500px;
 	font-size: 1.4em;

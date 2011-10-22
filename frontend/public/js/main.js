@@ -11,11 +11,11 @@
 
 					// Setup sliders
 
-					this.domOrgSize = $('#f_org_size');
-					this.domTechLevel = $('#f_user_proficiency');
+					this.domOrgSize = $('#org_size');
+					this.domTechLevel = $('#user_proficiency');
 
-					this.domOrgSizeValueLabel = $('<span/>').appendTo('label[for=f_org_size]');
-					this.domTechLevelValueLabel = $('<span/>').appendTo('label[for=f_user_proficiency]');
+					this.domOrgSizeValueLabel = $('<span/>').appendTo('label[for=org_size]');
+					this.domTechLevelValueLabel = $('<span/>').appendTo('label[for=user_proficiency]');
 
 					this.domOrgSizeSlider = $('<div class="slider"/>');
 					this.domTechLevelSlider = $('<div class="slider"/>');
