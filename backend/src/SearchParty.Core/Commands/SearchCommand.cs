@@ -119,7 +119,7 @@ namespace SearchParty.Core.Commands
                     ShortDescription =
                         "Payment Card Industry – Data Security Standards (PCI-DSS) were developed to address the increased threat of card fraud around the world.",
                     LongDescription =
-                        "Payment Card Industry – Data Security Standards (PCI-DSS) were developed to address the increased threat of card fraud around the world. The importance of these standards has grown over the last few years as the regulations have been adopted by certain governments and included in new laws.",
+                        "Payment Card Industry – Data Security Standards (PCI-DSS) were developed to address the increased threat of card fraud around the world.",
                     ResourceType = "PDF"
                 };
                 dataSession.Save(resource);
