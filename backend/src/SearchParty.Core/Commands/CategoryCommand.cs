@@ -37,26 +37,49 @@ namespace SearchParty.Core.Commands
             if (dataSession.CreateCriteria<Category>().List<Category>().Any()) return;
             using (var tx = dataSession.BeginTransaction())
             {
+                const string smallOrgSize = "org_size:1-5,";
+                const string mediumOrgSize = "org_size:6-25,";
+                const string largeOrgSize = "org_size:26+,";
+                const string proficiencyNovice = "user_prof:novice,";
+                const string proficiencyIntermediate = "user_prof:intermediate,";
+                const string proficiencyExpert = "user_prof:expert,";
+                const string promoted = "promoted,";
+
                 #region Category Getting Started with IT
 
                 var category = new Category
                                    {
                                        Title = "Getting Started with IT",
-                                       Blurb =
-                                           "When you're not an IT professional, where to start with IT can be a daunting question. Like all things, a bit of research never goes amiss.",
-                                       Tags = "GettingStarted",
+                                       Blurb = "When you're not an IT professional, where to start with IT can be a daunting question. Like all things, a bit of research never goes amiss.",
+                                       Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                proficiencyNovice + 
+                                                promoted + 
+                                                "GettingStarted",
                                        SearchResultLinks = new List<SearchResultLink>
                                                                {
                                                                    new SearchResultLink
                                                                        {
-                                                                           Title =
-                                                                               "How do I Plan and budget for IT equipment?",
-                                                                           Tags = "GettingStarted, ITEquipment"
+                                                                           Title = "How do I Plan and budget for IT equipment?",
+                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                    proficiencyNovice + proficiencyIntermediate +
+                                                                                    promoted + 
+                                                                                    "GettingStarted, ITEquipment"
                                                                        },
                                                                    new SearchResultLink
                                                                        {
                                                                            Title = "Choosing and using consultants",
-                                                                           Tags = "GettingStarted, Consultants"
+                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                    proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
+                                                                                    promoted + 
+                                                                                    "GettingStarted, Consultants"
+                                                                       },
+                                                                   new SearchResultLink
+                                                                       {
+                                                                           Title = "Making Decisions On ICT: Roles And Responsibilities",
+                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                    proficiencyNovice + 
+                                                                                    promoted + 
+                                                                                    "GettingStarted, Roles, Responsibilities"
                                                                        }
                                                                },
                                        SubCategories = new List<Category>
@@ -64,10 +87,37 @@ namespace SearchParty.Core.Commands
                                                                new Category
                                                                    {
                                                                        Title = "Technology Planning and Strategy",
-                                                                       Blurb =
-                                                                           "A technology plan can sound like another piece of bureaucracy. Don't be fooled! There is no substitute for thinking through what you need and how you will meet those needs. Technology planning is the process that will help you save money on technology, buy what you need and use technology as a tool to accomplish your organisation's mission.",
-                                                                       Tags = "GettingStarted, Strategy",
-                                                                       SearchResultLinks = new List<SearchResultLink> {},
+                                                                       Blurb = "A technology plan can sound like another piece of bureaucracy. Don't be fooled! There is no substitute for thinking through what you need and how you will meet those needs. Technology planning is the process that will help you save money on technology, buy what you need and use technology as a tool to accomplish your organisation's mission.",
+                                                                       Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                    proficiencyNovice + 
+                                                                                    promoted + 
+                                                                                    "GettingStarted, Strategy",
+                                                                       SearchResultLinks = new List<SearchResultLink> {
+                                                                                    new SearchResultLink 
+                                                                                    {
+                                                                                        Title = "What can IT do for me?",
+                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                proficiencyNovice + 
+                                                                                                promoted + 
+                                                                                                "Getting Started, Strategy, Infrastructure, Planning"
+                                                                                    },
+                                                                                    new SearchResultLink 
+                                                                                    {
+                                                                                        Title = "Case Studies",
+                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                proficiencyNovice + 
+                                                                                                promoted + 
+                                                                                                "Getting Started, CaseStudies"
+                                                                                    },
+                                                                                    new SearchResultLink 
+                                                                                    {
+                                                                                        Title = "Project Planning",
+                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                                proficiencyNovice + 
+                                                                                                promoted + 
+                                                                                                "Getting Started, ProjectPlanning"
+                                                                                    }
+                                                                       },
                                                                        SubCategories = new List<Category> {}
                                                                    }
                                                            }

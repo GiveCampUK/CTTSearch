@@ -1,0 +1,18 @@
+﻿@using System.Web.Mvc.Html
+@using SearchParty.Core.Models
+
+@model Category
+
+<h1>Just for testing the Update of a Category - remove</h1>
+
+<form action="@Url.Action("Update", "Category")" method="POST">
+
+@Html.HiddenFor(category => category.Id)
+@Html.HiddenFor(category => category.Title)
+@Html.HiddenFor(category => category.Blurb)
+@Html.HiddenFor(category => category.Tags)
+@Html.HiddenFor(category => category.Parent)
+@Html.HiddenFor(category => category.SearchResultLinks)
+@Html.HiddenFor(category => category.SubCategories)
+
+<input type="submit" /></form>
