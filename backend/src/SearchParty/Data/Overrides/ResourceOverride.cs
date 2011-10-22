@@ -1,6 +1,6 @@
 ﻿using FluentNHibernate.Automapping;
 using FluentNHibernate.Automapping.Alterations;
-using SearchParty.Api.Models;
+using SearchParty.Core.Models;
 
 namespace SearchParty.Api.Data.Overrides
 {

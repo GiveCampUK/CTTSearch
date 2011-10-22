@@ -26,7 +26,7 @@ namespace SearchParty.Api.Data
                         .OverrideAll(map => map.IgnoreProperty("IsIgnored"))
                         .Where(t =>
                                (
-                                   t.Namespace == "SearchParty.Api.Models"
+                                   t.Namespace == "SearchParty.Core.Models"
                                )
                                && !t.IsSubclassOf(typeof (Exception))
                                && !t.IsSubclassOf(typeof (Attribute)))))

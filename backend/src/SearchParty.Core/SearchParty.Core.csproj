@@ -76,10 +76,12 @@
     <Compile Include="BootstrapTasks\RegisterGlobalFiltersBootstrapperTask.cs" />
     <Compile Include="BootstrapTasks\RegisterRoutesBootstrapperTask.cs" />
     <Compile Include="BootstrapTasks\ServiceLocatorAwareControllerFactory.cs" />
+    <Compile Include="Commands\CategoryCommand.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
+    <Compile Include="ModelHelper.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Resource.cs" />
