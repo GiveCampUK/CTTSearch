@@ -3,10 +3,10 @@
     using System;
     using System.Web;
     using Core.BootstrapTasks;
-    using MvcMiniProfiler;
     using NBootstrap;
     using NServiceLocator;
     using NServiceLocator.Ninject;
+    using ServiceLocation;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -37,7 +37,7 @@
         ///// </summary>
         protected void Application_EndRequest()
         {
-            MiniProfiler.Stop(); //see note 1
+            //MiniProfiler.Stop(); //see note 1
         }
     }
 }

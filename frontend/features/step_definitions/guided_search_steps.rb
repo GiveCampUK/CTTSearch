@@ -2,6 +2,6 @@ Given /^I am on the home page$/ do
   visit "/"
 end
 
-Then /^I can see "([^"]*)"$/ do |arg1|
-  pending # express the regexp above with the code you wish you had
+Then /^I should see "([^"]*)"$/ do |text|
+  response_body.should contain text
 end

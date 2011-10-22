@@ -1,8 +1,10 @@
 ﻿namespace SearchParty.Infrastructure
 {
-    public class NullDto { }
-    
-    public abstract class ActionCommand<TReturn, TArgs> : IActionCommand<TReturn,TArgs>
+    using System;
+
+    public class NullDto {}
+
+    public abstract class ActionCommand<TReturn, TArgs> : IActionCommand<TReturn, TArgs>
     {
         public TReturn Execute(TArgs args)
         {
@@ -17,9 +19,9 @@
     {
         public abstract TReturn PerformAction();
 
-            public override TReturn PerformAction(NullDto args)
+        public override TReturn PerformAction(NullDto args)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

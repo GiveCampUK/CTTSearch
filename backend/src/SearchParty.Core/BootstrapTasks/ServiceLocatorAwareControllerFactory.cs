@@ -3,27 +3,26 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using MvcMiniProfiler;
     using NServiceLocator;
 
     /// <summary>
-    /// TODO: BA; complete genericisation.
-    /// URI determines the type of IItem used to type the controller
-    /// (and hence sub-objects).
-    /// TODO: BA; test using Phil Haacks web server simulator?
+    ///   TODO: BA; complete genericisation.
+    ///   URI determines the type of IItem used to type the controller
+    ///   (and hence sub-objects).
+    ///   TODO: BA; test using Phil Haacks web server simulator?
     /// </summary>
     public class ServiceLocatorAwareControllerFactory : DefaultControllerFactory
     {
-        private readonly IServiceLocator _serviceLocator;
         private readonly string _controllerAssemblyName;
         private readonly string _controllerNamespace;
+        private readonly IServiceLocator _serviceLocator;
         //private readonly string _homeControllerGenericSuffix;
         //private readonly MiniProfiler _profiler;
 
         public ServiceLocatorAwareControllerFactory(IServiceLocator serviceLocator,
                                                     string controllerAssemblyName,
                                                     string controllerNamespace)
-               //                                     MiniProfiler profiler)
+            //                                     MiniProfiler profiler)
         {
             _serviceLocator = serviceLocator;
             _controllerAssemblyName = controllerAssemblyName;
@@ -41,20 +40,21 @@
         {
             //using (_profiler.Step("CreateController"))
             //{
-                try
-                {
-                    var controllerTypeToLocate =
-                        Type.GetType(_controllerNamespace + "." + controllerName + "Controller"  + ", " + _controllerAssemblyName);
+            try
+            {
+                var controllerTypeToLocate =
+                    Type.GetType(_controllerNamespace + "." + controllerName + "Controller" + ", " +
+                                 _controllerAssemblyName);
 
-                    var instance = _serviceLocator.Locate(controllerTypeToLocate);
+                var instance = _serviceLocator.Locate(controllerTypeToLocate);
 
-                    return instance as IController;
-                }
-                catch (Exception e)
-                {
-                    //e.Log();
-                    throw new ControllerInstantiationException(controllerName, e);
-                }
+                return instance as IController;
+            }
+            catch (Exception e)
+            {
+                //e.Log();
+                throw new ControllerInstantiationException(controllerName, e);
+            }
             //}
         }
 

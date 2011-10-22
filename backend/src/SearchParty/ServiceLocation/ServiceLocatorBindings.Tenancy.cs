@@ -23,7 +23,6 @@ namespace SearchParty.Api.ServiceLocation
             }
         }
     }
-
 }
 
 // ReSharper restore CheckNamespace
