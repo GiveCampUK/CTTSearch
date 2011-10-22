@@ -20,11 +20,12 @@
                 .Configure(Configuration)
                 .Mappings(m => m.AutoMappings.Add(
                     AutoMap.AssemblyOf<IEntity>()
+                        .UseOverridesFromAssemblyOf<IEntity>()
                         .Conventions.Add(DefaultCascade.None())
                         .OverrideAll(map => map.IgnoreProperty("IsIgnored"))
                         .Where(t =>
                                (
-                                   t.Namespace == "SearchParty.Models"
+                                   t.Namespace == "SearchParty.Api.Models"
                                )
                                && !t.IsSubclassOf(typeof (Exception))
                                && !t.IsSubclassOf(typeof (Attribute)))))
