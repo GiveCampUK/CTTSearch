@@ -103,9 +103,22 @@ form label {
 	width: 19em;
 }
 
+#search_input_area.little {
+	float: right;
+	width: 250px;
+	font-size: .7em;
+	text-align: right;
+	padding: 11px;
+	margin-top: 0;
+}
+
+#search_input_area.little #query {
+	width: 160px;
+}
+
 #search_input_area {
 	text-align: center;
-}
+}	
 
 #search_input_area h2 {
 	text-align: left;
@@ -155,7 +168,6 @@ h1 {
 #categories .category h3 a {
 	padding: 8px;
 	border-bottom: 2px solid #8FC63F;
-	text-decoration: none;
 	display: block;
 }
 
@@ -171,13 +183,20 @@ h1 {
 /**** RESULTS MASHUP ****/
 /************************/
 
+#results_page {
+}
+
 #results_page h1 {
 	text-align: left;
 	margin-bottom: 5px;
+	float: left;
+	width: 50%;
+	font-size: 2.2em;
+	line-height: 50px;
 }
 
 .results {
-	
+	clear: both;
 }
 
 .results .alternate_level_nav {
@@ -234,6 +253,10 @@ h1 {
 	border: 1px dotted #000;
 	margin: 0 0 20px;
 	padding: 10px;
+}
+
+.results div.promoted /* up specificity */ {
+	border: 2px solid #FFF708;
 }
 
 .results .result p {
