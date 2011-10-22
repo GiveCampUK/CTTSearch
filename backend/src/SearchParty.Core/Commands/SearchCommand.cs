@@ -10,9 +10,9 @@
 
     public class SearchCommand : ActionCommand<object, string>
     {
+
         private readonly ISession _dataSession;
         private readonly IRepository<Resource> _resourceRepo;
-
 
         public SearchCommand(ISession dataSession, IRepository<Resource> resourceRepo)
         {
@@ -22,8 +22,9 @@
 
         public override object PerformAction(string query)
         {
-            
-             SearchCommandHelper.CreateDummyDataIfEmpty(_dataSession);
+            SearchCommandHelper.CreateDummyDataIfEmpty(_dataSession);
+            //_resourceRepo.GetByFreeText(query,);
+
             var terms = query.Split(' ');
             const string tagIndicator = "^";
             var words = terms.Where(t => !t.StartsWith(tagIndicator)).ToArray();

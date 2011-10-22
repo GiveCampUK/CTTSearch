@@ -10,7 +10,7 @@
 
         public SearchController(SearchCommand searchCommand)
         {
-            _searchCommand = searchCommand;
+            _searchCommand = searchCommand;// = new SearchCommand(null, null);//searchCommand;
         }
 
         public JsonResult SearchEngine(string q)

@@ -3,7 +3,6 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Routing;
-    using NHibernate;
     using NServiceLocator;
 
     /// <summary>

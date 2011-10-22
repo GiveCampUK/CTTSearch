@@ -17,10 +17,11 @@
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Resource> GetByFreeText(string query, int startPage, int numberOfPages)
+        public IEnumerable<Resource> GetByFreeText(string query, int pageSize, int startPage, int numberOfPages)
         {
             throw new NotImplementedException();
         }
+
 
         public Guid Save(Resource objectToSave)
         {

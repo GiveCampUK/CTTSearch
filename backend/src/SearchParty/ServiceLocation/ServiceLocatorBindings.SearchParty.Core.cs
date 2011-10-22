@@ -21,10 +21,10 @@ namespace SearchParty.Api.ServiceLocation
 
             public void BindAll()
             {
-                _module.Bind<IServiceLocator>().ToMethod(x => NinjectServiceLocator<SearchPartyNinjectModule>.GetInstance()); //singleton, no public ctor
+                _module.Bind<IServiceLocator>().ToMethod(
+                    x => NinjectServiceLocator<SearchPartyNinjectModule>.GetInstance()); //singleton, no public ctor
                 _module.Bind<IRepository<Resource>>().To<ResourceRepository>();
                 _module.Bind<SearchCommand>().ToSelf();
-                
             }
         }
     }
