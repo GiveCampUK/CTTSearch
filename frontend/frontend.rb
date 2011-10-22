@@ -10,7 +10,7 @@ class Frontend < Sinatra::Base
   set :root, File.dirname(__FILE__)
   
   get '/' do
-    @categories = Categories.all
+    @categories = Categories.top
     erb :index
   end
 end
