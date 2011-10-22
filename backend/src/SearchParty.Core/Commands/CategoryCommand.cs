@@ -39,7 +39,7 @@ namespace SearchParty.Core.Commands
             {
                 const string smallOrgSize = "org_size:1-5,";
                 const string mediumOrgSize = "org_size:6-25,";
-                const string largeOrgSize = "org_size:26+,";
+                const string largeOrgSize = "org_size:26plus,";
                 const string proficiencyNovice = "user_prof:novice,";
                 const string proficiencyIntermediate = "user_prof:intermediate,";
                 const string proficiencyExpert = "user_prof:expert,";
