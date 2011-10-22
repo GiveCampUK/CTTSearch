@@ -8,10 +8,8 @@ namespace SearchParty.Api.Controllers
 
     public class SearchController : BaseController
     {
-        public SearchController() : this(new SearchCommand())
-        {
-            
-        }
+        public SearchController() : this(new SearchCommand()) {}
+
         private readonly SearchCommand _searchCommand;
 
         public SearchController(SearchCommand searchCommand)

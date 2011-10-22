@@ -27,7 +27,6 @@
                 new {controller = "Home", action = "Index", id = UrlParameter.Optional} // Parameter defaults
                 );
 
-				
             Console.WriteLine(GetType() + " completed OK.");
         }
     }

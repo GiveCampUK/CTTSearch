@@ -3,6 +3,7 @@ namespace SearchParty.Api.ServiceLocation
 {
     namespace SearchParty.Core
     {
+        using global::SearchParty.Core.Commands;
         using Ninject.Modules;
         using NServiceLocator;
         using NServiceLocator.Ninject;
@@ -20,6 +21,7 @@ namespace SearchParty.Api.ServiceLocation
             {
                 _module.Bind<IServiceLocator>().ToMethod(
                     x => NinjectServiceLocator<SearchPartyNinjectModule>.GetInstance()); //singleton, no public ctor
+                _module.Bind<SearchCommand>().ToSelf();
             }
         }
     }
