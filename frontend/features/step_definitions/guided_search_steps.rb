@@ -1,5 +1,5 @@
 Given /^I am on the home page$/ do
-  pending
+  visit "/"
 end
 
 Then /^I can see "([^"]*)"$/ do |arg1|
