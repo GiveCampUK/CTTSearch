@@ -8,8 +8,8 @@ namespace SearchParty.Api.Data.Overrides
     {
         public void Override(AutoMapping<Resource> mapping)
         {
-            mapping.HasManyToMany(m => m.Tags)
-                .Table("ResourceTag");
+            //mapping.HasManyToMany(m => m.Tags)
+            //    .Table("ResourceTag");
         }
     }
 }

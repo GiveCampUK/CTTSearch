@@ -40,6 +40,9 @@
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="NBasicExtensionMethod">
       <HintPath>..\packages\NBasicExtensionMethod.1.0.4292.32667\lib\net40\NBasicExtensionMethod.dll</HintPath>
@@ -100,6 +103,7 @@
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Data\NHibernateHelper.cs" />
+    <Compile Include="Data\Overrides\CriteriaExtensions.cs" />
     <Compile Include="Data\Overrides\ResourceOverride.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

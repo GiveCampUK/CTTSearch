@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web.Mvc;
 using NHibernate;
 using NHibernate.Criterion;
 using NHibernate.Linq;
 using NHibernate.Transform;
+using SearchParty.Api.Data.Overrides;
 using SearchParty.Api.Models;
 
 namespace SearchParty.Api.Controllers
@@ -35,12 +37,12 @@ namespace SearchParty.Api.Controllers
 
             if (tags.Any())
             {
-                criteria.CreateAlias("Tags", "tags");
                 foreach (var tag in tags)
                 {
-                    criteria.Add(Restrictions.Eq("tags.Name", tag));
+                    criteria.Add(Restrictions.InsensitiveLike("Tags", string.Format(",{0},", tag), MatchMode.Anywhere));
                 }
             }
+            Debug.WriteLine(criteria.ToSql(DataSession));
 
             var results = criteria.List<Resource>().ToList();
             if (results.Any())
@@ -56,7 +58,7 @@ namespace SearchParty.Api.Controllers
                                                             id = resource.Id,
                                                             title = resource.Title,
                                                             uri = resource.Uri,
-                                                            tags = string.Join(",", resource.Tags.Select(t => t.Name)),
+                                                            tags = string.Join(",", resource.Tags.Replace(",", " ").Trim().Replace(" ", ",")),
                                                             shortDescription = resource.ShortDescription,
                                                             longDescription = resource.LongDescription,
                                                             resultType = "uri"
@@ -76,13 +78,13 @@ namespace SearchParty.Api.Controllers
             // Quick hacky write something into the database
             using (var tx = DataSession.BeginTransaction())
             {
-                var tag1 = new Tag { Name = "Windows7" };
-                var tag2 = new Tag { Name = "Upgrade" };
-                DataSession.Save(tag1);
-                DataSession.Save(tag2);
+                //var tag1 = new Tag { Name = "Windows7" };
+                //var tag2 = new Tag { Name = "Upgrade" };
+                //DataSession.Save(tag1);
+                //DataSession.Save(tag2);
                 var resource = new Resource
                                    {
-                                       Tags = new List<Tag> { tag1, tag2 },
+                                       Tags = ",Windows7,Upgrade,",
                                        Title = "Should I Upgrade To Windows 7?",
                                        Uri =
                                            "http://www.ctt.org/resource_centre/getting_started/learning/windows7upgrade",
