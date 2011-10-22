@@ -15,12 +15,12 @@ class Frontend < Sinatra::Base
   end
 
   get '/search/?' do
+    @query = params[:q]
   	erb :result
   end
   
   get '/process' do
     builder = SearchUriBuilder.new(params[:query],[ params[:org_size], params[:user_prof]])
-    return builder.uri
     redirect builder.uri
   end
 end
