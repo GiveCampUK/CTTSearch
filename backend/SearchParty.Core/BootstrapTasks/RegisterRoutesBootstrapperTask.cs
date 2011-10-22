@@ -19,9 +19,9 @@
             _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             _routes.IgnoreRoute("favicon.ico");
 
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute("search", "Search", new {controller = "Search", action = "SearchEngine"});
-            routes.MapRoute(
+            _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            _routes.MapRoute("search", "Search", new {controller = "Search", action = "SearchEngine"});
+            _routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new {controller = "Home", action = "Index", id = UrlParameter.Optional} // Parameter defaults

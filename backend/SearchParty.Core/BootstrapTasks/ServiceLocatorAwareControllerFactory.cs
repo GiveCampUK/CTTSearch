@@ -64,7 +64,7 @@
             {
                 _serviceLocator.Release(controller);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //e.Log();
                 ReleaseControllersAllocatedByDefaultFactory(controller);
@@ -77,7 +77,7 @@
             {
                 base.ReleaseController(controller);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 //e.Log();
             }
