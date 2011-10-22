@@ -10,7 +10,7 @@
 	</p>
 </div>
 
-<form action="">
+<form action="/process" method="get">
 
 	<div id="who_are_you" class="panel">
 	
@@ -18,16 +18,16 @@
 
 		<label for="org_size">How big is your organisation?</label>
 		<select id="org_size" name="org_size">
-			<option>1-5</option>
-			<option>6-25</option>
-			<option>26+</option>
+			<option value="org-size:1to5">1-5</option>
+			<option value="org-size:6to25">6-25</option>
+			<option value="org-size:26plus">26+</option>
 		</select>
 
-		<label for="user_proficiency">How technically minded are you?<br/>(in regards to I.T)</label>
-		<select id="user_proficiency" name="user_proficiency">
-			<option>Novice</option>
-			<option>Intermediate</option>
-			<option>Advanced</option>
+		<label for="user_prof">How technically minded are you?<br/>(in regards to I.T)</label>
+		<select id="user_prof" name="user_prof">
+			<option value="user_prof:novice">Novice</option>
+			<option value="user_prof:intermediate">Intermediate</option>
+			<option value="user_prof:advanced">Advanced</option>
 		</select>
 	</div>
 
@@ -49,7 +49,6 @@
   			<li><a href="#">Category item</a></li>
   			<li><a href="#">Category item</a></li>
   		</ul>
-  		<p><a href="<%= cat[:top_search] %>" target="_blank">See More &#187;</a></p>
   	</div>
 	<% end %>
 </div>

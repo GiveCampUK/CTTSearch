@@ -10,11 +10,16 @@ class Frontend < Sinatra::Base
   set :root, File.dirname(__FILE__)
   
   get '/' do
-    @categories = Categories.top
+    @categories = Categories.all
     erb :index
   end
 
-  get '/result' do
+  get '/search' do
   	erb :result
+  end
+  
+  get '/process' do
+    builder = SearchUriBuilder.new(params[:query],[ params[:org_size], params[:user_prof]])
+    redirect builder.uri
   end
 end
