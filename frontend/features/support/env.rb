@@ -5,8 +5,10 @@ require app_file
 Sinatra::Application.app_file = app_file
 
 require 'rspec/expectations'
+require 'cucumber/rspec/doubles'
 require 'rack/test'
 require 'webrat'
+require 'frontend'
 
 Webrat.configure do |config|
   config.mode = :rack

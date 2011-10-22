@@ -3,6 +3,7 @@ $:. << './lib'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/content_for'
+require 'models/categories'
 
 class Frontend < Sinatra::Base
   helpers Sinatra::ContentFor

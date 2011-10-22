@@ -4,9 +4,9 @@
 
 ---
 
-## TODO:
+## TODO
 
-- Add Cuke
+- Define High-Level Categories for Home Page
 - Add Login
 - Add Guided Search
 - Add Editor View
