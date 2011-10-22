@@ -3,6 +3,20 @@
 <% end %>
 <div id="results_page">
 	<h1>You asked: <strong>How do I blah?</strong></h1>
+
+	<form action="/process" method="get">
+
+		<input type="hidden" name="org_size" />
+		<input type="hidden" name="user_prof" />
+
+		<div id="search_input_area" class="panel">
+			<h2>I want to find out:</h2>
+			<input name="query" id="query" />
+			<input class="submit" type="submit" value="Search" />
+		</div>
+
+	</form>
+
 	<h2>What we found:</h2>
 
 	<% if @query.empty? %>
@@ -20,24 +34,26 @@
 
 				<div class="column first_column">
 
-					<div class="result">
-						
+					<div class="result type-text">
+						<h3>This is content!</h3>
+						<p>Interesting thing detailing how to do interesting thing.</p>
 					</div>
 
 					<div class="result type-video">
-						
+						<iframe width="420" height="300" src="http://www.youtube.com/embed/vdQj2ohqCBk" frameborder="0" allowfullscreen></iframe>
 					</div>
 
 					<div class="result type-link">
 						
 					</div>
 
-					<div class="result">
-						
+					<div class="result type-text">
+						<h3>This is content!</h3>
+						<p>Interesting thing detailing how to do interesting thing.</p>
 					</div>
 
 					<div class="result type-video">
-						
+						<iframe width="420" height="300" src="http://www.youtube.com/embed/vdQj2ohqCBk" frameborder="0" allowfullscreen></iframe>
 					</div>
 
 				</div>
@@ -45,15 +61,17 @@
 				<div class="column">
 
 					<div class="result type-video">
-						
-					</div>
-
-					<div class="result">
-						
+						<iframe width="420" height="300" src="http://www.youtube.com/embed/vdQj2ohqCBk" frameborder="0" allowfullscreen></iframe>
 					</div>
 
 					<div class="result type-text">
-						
+						<h3>This is content!</h3>
+						<p>Interesting thing detailing how to do interesting thing.</p>
+					</div>
+
+					<div class="result type-text">
+						<h3>This is content!</h3>
+						<p>Interesting thing detailing how to do interesting thing.</p>
 					</div>
 
 				</div>

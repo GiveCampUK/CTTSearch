@@ -183,6 +183,7 @@ h1 {
 .results .alternate_level_nav {
 	overflow: hidden;
 	margin-top: 20px;
+	padding-top: 4px;
 }
 
 .results .alternate_level_nav li {
@@ -197,6 +198,7 @@ h1 {
 	display: block;
 	text-align: center;
 	background: #E8F2D6;
+	font-size: 1.3em;
 	color: #444;
 }
 
@@ -204,6 +206,8 @@ h1 {
 
 }
 
+.results .alternate_level_nav li a:hover,
+.results .alternate_level_nav li a:focus,
 .results .alternate_level_nav li.selected a {
 	padding: 10px;
 	margin-top: -4px;
@@ -226,16 +230,25 @@ h1 {
 
 .results .result {
 	background: #EEE;
-	height: 50px;
+	height: 150px;
 	border: 1px dotted #000;
 	margin: 0 0 20px;
+	padding: 10px;
+}
+
+.results .result h3 {
+	font-size: 1.4em;
+}
+
+.results .result h3, .results .result p {
+	padding: .3em 0;
 }
 
 /* Result types */
 
 .results .type-text { height: 150px; border-color: #8FC63F; background-color: #E8F2D6; }
 .results .type-video { height: 300px; border-color: #543E87; background-color: #BEC2C5; }
-.results .type-link { height: 100px; border-color: #F37A22; background-color: #FBE4D6; }
+.results .type-link { height: 300px; border-color: #F37A22; background-color: #FBE4D6; }
 
 /************************/
 /** SINGLE RESULT PAGE **/
