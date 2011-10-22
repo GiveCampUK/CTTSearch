@@ -4,12 +4,14 @@
     using System.Web.Mvc;
     using NBootstrap;
     using NFeature;
+    using NHibernate;
     using NServiceLocator;
 
     public class RegisterControllerFactoryWithMvcBootstrapperTask : IBootstrapperTask
     {
         private readonly ControllerBuilder _currentControllerBuilder;
         private readonly IFeatureManifest<Feature> _featureManifest;
+        private readonly ISession _session;
         //private readonly MiniProfiler _miniProfiler;
         private readonly IServiceLocator _serviceLocator;
 

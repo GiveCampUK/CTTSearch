@@ -16,13 +16,13 @@
 
         public ActionResult CreateDatabase()
         {
-            new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
+            new SchemaExport(NHibernateSessionHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
             return RedirectToAction("Index");
         }
 
         public ActionResult UpdateDatabase()
         {
-            new SchemaUpdate(NHibernateHelper.Configuration).Execute(false, true);
+            new SchemaUpdate(NHibernateSessionHelper.Configuration).Execute(false, true);
             return RedirectToAction("Index");
         }
 
@@ -32,8 +32,8 @@
             DropTable("Tag");
             DropTable("Resource");
 
-            new SchemaExport(NHibernateHelper.Configuration).Drop(false, true);
-            new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
+            new SchemaExport(NHibernateSessionHelper.Configuration).Drop(false, true);
+            new SchemaExport(NHibernateSessionHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
             return RedirectToAction("Index");
         }
 

@@ -3,8 +3,6 @@
     using System.Web.Mvc;
     using Core;
     using Core.Commands;
-    using NHibernate;
-    using NHibernate.Linq;
 
     public class SearchController : BaseController
     {
@@ -17,7 +15,7 @@
 
         public JsonResult SearchEngine(string q)
         {
-            return Json(_searchCommand.Execute(new Tuple<string, ISession> {First = q, Second = DataSession}),
+            return Json(_searchCommand.Execute(q),
                         JsonRequestBehavior.AllowGet);
         }
     }

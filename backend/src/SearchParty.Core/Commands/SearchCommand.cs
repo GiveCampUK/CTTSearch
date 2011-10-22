@@ -8,10 +8,11 @@
     using NHibernate.Criterion;
     using NHibernate.Linq;
 
-    public class SearchCommand : ActionCommand<object, NHibernate.Linq.Tuple<string, ISession>>
+    public class SearchCommand : ActionCommand<object, string>
     {
         private readonly ISession _dataSession;
         private readonly IRepository<Resource> _resourceRepo;
+
 
         public SearchCommand(ISession dataSession, IRepository<Resource> resourceRepo)
         {
@@ -19,16 +20,15 @@
             _resourceRepo = resourceRepo;
         }
 
-        public override object PerformAction(NHibernate.Linq.Tuple<string, ISession> args)
+        public override object PerformAction(string query)
         {
-            var query = args.First;
-            var dataSession = args.Second;
-             SearchCommandHelper.CreateDummyDataIfEmpty(dataSession);
+            
+             SearchCommandHelper.CreateDummyDataIfEmpty(_dataSession);
             var terms = query.Split(' ');
             const string tagIndicator = "^";
             var words = terms.Where(t => !t.StartsWith(tagIndicator)).ToArray();
             var tags = terms.Where(t => t.StartsWith(tagIndicator)).Select(t => t.Replace(tagIndicator, "")).ToArray();
-            var criteria = dataSession.CreateCriteria<Resource>();
+            var criteria = _dataSession.CreateCriteria<Resource>();
             words.ForEach(word => criteria.Add(
                 Restrictions.Or(
                     Restrictions.InsensitiveLike("Title", word, MatchMode.Anywhere),
@@ -69,7 +69,5 @@
 
             return new {results = new {}};
         }
-
-        
     }
 }
