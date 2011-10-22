@@ -5,6 +5,13 @@ using SearchParty.Core.Models;
 
 namespace SearchParty.Core.Commands
 {
+    public class ResourceCreateCommand
+    {
+        public object PerformAction(int? id, ISession dataSession)
+        {
+            return new {status = "failed"};
+        }
+    }
     public class ResourceCommand
     {
         public object PerformAction(int? id, ISession dataSession)
