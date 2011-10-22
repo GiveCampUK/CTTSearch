@@ -1,4 +1,6 @@
-﻿namespace SearchParty.Api.Controllers
+﻿using System;
+
+namespace SearchParty.Api.Controllers
 {
     using System.Web.Mvc;
     using Data;
@@ -27,6 +29,14 @@
 
         public ActionResult ResetDatabase()
         {
+            var query = DataSession.Connection.CreateCommand();
+            query.CommandText = "DROP TABLE ResourceTag";
+            query.ExecuteNonQuery();
+            query.CommandText = "DROP TABLE Tag";
+            query.ExecuteNonQuery();
+            query.CommandText = "DROP TABLE Resource";
+            query.ExecuteNonQuery();
+
             new SchemaExport(NHibernateHelper.Configuration).Drop(false, true);
             new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
             return RedirectToAction("Index");
