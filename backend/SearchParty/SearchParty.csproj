@@ -41,8 +41,35 @@
       <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NBasicExtensionMethod">
+      <HintPath>..\packages\NBasicExtensionMethod.1.0.4292.32667\lib\net40\NBasicExtensionMethod.dll</HintPath>
+    </Reference>
+    <Reference Include="NBootstrap">
+      <HintPath>..\packages\NBootstrap.1.0.4293.40037\lib\net40\NBootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NFeature">
+      <HintPath>..\packages\NFeature.1.0.4306.31505\lib\net40\NFeature.dll</HintPath>
+    </Reference>
+    <Reference Include="NHelpfulException">
+      <HintPath>..\packages\NHelpfulException.1.0.4292.35244\lib\net40\NHelpfulException.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate">
       <HintPath>..\packages\NHibernate.3.2.0.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceLocator">
+      <HintPath>..\packages\NServiceLocator.1.0.4293.1115\lib\net40\NServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="NServiceLocator.Ninject">
+      <HintPath>..\packages\NServiceLocator.Ninject.1.0.4312.2983\lib\net40\NServiceLocator.Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="NSure">
+      <HintPath>..\packages\NSure.1.0.4292.35410\lib\net40\NSure.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
