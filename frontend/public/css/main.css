@@ -1,8 +1,10 @@
+
+/** GENERIC **/
 body {
 	margin: 0;
 	padding: 0;
-	background: #111;
-	color: #FFF;
+	background: #FFF;
+	color: #111;
 	font-size: .8em;
 	font-family: sans-serif;
 }
@@ -13,11 +15,24 @@ body, ul, ol, li, img, form, p, h1, h2, h3, h4, h5, h6 {
 	border: none;
 }
 
-a { color: #FFF; }
+a { color: #000; }
 a:hover, a:focus { text-decoration: underline; }
 
+.panel {
+	padding: 20px;
+	margin: 10px 0;
+	background: #EEE;
+}
+
+.panel h2 {
+	margin: 0;
+	padding: 5px 0 10px;
+}
+
+/** MAIN **/
+
 #main {
-	background: #222;
+	background: #DDD;
 	width: 960px;
 	margin: 20px auto;
 }
@@ -40,10 +55,7 @@ form .slider {
 }
 
 #search_input_area {
-	padding: 20px;
-	margin: 20px 0;
-	background: #333;
-	font-size: 1.4em;
+
 }
 
 #search_input_area #f_query {
@@ -73,12 +85,12 @@ h1 {
 	width: 280px;
 	float: left;
 	margin: 0 10px;
-	background: #333;
+	background: #EEE;
 }
 
 #categories .category h3 a {
 	padding: 8px;
-	border-bottom: 2px solid #555;
+	border-bottom: 2px solid #CCC;
 	text-decoration: none;
 	display: block;
 }

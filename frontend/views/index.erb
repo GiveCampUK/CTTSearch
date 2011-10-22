@@ -1,30 +1,30 @@
 <% content_for :title do %>
 	Home
 <% end %>
-<h1>What do you want to know?</h1>
 
 <form action="">
 
-	<label for="f_org_size">How big is your organisation?</label>
-	<select id="f_org_size" name="f_org_size">
-		<option>1-5</option>
-		<option>5-10</option>
-		<option>10-50</option>
-		<option>50-100</option>
-		<option>100-500</option>
-		<option>500+</option>
-	</select>
+	<div id="who_are_you" class="panel">
+	
+		<h2>Who are you?</h2>
 
-	<label for="f_user_proficiency">How technical are you?</label>
-	<select id="f_user_proficiency" name="f_user_proficiency">
-		<option>Not at all</option>
-		<option>A little bit</option>
-		<option>Quite technical</option>
-		<option>Very technical</option>
-	</select>
-	...
+		<label for="f_org_size">How big is your organisation?</label>
+		<select id="f_org_size" name="f_org_size">
+			<option>1-5</option>
+			<option>6-25</option>
+			<option>26+</option>
+		</select>
 
-	<div id="search_input_area">
+		<label for="f_user_proficiency">How technical are you?</label>
+		<select id="f_user_proficiency" name="f_user_proficiency">
+			<option>Novice</option>
+			<option>Intermediate</option>
+			<option>Advanced</option>
+		</select>
+	</div>
+
+	<div id="search_input_area" class="panel">
+		<h2>What do you want to know?</h2>
 		<input name="f_query" id="f_query" />
 		<input class="submit" type="submit" />
 	</div>
