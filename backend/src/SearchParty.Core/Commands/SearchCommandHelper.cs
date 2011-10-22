@@ -34,7 +34,7 @@
                                        ShortDescription =
                                            "Spam (unsolicited bulk email) is now a real problem for many organisations. This article will help you choose a solution for your organisation.",
                                        LongDescription =
-                                           "Spam (unsolicited bulk email) is now a real problem for many organisations.his article looks in more depth at how the various solutions on offer work and provides some guidance on issues to consider when choosing a solution for your organisation.",
+                                           "Spam (unsolicited bulk email) is now a real problem for many organisations. This article looks in more depth at how the various solutions on offer work and provides some guidance on issues to consider when choosing a solution for your organisation.",
                                        ResourceType = "ExternalLink"
                                    };
                 dataSession.Save(resource);
