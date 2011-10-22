@@ -37,7 +37,7 @@
         ///// </summary>
         protected void Application_EndRequest()
         {
-            MiniProfiler.Stop(); //see note 1
+            //MiniProfiler.Stop(); //see note 1
         }
     }
 }
