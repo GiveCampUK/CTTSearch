@@ -14,8 +14,7 @@ class SearchUriBuilder
   end
   
   def self.query_string(q = "", *tags)
-    formatted_tags = tags.flatten.map{ |t| "^#{t}"  }
-    "?q=#{escaped search_terms(q, formatted_tags).join(" ")}"
+    "?q=#{escaped q}" << "&tags=#{tags.join(";")}" unless tags.empty?
   end
   
   private
