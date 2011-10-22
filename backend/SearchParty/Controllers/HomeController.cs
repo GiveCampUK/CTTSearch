@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SearchParty.Api.Controllers
+﻿namespace SearchParty.Api.Controllers
 {
     using System.Web.Mvc;
     using Data;
@@ -29,17 +27,21 @@ namespace SearchParty.Api.Controllers
 
         public ActionResult ResetDatabase()
         {
-            var query = DataSession.Connection.CreateCommand();
-            query.CommandText = "DROP TABLE ResourceTag";
-            query.ExecuteNonQuery();
-            query.CommandText = "DROP TABLE Tag";
-            query.ExecuteNonQuery();
-            query.CommandText = "DROP TABLE Resource";
-            query.ExecuteNonQuery();
+            DropTable("ResourceTag");
+            DropTable("Tag");
+            DropTable("Resource");
 
             new SchemaExport(NHibernateHelper.Configuration).Drop(false, true);
             new SchemaExport(NHibernateHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
             return RedirectToAction("Index");
+        }
+
+        private void DropTable(string tableName)
+        {
+            var query = DataSession.Connection.CreateCommand();
+            query.CommandText =
+                string.Format("IF EXISTS (SELECT 1 FROM sysobjects WHERE xtype='u' AND name='{0}') DROP TABLE {0}", tableName);
+            query.ExecuteNonQuery();
         }
     }
 }

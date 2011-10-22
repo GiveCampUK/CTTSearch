@@ -73,12 +73,14 @@
     <Compile Include="BoostrapTasks\BindControllersToServiceLocatorBootstrapperTask.cs" />
     <Compile Include="BoostrapTasks\ControllerInstantiationException.cs" />
     <Compile Include="BoostrapTasks\ServiceLocatorAwareControllerFactory.cs" />
+    <Compile Include="Commands\CategoryCommand.cs" />
     <Compile Include="Commands\ResourceCommand.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
     <Compile Include="BoostrapTasks\RegisterControllerFactoryWithMvcBootstrapperTask.cs" />
     <Compile Include="BoostrapTasks\RegisterRoutesBootstrapperTask.cs" />
+    <Compile Include="ModelHelper.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\Resource.cs" />

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SearchParty.Core.Models
+﻿namespace SearchParty.Core.Models
 {
     public class SearchResultLink: IEntity
     {
