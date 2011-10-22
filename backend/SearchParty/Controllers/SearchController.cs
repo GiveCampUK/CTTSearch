@@ -1,8 +1,8 @@
-﻿using System;
-using System.Web.Mvc;
-
-namespace SearchParty.Controllers
+﻿namespace SearchParty.Controllers
 {
+    using System;
+    using System.Web.Mvc;
+
     public class SearchController : Controller
     {
         //
@@ -21,7 +21,8 @@ namespace SearchParty.Controllers
                                                                     uri = "http://givecamp.org.uk",
                                                                     tags = "charity",
                                                                     shortDescription = "Generous Geeks",
-                                                                    longDescription = "Generous geeks give their weekend to code",
+                                                                    longDescription =
+                            "Generous geeks give their weekend to code",
                                                                     resultType = "uri"
                                                                 }
                                               }
