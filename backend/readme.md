@@ -9,19 +9,20 @@ Search Party API
  ---
 URI: ```/search/?q=```
 Methods: ```GET```
-Parameters: ```q``` = free text. tags identified by ^ prefix
+Parameters: ```q```
+ = free text. tags identified by ^ prefix
 Returns:
 Json array of results like
 
 ```json
 [{
-id = “”
-uri = “”
-title = “”
-tags = “”
-shortDescription = “”
-longDescription = “”
-resultType = “”
+id = ''
+uri = ''
+title = ''
+tags = ''
+shortDescription = ''
+longDescription = ''
+resultType = ''
 },
 ]
 ```
