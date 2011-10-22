@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8" />
     <title>
-      <%= yield_content :title %>
+      CTT Search Party - <% yield_content :title %>
     </title>
-    <%= yield_content :end_head %>
+    <link rel="stylesheet" href="/css/main.css" />
+    <% yield_content :end_head %>
   </head>
   <body>
-    <%= yield %>
+
+    <div id="main">
+
+      <div id="head">
+        <div id="logo">CTT Search Party</div>
+      </div>
+
+      <div id="content">
+        <%= yield %>
+      </div>
+
+    </div>
+
   </body>
-  <%= yield_content :end_body %>
+  <% yield_content :end_body %>
 </html>
