@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using SearchParty.Core.Models;
 using SearchParty.Infrastructure;
 
@@ -82,5 +84,26 @@ namespace SearchParty.Api.Controllers
             return Redirect(newUrl);
         }
 
+        public ActionResult ListTags()
+        {
+            // TODO: Refactor into command
+            var tagList = new List<string>();
+            var resourceTags = DataSession.CreateCriteria<Resource>()
+                .List<Resource>()
+                .ToList().Select(r => r.Tags);
+            foreach (var tag in resourceTags)
+            {
+                tagList.AddRange(tag.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
+            }
+            var categoryTags = DataSession.CreateCriteria<Category>()
+                .List<Category>()
+                .ToList().Select(c => c.Tags);
+            foreach (var tag in categoryTags)
+            {
+                tagList.AddRange(tag.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
+            }
+
+            return Json(new { tags = tagList.Distinct().OrderBy(s => s).Select(s => s.Trim()) }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

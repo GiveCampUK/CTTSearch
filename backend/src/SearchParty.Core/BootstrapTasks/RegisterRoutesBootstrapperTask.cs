@@ -20,6 +20,7 @@
             _routes.IgnoreRoute("favicon.ico");
 
             _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            _routes.MapRoute("resourceTags", "resource/listtags", new { controller = "Resource", action = "ListTags" });
             _routes.MapRoute("resourceIndex", "resource/index/{id}", new { controller = "Resource", action = "Index" });
             _routes.MapRoute("resourceUpdate", "resource/update/{id}", new { controller = "Resource", action = "Update" });
             _routes.MapRoute("categoryIndex", "category/index/{id}", new { controller = "Category", action = "Index" });
