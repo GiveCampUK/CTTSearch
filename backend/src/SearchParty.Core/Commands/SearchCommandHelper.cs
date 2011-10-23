@@ -25,10 +25,10 @@
 
                 var resource = new Resource
                                    {
-                                       Tags = proficiencyNovice + proficiencyIntermediate 
+                                       Tags = (proficiencyNovice + proficiencyIntermediate 
                                                 + smallOrgSize + mediumOrgSize + largeOrgSize 
                                                 + promoted
-                                                + "Email, Spam",
+                                                + "Email, Spam").WrapCommas(),
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
                                        ShortDescription =
