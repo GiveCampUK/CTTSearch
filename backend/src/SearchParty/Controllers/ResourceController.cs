@@ -1,6 +1,6 @@
-﻿    using System;
-    using SearchParty.Core.Models;
-    using SearchParty.Infrastructure;
+﻿using System;
+using SearchParty.Core.Models;
+using SearchParty.Infrastructure;
 
 namespace SearchParty.Api.Controllers
 {
@@ -13,7 +13,7 @@ namespace SearchParty.Api.Controllers
         private readonly ResourceCommand _resourceCommand;
         private readonly ResourceUpdateCommand _resourceUpdateCommand;
 
-        public ResourceController(ResourceCommand resourceCommand, 
+        public ResourceController(ResourceCommand resourceCommand,
                                   ResourceUpdateCommand resourceUpdateCommand)
         {
             _resourceCommand = resourceCommand;
@@ -36,22 +36,45 @@ namespace SearchParty.Api.Controllers
         [HttpGet]
         public ActionResult Update()
         {
-            return View(new Resource
+            try
             {
-                Id = 0,
-                LongDescription = "Long description",
-                ShortDescription = "Short description",
-                Uri = "http://givecamp.org.uk",
-                ResourceType = "Uri",
-                Tags = "charity,event",
-                Title = "GiveCamp UK"
-            });
+                return View(new Resource
+                {
+                    Id = 0,
+                    LongDescription = "Long description",
+                    ShortDescription = "Short description",
+                    Uri = "http://givecamp.org.uk",
+                    ResourceType = "Uri",
+                    Tags = "charity,event",
+                    Title = "GiveCamp UK"
+                });
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
+
         }
 
         [HttpPost]
         public ActionResult Update(Resource resource)
         {
-            return Json(_resourceUpdateCommand.PerformAction(resource, DataSession));
+            try
+            {
+                try
+                {
+                    _resourceUpdateCommand.PerformAction(resource, DataSession);
+                    return Redirect(Request.RawUrl);
+                }
+                catch
+                {
+                    return Redirect(Request.RawUrl);
+                }
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
         }
     }
 }

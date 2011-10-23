@@ -1,3 +1,6 @@
+using System;
+using SearchParty.Infrastructure;
+
 namespace SearchParty.Api.Controllers
 {
     using System.Web.Mvc;
@@ -20,29 +23,53 @@ namespace SearchParty.Api.Controllers
 
         public JsonResult Index(int? id)
         {
-            return Json(_categoryCommand.PerformAction(id, DataSession), JsonRequestBehavior.AllowGet);
+            try
+            {
+
+                return Json(_categoryCommand.PerformAction(id, DataSession), JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
         }
 
         [HttpPost]
         public JsonResult Update(Category category)
         {
-            return Json(_categoryUpdateCommand.PerformAction(category, DataSession));
+            try
+            {
+                return Json(_categoryUpdateCommand.PerformAction(category, DataSession));
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
+
         }
 
         [HttpGet]
         public ActionResult Update()
         {
-            // Only here for the test form - DELETE
-            return View(new Category
+            try
             {
-                Id = 0,
-                Title = "Long description",
-                Blurb = "Short description",
-                Tags = "test,data",
-                Parent = null,
-                SearchResultLinks = new List<SearchResultLink> { },
-                SubCategories = new List<Category> { }
-            });
+                // Only here for the test form - DELETE
+                return View(new Category
+                {
+                    Id = 0,
+                    Title = "Long description",
+                    Blurb = "Short description",
+                    Tags = "test,data",
+                    Parent = null,
+                    SearchResultLinks = new List<SearchResultLink> { },
+                    SubCategories = new List<Category> { }
+                });
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
+
         }
 
     }
