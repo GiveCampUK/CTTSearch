@@ -7,11 +7,18 @@ namespace SearchParty.Core.Commands
 {
     public class ResourceCommand : ResourceCommandBase
     {
-        public object PerformAction(int? id, ISession dataSession)
+        private readonly ISession _dbSession;
+
+        public ResourceCommand(ISession dbSession)
+        {
+            _dbSession = dbSession;
+        }
+
+        public object PerformAction(int? id)
         {
             if (id.HasValue)
             {
-                var resource = dataSession.CreateCriteria<Resource>()
+                var resource = _dbSession.CreateCriteria<Resource>()
                     .Add(Restrictions.IdEq(id)).UniqueResult<Resource>();
                 if (resource == null)
                 {
@@ -21,7 +28,7 @@ namespace SearchParty.Core.Commands
             }
             else
             {
-                var resource = dataSession.CreateCriteria<Resource>()
+                var resource = _dbSession.CreateCriteria<Resource>()
                     .List<Resource>().ToList();
                 if (!resource.Any())
                 {
