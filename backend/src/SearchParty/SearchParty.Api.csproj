@@ -135,7 +135,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.aspx" />
+    <None Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SearchParty.Core\SearchParty.Core.csproj">
