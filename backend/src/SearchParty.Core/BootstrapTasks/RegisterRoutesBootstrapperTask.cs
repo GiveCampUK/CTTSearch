@@ -21,6 +21,7 @@
 
             _routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             _routes.MapRoute("search", "Search", new {controller = "Search", action = "SearchEngine"});
+            _routes.MapRoute("searchQueries", "Search/Last/{count}", new {controller = "Search", action = "Last", count = 50});
             _routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
