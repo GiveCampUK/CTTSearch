@@ -42,7 +42,7 @@ namespace SearchParty.Core.Commands
                 existing.ShortDescription = resource.ShortDescription;
                 existing.Title = resource.Title;
                 existing.Uri = resource.Uri;
-                existing.Tags = existing.Tags.WrapCommas();
+                existing.Tags = resource.Tags.WrapCommas();
                 dataSession.SaveOrUpdate(existing);
                 tx.Commit();
             }
