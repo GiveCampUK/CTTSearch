@@ -11,7 +11,7 @@ namespace SearchParty.Core.Commands
                            id = resource.Id,
                            uri = resource.Uri,
                            title = resource.Title,
-                           tags = resource.Tags.Tagify(),
+                           tags = resource.Tags.UnwrapCommas(),
                            shortDescription = resource.ShortDescription,
                            longDescription = resource.LongDescription,
                            resourceType = resource.ResourceType

@@ -100,6 +100,7 @@
     <Compile Include="Commands\ResourceCommandBase.cs" />
     <Compile Include="Commands\ResourceUpdateCommand.cs" />
     <Compile Include="Commands\SearchCommandHelper.cs" />
+    <Compile Include="Commands\SearchQueryCommand.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Data\NHibernateSessionHelper.cs" />
     <Compile Include="Data\Overrides\ResourceOverride.cs" />
