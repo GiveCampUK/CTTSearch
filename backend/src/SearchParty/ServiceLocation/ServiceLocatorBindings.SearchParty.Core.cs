@@ -21,13 +21,13 @@ namespace SearchParty.Api.ServiceLocation
 
             public void BindAll()
             {
-                _module.Bind<IServiceLocator>().ToMethod(
-                    x => NinjectServiceLocator<SearchPartyNinjectModule>.GetInstance()); //singleton, no public ctor
+                _module.Bind<IServiceLocator>().ToMethod(x => NinjectServiceLocator<SearchPartyNinjectModule>.GetInstance()); 
                 _module.Bind<IRepository<Resource>>().To<ResourceRepository>();
                 _module.Bind<SearchCommand>().ToSelf();
+                _module.Bind<CategoryCommand>().ToSelf();
+                _module.Bind<CategoryUpdateCommand>().ToSelf();
             }
         }
     }
 }
-
 // ReSharper restore CheckNamespace

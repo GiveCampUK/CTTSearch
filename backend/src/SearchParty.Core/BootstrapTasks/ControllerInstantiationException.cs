@@ -11,6 +11,6 @@
             : base(string.Format(DefaultMessageFormat, controllerName)) {}
 
         public ControllerInstantiationException(string controllerName, Exception innerException)
-            : base(string.Format(DefaultMessageFormat, controllerName)) {}
+            : base(string.Format(DefaultMessageFormat, controllerName), innerException:innerException) {}
     }
 }

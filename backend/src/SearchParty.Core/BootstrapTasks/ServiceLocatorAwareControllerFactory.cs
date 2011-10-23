@@ -48,7 +48,7 @@
             }
             catch (Exception e)
             {
-                //e.Log();
+                Console.Write(e.Message);
                 throw new ControllerInstantiationException(controllerName, e);
             }
             //}
@@ -60,9 +60,9 @@
             {
                 _serviceLocator.Release(controller);
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                //e.Log();
+                System.Console.Write(e.Message);
                 ReleaseControllersAllocatedByDefaultFactory(controller);
             }
         }

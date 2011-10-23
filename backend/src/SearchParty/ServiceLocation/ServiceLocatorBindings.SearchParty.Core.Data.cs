@@ -4,7 +4,6 @@ namespace SearchParty.Api.ServiceLocation
     namespace SearchParty.Core.Data
     {
         using global::SearchParty.Core.Data;
-        using Moq;
         using NHibernate;
         using Ninject.Modules;
 
@@ -21,8 +20,6 @@ namespace SearchParty.Api.ServiceLocation
             {
                 _module.Bind<ISession>().ToMethod(x => NHibernateSessionHelper.OpenSession()).InRequestScope();
 
-                //if you need to get up and running locally for the time being
-                //_module.Bind<ISession>().ToMethod(x => new Mock<ISession>().Object).InRequestScope();
             }
         }
     }
