@@ -14,6 +14,7 @@ namespace SearchParty.Core.Commands
                 // Creating a new Category
                 try
                 {
+                    category.Tags = category.Tags.WrapCommas();
                     dataSession.SaveOrUpdate(category);
                     return GenerateCategory(category);
                 }
@@ -38,7 +39,7 @@ namespace SearchParty.Core.Commands
                     return new { status = "failed", message = "Category to be updated does not exist" };
                 }
                 existingCategory.Title = category.Title;
-                existingCategory.Tags = category.Tags;
+                existingCategory.Tags = category.Tags.WrapCommas();
                 existingCategory.Blurb = category.Blurb;
                 existingCategory.Parent = category.Parent;
                 existingCategory.SearchResultLinks = category.SearchResultLinks;
