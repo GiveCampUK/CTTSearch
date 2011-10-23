@@ -64,11 +64,11 @@ namespace SearchParty.Api.Controllers
                 try
                 {
                     _resourceUpdateCommand.PerformAction(resource, DataSession);
-                    return Redirect(Request.RawUrl);
+                    return Redirect(Request.UrlReferrer.ToString());
                 }
                 catch
                 {
-                    return Redirect(Request.RawUrl);
+                    return Redirect(Request.UrlReferrer.ToString());
                 }
             }
             catch (Exception e)
