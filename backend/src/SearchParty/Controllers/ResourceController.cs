@@ -59,22 +59,24 @@ namespace SearchParty.Api.Controllers
         [HttpPost]
         public ActionResult Update(Resource resource)
         {
+            var urlReferrer = Request.UrlReferrer;
+            string newUrl = Request.UrlReferrer.ToString();
+            bool success = true;
             try
             {
-                try
-                {
-                    _resourceUpdateCommand.PerformAction(resource, DataSession);
-                    return Redirect(Request.UrlReferrer.ToString());
-                }
-                catch
-                {
-                    return Redirect(Request.UrlReferrer.ToString());
-                }
+                _resourceUpdateCommand.PerformAction(resource, DataSession);
             }
-            catch (Exception e)
+            catch
             {
-                return new JsonErrorResult(e);
+                success = false;
             }
+            if (newUrl.Contains("success"))
+            {
+                newUrl = newUrl.Replace("&success=true", "");
+                newUrl = newUrl.Replace("&success=false", "");
+            }
+            newUrl += "&success=" + success.ToString().ToLower();
+            return Redirect(newUrl);
         }
     }
 }

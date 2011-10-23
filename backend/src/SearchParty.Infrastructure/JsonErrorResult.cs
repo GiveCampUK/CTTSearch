@@ -7,12 +7,19 @@ namespace SearchParty.Infrastructure
     {
         public JsonErrorResult(Exception e)
         {
-            Data = new { error = e.Message };
+            SetProperties(e.Message);
         }
 
         public JsonErrorResult(string message)
         {
-            Data = new {error = message};
+            SetProperties(message);
         }
+
+        private void SetProperties(string message)
+        {
+            Data = new {error = message};
+            JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+        }
+
     }
 }
