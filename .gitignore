@@ -2,7 +2,7 @@
 [Oo]bj
 [bB]in
 *.suo
-Publish.xml
+Publish*.xml
 
 # ReSharper
 _ReSharper.*

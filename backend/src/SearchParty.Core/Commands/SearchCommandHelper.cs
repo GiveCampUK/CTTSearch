@@ -28,7 +28,7 @@
                                        Tags = (proficiencyNovice + proficiencyIntermediate 
                                                 + smallOrgSize + mediumOrgSize + largeOrgSize 
                                                 + promoted
-                                                + "Email, Spam").WrapCommas(),
+                                                + "Email,Spam").WrapCommas(),
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
                                        ShortDescription =
@@ -50,7 +50,7 @@
                                             promoted +
                                             "Email, Contact, AddressBook").WrapCommas(),
                                    Title = "Delete an email contact or an address book",
-                                   Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/6/juYn0TUrW90",
+                                   Uri = "http://www.youtube.com/embed/juYn0TUrW90",
                                    ShortDescription =
                                        "This is a training video to help you delete a contact or addressbook in CTT Mail.",
                                    LongDescription =
@@ -68,7 +68,7 @@
                                    Tags = (proficiencyNovice +
                                                 smallOrgSize + "Email, Font").WrapCommas(),
                                    Title = "Changing Font Colours in Email",
-                                   Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/10/ZQQloZ3rk5g",
+                                   Uri = "http://www.youtube.com/embed/ZQQloZ3rk5g",
                                    ShortDescription =
                                        "This is a training video to help you change the font colours used in CTT Mail.",
                                    LongDescription =
@@ -143,7 +143,7 @@
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
                                             "CaseStudy, DonatedTechnology").WrapCommas(),
                                    Title = "Sight Advice South Lakes - CTT case study",
-                                   Uri = "http://www.youtube.com/watch?v=rNnKJ6naWgQ&feature=player_embedded&noredirect=1",
+                                   Uri = "http://www.youtube.com/embed/rNnKJ6naWgQ",
                                    ShortDescription =
                                        "The Sight Advice South Lakes charity has set up a technology suite, using donated software from CTT and Microsoft, aimed at providing new opportunities for their clients.",
                                    LongDescription =
