@@ -34,13 +34,13 @@ namespace SearchParty.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult Update()
+        public ActionResult Update(int id = 0)
         {
             try
             {
                 return View(new Resource
                 {
-                    Id = 0,
+                    Id = id,
                     LongDescription = "Long description",
                     ShortDescription = "Short description",
                     Uri = "http://givecamp.org.uk",
@@ -74,9 +74,13 @@ namespace SearchParty.Api.Controllers
             {
                 newUrl = newUrl.Replace("&success=true", "");
                 newUrl = newUrl.Replace("&success=false", "");
+                newUrl = newUrl.Replace("?success=true", "");
+                newUrl = newUrl.Replace("?success=false", "");
             }
-            newUrl += "&success=" + success.ToString().ToLower();
+            var separator = (newUrl.Contains("?") ? "&" : "?");
+            newUrl += string.Format("{0}success={1}", separator, success.ToString().ToLower());
             return Redirect(newUrl);
         }
+
     }
 }

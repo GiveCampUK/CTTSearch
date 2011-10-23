@@ -9,12 +9,12 @@
 <h2>Test Form for adding resource. Delete when no longer needed</h2>
 
 <form action="@Url.Action("Update", "Resource")" method="POST">
-@Html.HiddenFor(r => r.Id)
-@Html.HiddenFor(r => r.Tags)
-@Html.HiddenFor(r => r.Title)
-@Html.HiddenFor(r => r.ShortDescription)
-@Html.HiddenFor(r => r.Uri)
-@Html.HiddenFor(r => r.ResourceType)
-@Html.HiddenFor(r => r.LongDescription)
+@Html.TextBoxFor(r => r.Id)
+@Html.TextBoxFor(r => r.Tags)
+@Html.TextBoxFor(r => r.Title)
+@Html.TextBoxFor(r => r.ShortDescription)
+@Html.TextBoxFor(r => r.Uri)
+@Html.TextBoxFor(r => r.ResourceType)
+@Html.TextBoxFor(r => r.LongDescription)
 <input type="submit" />
 </form>
