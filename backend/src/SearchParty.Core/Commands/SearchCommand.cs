@@ -57,7 +57,6 @@ namespace SearchParty.Core.Commands
                                   };
                 _dataSession.SaveOrUpdate(searchQuery); tx.Commit();
             }
-
         }
 
         private static object CreateResources(IEnumerable<Resource> results)
