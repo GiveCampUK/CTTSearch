@@ -63,7 +63,7 @@ namespace SearchParty.Core.Commands
                                                                            Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + proficiencyIntermediate +
                                                                                     promoted + 
-                                                                                    "GettingStarted, ITEquipment").WrapCommas()
+                                                                                    "GettingStarted,ITEquipment").WrapCommas()
                                                                        },
                                                                    new SearchResultLink
                                                                        {
@@ -71,7 +71,7 @@ namespace SearchParty.Core.Commands
                                                                            Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                     promoted + 
-                                                                                    "GettingStarted, Consultants").WrapCommas()
+                                                                                    "GettingStarted,Consultants").WrapCommas()
                                                                        },
                                                                    new SearchResultLink
                                                                        {
@@ -79,7 +79,7 @@ namespace SearchParty.Core.Commands
                                                                            Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + 
                                                                                     promoted + 
-                                                                                    "GettingStarted, Roles, Responsibilities").WrapCommas()
+                                                                                    "GettingStarted,Roles,Responsibilities").WrapCommas()
                                                                        }
                                                                },
                                        SubCategories = new List<Category>
@@ -91,7 +91,7 @@ namespace SearchParty.Core.Commands
                                                                        Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + 
                                                                                     promoted + 
-                                                                                    "GettingStarted, Strategy").WrapCommas(),
+                                                                                    "GettingStarted,Strategy").WrapCommas(),
                                                                        SearchResultLinks = new List<SearchResultLink> {
                                                                                     new SearchResultLink 
                                                                                     {
@@ -99,7 +99,7 @@ namespace SearchParty.Core.Commands
                                                                                         Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, Strategy, Infrastructure, Planning").WrapCommas()
+                                                                                                "GettingStarted,Strategy,Infrastructure,Planning").WrapCommas()
                                                                                     },
                                                                                     new SearchResultLink 
                                                                                     {
@@ -107,7 +107,7 @@ namespace SearchParty.Core.Commands
                                                                                         Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, CaseStudies").WrapCommas()
+                                                                                                "GettingStarted,CaseStudies").WrapCommas()
                                                                                     },
                                                                                     new SearchResultLink 
                                                                                     {
@@ -115,7 +115,7 @@ namespace SearchParty.Core.Commands
                                                                                         Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, ProjectPlanning").WrapCommas()
+                                                                                                "GettingStarted,ProjectPlanning").WrapCommas()
                                                                                     }
                                                                        },
                                                                        SubCategories = new List<Category> {}
@@ -139,15 +139,15 @@ namespace SearchParty.Core.Commands
                                                new SearchResultLink {Title = "Web Online Payments", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + proficiencyIntermediate +
                                                                                                             promoted + 
-                                                                                                            "Payments, Online"},
+                                                                                                            "Payments,Online"},
                                                new SearchResultLink {Title = "Chip & Pin Terminals", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                                             promoted + 
-                                                                                                            "Payments, ChipAndPin"},
+                                                                                                            "Payments,ChipAndPin"},
                                                new SearchResultLink {Title = "Security of PCI-DSS Payment Card Industry Data", Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                                             promoted + 
-                                                                                                            "Payments, PCI-DSS, Security"}
+                                                                                                            "Payments,PCI-DSS,Security"}
                                            },
                                    SubCategories =
                                        new List<Category>
@@ -162,17 +162,17 @@ namespace SearchParty.Core.Commands
                                                                                                             Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + 
                                                                                                             promoted + 
-                                                                                                            "Payments, DirectDebit, Online"},
+                                                                                                            "Payments,DirectDebit,Online"},
                                                                                                         new SearchResultLink {Title = "Direct Debit Bureau Services", 
                                                                                                             Tags = mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                                             promoted + 
-                                                                                                            "Payments, DirectDebit, Bureau"},
+                                                                                                            "Payments,DirectDebit,Bureau"},
                                                                                                         new SearchResultLink {Title = "Direct Debit Facilities Management", 
                                                                                                             Tags = mediumOrgSize + largeOrgSize +
                                                                                                             proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                                             promoted + 
-                                                                                                            "Payments, DirectDebit, Facilities"}
+                                                                                                            "Payments,DirectDebit,Facilities"}
                                                        },
                                                        SubCategories = new List<Category> {}
                                                    }
@@ -200,7 +200,7 @@ namespace SearchParty.Core.Commands
                                                        Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                proficiencyNovice + proficiencyIntermediate +
                                                                promoted + 
-                                                               "Email, ISP"
+                                                               "Email,ISP"
                                                    },
                                                    new SearchResultLink
                                                    {
@@ -208,7 +208,7 @@ namespace SearchParty.Core.Commands
                                                        Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                promoted + 
-                                                               "Email, Cloud, Google, CaseStudy"
+                                                               "Email,Cloud,Google,CaseStudy"
                                                    },
                                                    new SearchResultLink
                                                    {
@@ -216,7 +216,7 @@ namespace SearchParty.Core.Commands
                                                        Tags =  smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                proficiencyNovice + proficiencyIntermediate +
                                                                promoted + 
-                                                               "Email, Marketing"
+                                                               "Email,Marketing"
                                                    }
                                            },
                                    SubCategories = new List<Category>
@@ -226,7 +226,7 @@ namespace SearchParty.Core.Commands
                                                                    Title = "Using Broadband",
                                                                    Blurb =
                                                                        "As greater numbers of people connect to broadband those left without a service are increasingly struggling to keep up.  In the voluntary and community sector large numbers of people work from home and a slow internet connection can seriously hamper productivity.",
-                                                                   Tags = "Email, Broadband",
+                                                                   Tags = "Email,Broadband",
                                                                    SearchResultLinks = new List<SearchResultLink> {},
                                                                    SubCategories = new List<Category> {}
                                                                },
@@ -235,7 +235,7 @@ namespace SearchParty.Core.Commands
                                                                    Title = "Building And Designing Email Newsletters",
                                                                    Blurb =
                                                                        "Different Email Clients (Outlook, Hotmail, Yahoo!, AOL, Gmail) display email slightly differently, and many of them are dependant on the web browser the user has chosen. So how do we build and design emails to fit across all systems?",
-                                                                   Tags = "Email, Newsletters",
+                                                                   Tags = "Email,Newsletters",
                                                                    SearchResultLinks = new List<SearchResultLink> {},
                                                                    SubCategories = new List<Category> {}
                                                                }
