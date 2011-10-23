@@ -57,7 +57,7 @@
                                                                    id = resource.Id,
                                                                    title = resource.Title,
                                                                    uri = resource.Uri,
-                                                                   tags = resource.Tags.Tagify(),
+                                                                   tags = resource.Tags.UnwrapCommas(),
                                                                    shortDescription = resource.ShortDescription,
                                                                    longDescription = resource.LongDescription,
                                                                    resourceType = "uri"
