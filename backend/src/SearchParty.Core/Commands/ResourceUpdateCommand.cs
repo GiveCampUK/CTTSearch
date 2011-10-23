@@ -13,7 +13,7 @@ namespace SearchParty.Core.Commands
             {
                 try
                 {
-                    FixTags(resource);
+                    resource.Tags = resource.Tags.WrapCommas();
                     dataSession.SaveOrUpdate(resource);
                     return GenerateResource(resource);
                 }
@@ -24,18 +24,6 @@ namespace SearchParty.Core.Commands
             }
 
             return UpdateExistingResource(resource, dataSession);
-        }
-
-        private static void FixTags(Resource resource)
-        {
-            if (!resource.Tags.StartsWith(","))
-            {
-                resource.Tags = "," + resource.Tags;
-            }
-            if (!resource.Tags.EndsWith(","))
-            {
-                resource.Tags = resource.Tags + ",";
-            }
         }
 
         private static object UpdateExistingResource(Resource resource, ISession dataSession)
@@ -54,7 +42,7 @@ namespace SearchParty.Core.Commands
                 existing.ShortDescription = resource.ShortDescription;
                 existing.Title = resource.Title;
                 existing.Uri = resource.Uri;
-                FixTags(existing);
+                existing.Tags = existing.Tags.WrapCommas();
                 dataSession.SaveOrUpdate(existing);
                 tx.Commit();
             }

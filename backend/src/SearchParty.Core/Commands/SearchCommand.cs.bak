@@ -40,7 +40,28 @@ namespace SearchParty.Core.Commands
 
             if (results.Any())
             {
+<<<<<<< HEAD
+                return new
+                           {
+                               results = results
+                                   .Select(
+                                       resource => new[]
+                                                       {
+                                                           new
+                                                               {
+                                                                   id = resource.Id,
+                                                                   title = resource.Title,
+                                                                   uri = resource.Uri,
+                                                                   tags = resource.Tags.UnwrapCommas(),
+                                                                   shortDescription = resource.ShortDescription,
+                                                                   longDescription = resource.LongDescription,
+                                                                   resourceType = "uri"
+                                                               }
+                                                       })
+                           };
+=======
                 return CreateResources(results);
+>>>>>>> 5aa37667df7c2c25c939eed77e9fc8a7d6afc4dc
             }
 
             return new { results = new { } };
@@ -73,7 +94,7 @@ namespace SearchParty.Core.Commands
                                                                id = resource.Id,
                                                                title = resource.Title,
                                                                uri = resource.Uri,
-                                                               tags = resource.Tags.WrapCommas(),
+                                                               tags = resource.Tags.Tagify(),
                                                                shortDescription = resource.ShortDescription,
                                                                longDescription = resource.LongDescription,
                                                                resourceType = "uri"

@@ -15,7 +15,7 @@ namespace SearchParty.Core.Commands
                 id = result.Id,
                 title = result.Title,
                 blurb = result.Blurb,
-                tags = result.Tags.Tagify(),
+                tags = result.Tags.UnwrapCommas(),
                 parentId = result.Parent == null ? 0 : result.Parent.Id,
                 searchResultLinks = result.SearchResultLinks == null ? null :
                     result.SearchResultLinks
@@ -23,7 +23,7 @@ namespace SearchParty.Core.Commands
                     {
                         id = link.Id,
                         title = link.Title,
-                        tags = link.Tags.Tagify()
+                        tags = link.Tags.UnwrapCommas()
                     }),
                 subCategories = result.SubCategories == null ? null : recurseOnce
                                     ? (object)
