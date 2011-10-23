@@ -11,13 +11,8 @@ namespace SearchParty.Api.Controllers
         private readonly ResourceCommand _resourceCommand;
         private readonly ResourceUpdateCommand _resourceUpdateCommand;
 
-        public ResourceController()
-            : this(new ResourceCommand(), new ResourceUpdateCommand())
-        {
-
-        }
-
-        private ResourceController(ResourceCommand resourceCommand, ResourceUpdateCommand resourceUpdateCommand)
+        public ResourceController(ResourceCommand resourceCommand, 
+                                  ResourceUpdateCommand resourceUpdateCommand)
         {
             _resourceCommand = resourceCommand;
             _resourceUpdateCommand = resourceUpdateCommand;
@@ -25,7 +20,7 @@ namespace SearchParty.Api.Controllers
 
         public JsonResult Index(int? id)
         {
-            return Json(_resourceCommand.PerformAction(id, DataSession),
+            return Json(_resourceCommand.PerformAction(id),
                             JsonRequestBehavior.AllowGet);
         }
 

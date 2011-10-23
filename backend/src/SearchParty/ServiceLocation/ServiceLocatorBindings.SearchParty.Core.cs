@@ -26,6 +26,8 @@ namespace SearchParty.Api.ServiceLocation
                 _module.Bind<SearchCommand>().ToSelf();
                 _module.Bind<CategoryCommand>().ToSelf();
                 _module.Bind<CategoryUpdateCommand>().ToSelf();
+                _module.Bind<ResourceCommand>().ToSelf();
+                _module.Bind<ResourceUpdateCommand>().ToSelf();
             }
         }
     }
