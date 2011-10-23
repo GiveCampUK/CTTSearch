@@ -28,7 +28,7 @@
                                        Tags = (proficiencyNovice + proficiencyIntermediate 
                                                 + smallOrgSize + mediumOrgSize + largeOrgSize 
                                                 + promoted
-                                                + "Email, Spam").WrapCommas(),
+                                                + "Email,Spam").WrapCommas(),
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
                                        ShortDescription =
