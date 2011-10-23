@@ -22,7 +22,7 @@ namespace SearchParty.Core.Commands
             return results.Select(s => new
                                            {
                                                query = s.QueryString,
-                                               timeStamp = s.TimeStamp,
+                                               timeStamp = s.TimeStamp.ToString("G"),
                                                count = s.ResultsCount
                                            });
         }
