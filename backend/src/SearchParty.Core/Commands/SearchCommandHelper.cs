@@ -1,11 +1,19 @@
 ﻿namespace SearchParty.Core.Commands
 {
     using System.Linq;
-    using SearchParty.Core.Models;
+    using Models;
     using NHibernate;
 
     public static class SearchCommandHelper
     {
+        public const string SmallOrgSize = "org_size:1to5,";
+        public const string MediumOrgSize = "org_size:6to25,";
+        public const string LargeOrgSize = "org_size:26plus,";
+        public const string ProficiencyNovice = "user_prof:novice,";
+        public const string ProficiencyIntermediate = "user_prof:intermediate,";
+        public const string ProficiencyExpert = "user_prof:expert,";
+        public const string Promoted = "promoted,";
+
         public static void CreateDummyDataIfEmpty(ISession dataSession)
         {
             if (dataSession.CreateCriteria<Resource>().List<Resource>().Any()) return;
@@ -13,21 +21,15 @@
             {
                 //var tag1 = new Tag { Name = "Windows7" };
                 //DataSession.Save(tag1);
-                const string smallOrgSize = "org_size:1to5,";
-                const string mediumOrgSize = "org_size:6to25,";
-                const string largeOrgSize = "org_size:26plus,";
-                const string proficiencyNovice = "user_prof:novice,";
-                const string proficiencyIntermediate = "user_prof:intermediate,";
-                const string proficiencyExpert = "user_prof:expert,";
-                const string promoted = "promoted,";
+
 
                 #region Resource Spam - Solutions Anyone?
 
                 var resource = new Resource
                                    {
-                                       Tags = (proficiencyNovice + proficiencyIntermediate 
-                                                + smallOrgSize + mediumOrgSize + largeOrgSize 
-                                                + promoted
+                                       Tags = (ProficiencyNovice + ProficiencyIntermediate
+                                                + SmallOrgSize + MediumOrgSize + LargeOrgSize
+                                                + Promoted
                                                 + "Email,Spam").WrapCommas(),
                                        Title = "Spam - solutions anyone?",
                                        Uri = "http://www.ictknowledgebase.org.uk/spamsolutions",
@@ -45,9 +47,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice + 
-                                            mediumOrgSize + largeOrgSize + 
-                                            promoted +
+                                   Tags = (ProficiencyNovice +
+                                            MediumOrgSize + LargeOrgSize +
+                                            Promoted +
                                             "Email,Contact,AddressBook").WrapCommas(),
                                    Title = "Delete an email contact or an address book",
                                    Uri = "http://www.youtube.com/embed/juYn0TUrW90",
@@ -65,8 +67,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice +
-                                                smallOrgSize + "Email,Font").WrapCommas(),
+                                   Tags = (ProficiencyNovice +
+                                                SmallOrgSize + "Email,Font").WrapCommas(),
                                    Title = "Changing Font Colours in Email",
                                    Uri = "http://www.youtube.com/embed/ZQQloZ3rk5g",
                                    ShortDescription =
@@ -83,9 +85,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyExpert + 
-                                                largeOrgSize + 
-                                                promoted +
+                                   Tags = (ProficiencyExpert +
+                                                LargeOrgSize +
+                                                Promoted +
                                                 "Payments,PCI-DSS").WrapCommas(),
                                    Title = "PCI-DSS regulations – D day for charities",
                                    Uri = "http://www.ctt.org/sites/default/files/PCI_Whitepaper.pdf",
@@ -103,8 +105,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyIntermediate + proficiencyExpert +
-                                                mediumOrgSize + largeOrgSize + "Payments,DirectDebit").WrapCommas(),
+                                   Tags = (ProficiencyIntermediate + ProficiencyExpert +
+                                                MediumOrgSize + LargeOrgSize + "Payments,DirectDebit").WrapCommas(),
                                    Title = "Paperless Direct Debit (PDD) User Guide",
                                    Uri = "http://www.ctt.org/sites/default/files/pdd_userguide290711.pdf",
                                    ShortDescription =
@@ -121,8 +123,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyIntermediate + proficiencyExpert +
-                                            mediumOrgSize + "Payments,Pricing").WrapCommas(),
+                                   Tags = (ProficiencyIntermediate + ProficiencyExpert +
+                                            MediumOrgSize + "Payments,Pricing").WrapCommas(),
                                    Title = "CTPayments Pricing",
                                    Uri = "http://www.ctt.org/ctpayments/pricing",
                                    ShortDescription =
@@ -139,8 +141,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                   Tags = (ProficiencyNovice + ProficiencyIntermediate + ProficiencyExpert +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
                                             "CaseStudy,DonatedTechnology").WrapCommas(),
                                    Title = "Sight Advice South Lakes - CTT case study",
                                    Uri = "http://www.youtube.com/embed/rNnKJ6naWgQ",
@@ -158,8 +160,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice +  
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                   Tags = (ProficiencyNovice +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
                                             "GettingStarted,Strategy").WrapCommas(),
                                    Title = "Why Be Concerned About Managing IT",
                                    Uri = "http://www.ictknowledgebase.org.uk/whyworryaboutictmanagement",
@@ -175,8 +177,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice +  
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                   Tags = (ProficiencyNovice +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
                                             "GettingStarted,Virus,Malware,Spyware").WrapCommas(),
                                    Title = "Viruses, Spyware & Malware",
                                    Uri = "http://www.ictknowledgebase.org.uk/virusesspywaremalware",
@@ -192,9 +194,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice + proficiencyIntermediate +
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            promoted +
+                                   Tags = (ProficiencyNovice + ProficiencyIntermediate +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
+                                            Promoted +
                                             "Virus,Malware,Spyware").WrapCommas(),
                                    Title = "Infection Control",
                                    Uri = "http://www.ictknowledgebase.org.uk/infectioncontrol",
@@ -210,8 +212,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
+                                   Tags = (ProficiencyNovice + ProficiencyIntermediate + ProficiencyExpert +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
                                             "Virus,Malware,Spyware").WrapCommas(),
                                    Title = "Virus Hoax Alert",
                                    Uri = "http://www.ictknowledgebase.org.uk/virushoax",
@@ -227,9 +229,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = (proficiencyNovice +  
-                                            smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            promoted +
+                                   Tags = (ProficiencyNovice +
+                                            SmallOrgSize + MediumOrgSize + LargeOrgSize +
+                                            Promoted +
                                             "GettingStarted,Virus,Malware,Spyware").WrapCommas(),
                                    Title = "Choosing An Antivirus Solution For Your Organisation",
                                    Uri = "http://www.ictknowledgebase.org.uk/choosingantivirus",
@@ -239,15 +241,15 @@
                                };
                 dataSession.Save(resource);
 
-                #endregion  
-              
+                #endregion
+
                 #region A Day In The Life Of A PDA User
 
                 resource = new Resource
                 {
-                    Tags =  (proficiencyIntermediate + proficiencyExpert +
-                             largeOrgSize +
-                             promoted +
+                    Tags = (ProficiencyIntermediate + ProficiencyExpert +
+                             LargeOrgSize +
+                             Promoted +
                              "Mobile,PDA").WrapCommas(),
                     Title = "A Day In The Life Of A PDA User",
                     Uri = "http://www.ictknowledgebase.org.uk/pdadiary",
@@ -257,7 +259,7 @@
                 };
                 dataSession.Save(resource);
 
-                #endregion  
+                #endregion
 
                 tx.Commit();
             }

@@ -84,7 +84,7 @@ namespace SearchParty.Api.Controllers
             return Redirect(newUrl);
         }
 
-        public ActionResult ListTags()
+        public ActionResult ListTags(bool all = true)
         {
             // TODO: Refactor into command
             var tagList = new List<string>();
@@ -103,7 +103,34 @@ namespace SearchParty.Api.Controllers
                 tagList.AddRange(tag.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries));
             }
 
-            return Json(new { tags = tagList.Distinct().OrderBy(s => s).Select(s => s.Trim()) }, JsonRequestBehavior.AllowGet);
+            tagList = tagList.Distinct().ToList();
+
+            if (!all)
+            {
+                foreach (var specialTag in SpecialTags)
+                {
+                    var unwrapCommas = specialTag.UnwrapCommas();
+                    tagList.Remove(unwrapCommas);
+                }
+            }
+            return Json(new { tags = tagList.OrderBy(s => s).Select(s => s.Trim()) }, JsonRequestBehavior.AllowGet);
+        }
+
+        public static List<string> SpecialTags
+        {
+            get
+            {
+                return new List<string>
+                      {
+                            SearchCommandHelper.SmallOrgSize,
+                            SearchCommandHelper.MediumOrgSize,
+                            SearchCommandHelper.LargeOrgSize,
+                            SearchCommandHelper.ProficiencyNovice,
+                            SearchCommandHelper.ProficiencyIntermediate,
+                            SearchCommandHelper.ProficiencyExpert,
+                            SearchCommandHelper.Promoted,
+                      };
+            }
         }
     }
 }
