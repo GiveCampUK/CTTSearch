@@ -83,7 +83,7 @@ namespace SearchParty.Core.Commands
                                                                        }
                                                                },
                                        SubCategories = new List<Category>
-                                                           {
+                                                           {/*
                                                                new Category
                                                                    {
                                                                        Title = "Technology Planning and Strategy",
@@ -120,7 +120,7 @@ namespace SearchParty.Core.Commands
                                                                        },
                                                                        SubCategories = new List<Category> {}
                                                                    }
-                                                           }
+                                                           */}
                                    };
                 SaveChildObjects(dataSession, category);
 
@@ -151,7 +151,7 @@ namespace SearchParty.Core.Commands
                                            },
                                    SubCategories =
                                        new List<Category>
-                                           {
+                                           {/*
                                                new Category
                                                    {
                                                        Title = "Direct Debit Services",
@@ -176,7 +176,7 @@ namespace SearchParty.Core.Commands
                                                        },
                                                        SubCategories = new List<Category> {}
                                                    }
-                                           }
+                                           */}
                                };
                 SaveChildObjects(dataSession, category);
 
@@ -220,7 +220,7 @@ namespace SearchParty.Core.Commands
                                                    }
                                            },
                                    SubCategories = new List<Category>
-                                                       {
+                                                       {/*
                                                            new Category
                                                                {
                                                                    Title = "Using Broadband",
@@ -239,7 +239,7 @@ namespace SearchParty.Core.Commands
                                                                    SearchResultLinks = new List<SearchResultLink> {},
                                                                    SubCategories = new List<Category> {}
                                                                }
-                                                       }
+                                                       */}
                                };
                 SaveChildObjects(dataSession, category);
 
@@ -254,9 +254,9 @@ namespace SearchParty.Core.Commands
             category.SearchResultLinks.ForEach(r => dataSession.Save(r));
             category.SubCategories.ForEach(r =>
                                                {
-                                                   dataSession.Save(r);
                                                    r.SubCategories.ForEach(s => dataSession.Save(s));
                                                    r.SearchResultLinks.ForEach(s => dataSession.Save(s));
+                                                   dataSession.Save(r);
                                                });
             dataSession.Save(category);
         }
