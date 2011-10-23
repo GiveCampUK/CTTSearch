@@ -57,7 +57,6 @@ namespace SearchParty.Core.Commands
                                   };
                 _dataSession.SaveOrUpdate(searchQuery); tx.Commit();
             }
-
         }
 
         private static object CreateResources(IEnumerable<Resource> results)
@@ -73,10 +72,10 @@ namespace SearchParty.Core.Commands
                                                                id = resource.Id,
                                                                title = resource.Title,
                                                                uri = resource.Uri,
-                                                               tags = resource.Tags.WrapCommas(),
+                                                               tags = resource.Tags.UnwrapCommas(),
                                                                shortDescription = resource.ShortDescription,
                                                                longDescription = resource.LongDescription,
-                                                               resourceType = "uri"
+                                                               resourceType = resource.ResourceType
                                                            }
                                                    })
                        };

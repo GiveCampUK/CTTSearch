@@ -1,4 +1,6 @@
-﻿    using SearchParty.Core.Models;
+﻿    using System;
+    using SearchParty.Core.Models;
+    using SearchParty.Infrastructure;
 
 namespace SearchParty.Api.Controllers
 {
@@ -11,13 +13,8 @@ namespace SearchParty.Api.Controllers
         private readonly ResourceCommand _resourceCommand;
         private readonly ResourceUpdateCommand _resourceUpdateCommand;
 
-        public ResourceController()
-            : this(new ResourceCommand(), new ResourceUpdateCommand())
-        {
-
-        }
-
-        private ResourceController(ResourceCommand resourceCommand, ResourceUpdateCommand resourceUpdateCommand)
+        public ResourceController(ResourceCommand resourceCommand, 
+                                  ResourceUpdateCommand resourceUpdateCommand)
         {
             _resourceCommand = resourceCommand;
             _resourceUpdateCommand = resourceUpdateCommand;
@@ -25,8 +22,15 @@ namespace SearchParty.Api.Controllers
 
         public JsonResult Index(int? id)
         {
-            return Json(_resourceCommand.PerformAction(id, DataSession),
-                            JsonRequestBehavior.AllowGet);
+            try
+            {
+                return Json(_resourceCommand.PerformAction(id),
+                                JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception e)
+            {
+                return new JsonErrorResult(e);
+            }
         }
 
         [HttpGet]
