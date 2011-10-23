@@ -75,7 +75,7 @@ namespace SearchParty.Core.Commands
                                                                tags = resource.Tags.UnwrapCommas(),
                                                                shortDescription = resource.ShortDescription,
                                                                longDescription = resource.LongDescription,
-                                                               resourceType = "uri"
+                                                               resourceType = resource.ResourceType
                                                            }
                                                    })
                        };
