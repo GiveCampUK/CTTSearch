@@ -13,6 +13,15 @@ namespace SearchParty.Core.Models
         public virtual int Id { get; set; }
     }
 
+    public class ResourceBinder : Resource
+    {
+        // TODO: Implement removing special tags from Resource.Tags when returning to Update get
+        // TODO: Implement adding special tags to Resource.Tags when posting to Update
+        public virtual string OrdinaryTags { get; set; }
+        public virtual string OrganisationSizeTag { get; set; } 
+        public virtual string UserProficiencyTag { get; set; } 
+    }
+
     public class SearchQuery : IEntity
     {
         public SearchQuery()
