@@ -45,10 +45,10 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice + 
+                                   Tags = (proficiencyNovice + 
                                             mediumOrgSize + largeOrgSize + 
                                             promoted +
-                                            "Email, Contact, AddressBook",
+                                            "Email, Contact, AddressBook").WrapCommas(),
                                    Title = "Delete an email contact or an address book",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/6/juYn0TUrW90",
                                    ShortDescription =
@@ -65,8 +65,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice + 
-                                                smallOrgSize + "Email, Font",
+                                   Tags = (proficiencyNovice +
+                                                smallOrgSize + "Email, Font").WrapCommas(),
                                    Title = "Changing Font Colours in Email",
                                    Uri = "http://www.youtube.com/user/CTTCTX?blend=2&ob=5#p/c/10/ZQQloZ3rk5g",
                                    ShortDescription =
@@ -83,10 +83,10 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyExpert + 
+                                   Tags = (proficiencyExpert + 
                                                 largeOrgSize + 
-                                                promoted + 
-                                                "Payments, PCI-DSS",
+                                                promoted +
+                                                "Payments, PCI-DSS").WrapCommas(),
                                    Title = "PCI-DSS regulations – D day for charities",
                                    Uri = "http://www.ctt.org/sites/default/files/PCI_Whitepaper.pdf",
                                    ShortDescription =
@@ -103,8 +103,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyIntermediate + proficiencyExpert + 
-                                                mediumOrgSize + largeOrgSize + "Payments, DirectDebit",
+                                   Tags = (proficiencyIntermediate + proficiencyExpert +
+                                                mediumOrgSize + largeOrgSize + "Payments, DirectDebit").WrapCommas(),
                                    Title = "Paperless Direct Debit (PDD) User Guide",
                                    Uri = "http://www.ctt.org/sites/default/files/pdd_userguide290711.pdf",
                                    ShortDescription =
@@ -121,8 +121,8 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyIntermediate + proficiencyExpert + 
-                                            mediumOrgSize + "Payments, Pricing",
+                                   Tags = (proficiencyIntermediate + proficiencyExpert +
+                                            mediumOrgSize + "Payments, Pricing").WrapCommas(),
                                    Title = "CTPayments Pricing",
                                    Uri = "http://www.ctt.org/ctpayments/pricing",
                                    ShortDescription =
@@ -139,9 +139,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
+                                   Tags = (proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            "CaseStudy, DonatedTechnology",
+                                            "CaseStudy, DonatedTechnology").WrapCommas(),
                                    Title = "Sight Advice South Lakes - CTT case study",
                                    Uri = "http://www.youtube.com/watch?v=rNnKJ6naWgQ&feature=player_embedded&noredirect=1",
                                    ShortDescription =
@@ -158,9 +158,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice +  
+                                   Tags = (proficiencyNovice +  
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            "GettingStarted, Strategy",
+                                            "GettingStarted, Strategy").WrapCommas(),
                                    Title = "Why Be Concerned About Managing IT",
                                    Uri = "http://www.ictknowledgebase.org.uk/whyworryaboutictmanagement",
                                    ShortDescription = "Managers increasingly face important decisions about IT. It is too important to be ignored, and this article tells you why.",
@@ -175,9 +175,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice +  
+                                   Tags = (proficiencyNovice +  
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            "GettingStarted, Virus, Malware, Spyware",
+                                            "GettingStarted, Virus, Malware, Spyware").WrapCommas(),
                                    Title = "Viruses, Spyware & Malware",
                                    Uri = "http://www.ictknowledgebase.org.uk/virusesspywaremalware",
                                    ShortDescription = "A collection of articles telling you about keeping nasties off your organisation's network and computers.",
@@ -192,10 +192,10 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice + proficiencyIntermediate +
+                                   Tags = (proficiencyNovice + proficiencyIntermediate +
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            promoted + 
-                                            "Virus, Malware, Spyware",
+                                            promoted +
+                                            "Virus, Malware, Spyware").WrapCommas(),
                                    Title = "Infection Control",
                                    Uri = "http://www.ictknowledgebase.org.uk/infectioncontrol",
                                    ShortDescription = "Computer viruses plague millions around the world and email is a common way of spreading them. This article looks at the main issues.",
@@ -210,9 +210,9 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
+                                   Tags = (proficiencyNovice + proficiencyIntermediate + proficiencyExpert + 
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            "Virus, Malware, Spyware",
+                                            "Virus, Malware, Spyware").WrapCommas(),
                                    Title = "Virus Hoax Alert",
                                    Uri = "http://www.ictknowledgebase.org.uk/virushoax",
                                    ShortDescription = "Virus hoaxes can cause mayhem and confusion. They often encourage recipients to delete important system files. This article gives examples of past hoaxes and tips on how to spot hoaxes so you can avoid spreading them.",
@@ -227,10 +227,10 @@
 
                 resource = new Resource
                                {
-                                   Tags = proficiencyNovice +  
+                                   Tags = (proficiencyNovice +  
                                             smallOrgSize + mediumOrgSize + largeOrgSize +
-                                            promoted + 
-                                            "GettingStarted, Virus, Malware, Spyware",
+                                            promoted +
+                                            "GettingStarted, Virus, Malware, Spyware").WrapCommas(),
                                    Title = "Choosing An Antivirus Solution For Your Organisation",
                                    Uri = "http://www.ictknowledgebase.org.uk/choosingantivirus",
                                    ShortDescription = "Your organisation needs antivirus - that we can all agree. Don't rely on antivirus products that come with new computers. Coordinate a strategy across your organisation to benefit from time and money savings.",
@@ -245,10 +245,10 @@
 
                 resource = new Resource
                 {
-                    Tags =  proficiencyIntermediate + proficiencyExpert +
+                    Tags =  (proficiencyIntermediate + proficiencyExpert +
                              largeOrgSize +
                              promoted +
-                             "Mobile, PDA",
+                             "Mobile, PDA").WrapCommas(),
                     Title = "A Day In The Life Of A PDA User",
                     Uri = "http://www.ictknowledgebase.org.uk/pdadiary",
                     ShortDescription = "Whilst not in itself a true story, all of these events show how a Personal Digital Assistants (PDA) could commonly be used by an Advice Worker. For this example we are going to use an Outreach Advice Worker working for a Housing charity.",

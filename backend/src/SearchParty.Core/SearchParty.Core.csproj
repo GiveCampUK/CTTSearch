@@ -120,7 +120,9 @@
     <Compile Include="Commands\SearchQueryCommand.cs" />
     <Compile Include="ControllerFactoryHelper.cs" />
     <Compile Include="Data\NHibernateSessionHelper.cs" />
+    <Compile Include="Data\Overrides\CategoryOverride.cs" />
     <Compile Include="Data\Overrides\ResourceOverride.cs" />
+    <Compile Include="Data\Overrides\SearchResultLinkOverride.cs" />
     <Compile Include="Feature.cs" />
     <Compile Include="FeatureSettingNames.cs" />
     <Compile Include="ModelHelper.cs" />

@@ -51,35 +51,35 @@ namespace SearchParty.Core.Commands
                                    {
                                        Title = "Getting Started with IT",
                                        Blurb = "When you're not an IT professional, where to start with IT can be a daunting question. Like all things, a bit of research never goes amiss.",
-                                       Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                       Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                 proficiencyNovice + 
-                                                promoted + 
-                                                "GettingStarted",
+                                                promoted +
+                                                "GettingStarted").WrapCommas(),
                                        SearchResultLinks = new List<SearchResultLink>
                                                                {
                                                                    new SearchResultLink
                                                                        {
                                                                            Title = "How do I Plan and budget for IT equipment?",
-                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                           Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + proficiencyIntermediate +
                                                                                     promoted + 
-                                                                                    "GettingStarted, ITEquipment"
+                                                                                    "GettingStarted, ITEquipment").WrapCommas()
                                                                        },
                                                                    new SearchResultLink
                                                                        {
                                                                            Title = "Choosing and using consultants",
-                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                           Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + proficiencyIntermediate + proficiencyExpert +
                                                                                     promoted + 
-                                                                                    "GettingStarted, Consultants"
+                                                                                    "GettingStarted, Consultants").WrapCommas()
                                                                        },
                                                                    new SearchResultLink
                                                                        {
                                                                            Title = "Making Decisions On ICT: Roles And Responsibilities",
-                                                                           Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                           Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + 
                                                                                     promoted + 
-                                                                                    "GettingStarted, Roles, Responsibilities"
+                                                                                    "GettingStarted, Roles, Responsibilities").WrapCommas()
                                                                        }
                                                                },
                                        SubCategories = new List<Category>
@@ -88,43 +88,41 @@ namespace SearchParty.Core.Commands
                                                                    {
                                                                        Title = "Technology Planning and Strategy",
                                                                        Blurb = "A technology plan can sound like another piece of bureaucracy. Don't be fooled! There is no substitute for thinking through what you need and how you will meet those needs. Technology planning is the process that will help you save money on technology, buy what you need and use technology as a tool to accomplish your organisation's mission.",
-                                                                       Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                       Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                     proficiencyNovice + 
                                                                                     promoted + 
-                                                                                    "GettingStarted, Strategy",
+                                                                                    "GettingStarted, Strategy").WrapCommas(),
                                                                        SearchResultLinks = new List<SearchResultLink> {
                                                                                     new SearchResultLink 
                                                                                     {
                                                                                         Title = "What can IT do for me?",
-                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                        Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, Strategy, Infrastructure, Planning"
+                                                                                                "Getting Started, Strategy, Infrastructure, Planning").WrapCommas()
                                                                                     },
                                                                                     new SearchResultLink 
                                                                                     {
                                                                                         Title = "Case Studies",
-                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                        Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, CaseStudies"
+                                                                                                "Getting Started, CaseStudies").WrapCommas()
                                                                                     },
                                                                                     new SearchResultLink 
                                                                                     {
                                                                                         Title = "Project Planning",
-                                                                                        Tags = smallOrgSize + mediumOrgSize + largeOrgSize +
+                                                                                        Tags = (smallOrgSize + mediumOrgSize + largeOrgSize +
                                                                                                 proficiencyNovice + 
                                                                                                 promoted + 
-                                                                                                "Getting Started, ProjectPlanning"
+                                                                                                "Getting Started, ProjectPlanning").WrapCommas()
                                                                                     }
                                                                        },
                                                                        SubCategories = new List<Category> {}
                                                                    }
                                                            }
                                    };
-                category.SearchResultLinks.ForEach(r => dataSession.Save(r));
-                category.SubCategories.ForEach(r => dataSession.Save(r));
-                dataSession.Save(category);
+                SaveChildObjects(dataSession, category);
 
                 #endregion
 
@@ -180,9 +178,7 @@ namespace SearchParty.Core.Commands
                                                    }
                                            }
                                };
-                category.SearchResultLinks.ForEach(r => dataSession.Save(r));
-                category.SubCategories.ForEach(r => dataSession.Save(r));
-                dataSession.Save(category);
+                SaveChildObjects(dataSession, category);
 
                 #endregion
 
@@ -245,14 +241,24 @@ namespace SearchParty.Core.Commands
                                                                }
                                                        }
                                };
-                category.SearchResultLinks.ForEach(r => dataSession.Save(r));
-                category.SubCategories.ForEach(r => dataSession.Save(r));
-                dataSession.Save(category);
+                SaveChildObjects(dataSession, category);
 
                 #endregion
 
                 tx.Commit();
             }
+        }
+
+        private static void SaveChildObjects(ISession dataSession, Category category)
+        {
+            category.SearchResultLinks.ForEach(r => dataSession.Save(r));
+            category.SubCategories.ForEach(r =>
+                                               {
+                                                   dataSession.Save(r);
+                                                   r.SubCategories.ForEach(s => dataSession.Save(s));
+                                                   r.SearchResultLinks.ForEach(s => dataSession.Save(s));
+                                               });
+            dataSession.Save(category);
         }
     }
 }

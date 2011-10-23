@@ -31,6 +31,8 @@
             DropTable("ResourceTag");
             DropTable("Tag");
             DropTable("Resource");
+            DropTable("Category");
+            DropTable("SearchQuery");
 
             new SchemaExport(NHibernateSessionHelper.Configuration).Drop(false, true);
             new SchemaExport(NHibernateSessionHelper.Configuration).Execute(false, true, false, DataSession.Connection, null);
